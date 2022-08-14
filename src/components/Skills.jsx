@@ -4,7 +4,6 @@ import CSS from '../assets/css.png';
 import JavaScript from '../assets/javascript.png';
 import ReactImg from '../assets/react.png';
 import GitHub from '../assets/github.png';
-import Tailwind from '../assets/tailwind.png';
 import Python from '../assets/python.png'
 import MYSQL from '../assets/My.png'
 import VS from '../assets/code.png';
