@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importação e definição de Bohemian Soul */
+@font-face {
+  font-family: 'Bohemian Soul';
+  src: url('./assets/Bohemian Soul.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Definição de Montserrat (já está no seu projeto) */
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Classe específica para Bohemian Soul */
+.font-bohemian {
+  font-family: 'Bohemian Soul', sans-serif;
+}
