@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import br from '../../assets/brasil.png';
-import uk from '../../assets/uk.png';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [language, setLanguage] = useState("pt"); // Estado para a linguagem selecionada
 
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
+  const handleScrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsSidebarOpen(false); // Fecha o menu no mobile
+    }
   };
 
   return (
@@ -18,37 +19,8 @@ const Navbar = () => {
           <span className="flex justify-start items-center">
             Product Designer
           </span>
-        
-          {/* 
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => handleLanguageChange("pt")}
-              className={`w-10 h-8 border-2 ${
-                language === "pt" ? "border-white" : "border-transparent"
-              }`}
-            >
-              <img
-                src={br}
-                alt="Português"
-                className="w-10 h-6"
-              />
-            </button>
-            <button
-              onClick={() => handleLanguageChange("en")}
-              className={`w-10 h-8 border-2 ${
-                language === "en" ? "border-white" : "border-transparent"
-              }`}
-            >
-              <img
-                src={uk}
-                alt="English"
-                className="w-10 h-6"
-              />
-            </button>
-          </div>
-          */}
 
-          {/* Menu button for small screens */}
+          {/* Botão de menu para mobile */}
           <button
             className="md:hidden text-white text-xl"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -56,16 +28,24 @@ const Navbar = () => {
             {isSidebarOpen ? "Close" : "Menu"}
           </button>
 
-          {/* Navbar links for larger screens */}
+          {/* Links para desktop */}
           <div className="hidden md:flex justify-end gap-8 items-center">
-            <button className="hover:text-[#FF5B23]">Home</button>
-            <button className="hover:text-[#FF5B23]">About me</button>
-            <button className="hover:text-[#FF5B23]">Projects</button>
-            <button className="hover:text-[#FF5B23]">Contact</button>
+            <button onClick={() => handleScrollToSection("home")} className="hover:text-[#FF5B23]">
+              Home
+            </button>
+            <button onClick={() => handleScrollToSection("about")} className="hover:text-[#FF5B23]">
+              About me
+            </button>
+            <button onClick={() => handleScrollToSection("projects")} className="hover:text-[#FF5B23]">
+              Projects
+            </button>
+            <button onClick={() => handleScrollToSection("contact")} className="hover:text-[#FF5B23]">
+              Contact
+            </button>
           </div>
         </div>
 
-        {/* Sidebar for smaller screens */}
+        {/* Sidebar para mobile */}
         {isSidebarOpen && (
           <div className="fixed text-6xl inset-0 bg-[#F4F3EF] flex flex-col items-start p-10 justify-center gap-12 text-[#141414] md:hidden">
             <button
@@ -77,28 +57,28 @@ const Navbar = () => {
 
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => handleScrollToSection("home")}
             >
               HOME
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => handleScrollToSection("about")}
             >
               ABOUT ME
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => handleScrollToSection("projects")}
             >
               PROJECTS
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => handleScrollToSection("contact")}
             >
               CONTACT
               <ArrowUpRightIcon className="w-12 h-12" />
