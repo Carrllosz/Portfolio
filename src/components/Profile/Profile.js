@@ -119,13 +119,13 @@ const Profile = () => {
 
           <div className="grid grid-cols-1 gap-6 pl-0 md:pl-">
             <div className="">
-              <h2 className="font-bold text-xl">Projects</h2>
+              <h2 className="font-bold text-xl">Projetos</h2>
               <p className="text-sm text-gray-600">
                 Planejo e gerencio projetos com foco em eficiência, utilizando cronogramas, modelagem BPMN e gestão de indicadores para alcançar metas estratégicas.
               </p>
             </div>
             <div className="border-t border-gray-300 pt-4">
-              <h2 className="font-bold text-xl">Product</h2>
+              <h2 className="font-bold text-xl">Produto</h2>
               <p className="text-sm text-gray-600">
                 Transformo ideias em soluções estratégicas, gerenciando backlog, roadmaps e métricas para entregar produtos impactantes.
               </p>

@@ -66,21 +66,21 @@ const Navbar = () => {
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
               onClick={() => handleScrollToSection("about")}
             >
-              ABOUT ME
+              SOBRE
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
               onClick={() => handleScrollToSection("projects")}
             >
-              PROJECTS
+              PROJETOS
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
             <button
               className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]"
               onClick={() => handleScrollToSection("contact")}
             >
-              CONTACT
+              CONTATO
               <ArrowUpRightIcon className="w-12 h-12" />
             </button>
           </div>

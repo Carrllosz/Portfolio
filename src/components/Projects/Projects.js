@@ -19,7 +19,9 @@ const Projects = () => {
             <div className="w-1/3 flex flex-col justify-between p-4 text-[#F4F3EF]">
               <div className="flex flex-col">
                 <h2 className="font-bold text-xs md:text-lg lg:text-xl">
+                <a href="https://www.behance.net/gallery/199894671/UX-UI-Case-Study-Redesign-do-App-da-Amazon" target="_blank" rel="noopener noreferrer">
                   Redesign App Mobile - Amazon
+                </a>
                 </h2>
                 <h1 className="font-regular text-xs md:text-lg lg:text-xl">
                   Case Study
@@ -39,11 +41,13 @@ const Projects = () => {
             </div>
 
             <div className="w-2/3 h-full">
+            <a href="https://www.behance.net/gallery/199894671/UX-UI-Case-Study-Redesign-do-App-da-Amazon" target="_blank" rel="noopener noreferrer">
               <img
                 src={amazon}
                 alt="Amazon redesign"
                 className="w-full h-full object-cover"
               />
+            </a>
             </div>
           </div>
         </div>
