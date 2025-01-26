@@ -143,15 +143,70 @@ const Profile = () => {
           <h2 className="font-semibold text-lg">(Educação)</h2>
           <ArrowDownRightIcon className="w-6 h-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-start">
-        <div className="w-full max-w-[350px] h-[150px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 justify-start">
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
-            2022 - Presente
+            2022 - Atual
           </p>
 
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Universidade Federal de Alagoas</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">Ciência da Computação</h1>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+          <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
+            2024
+          </p>
+
+          <div className="absolute bottom-4 left-4">
+            <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
+            <h1 className="font-bold text-sm md:text-lg lg:text-xl">UX Design: Elaborando Projetos Estratégicos</h1>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+          <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
+            2024
+          </p>
+
+          <div className="absolute bottom-4 left-4">
+            <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
+            <h1 className="font-bold text-sm md:text-lg lg:text-xl">UI Design: Criando o design de um protótipo</h1>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+          <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
+            2023
+          </p>
+
+          <div className="absolute bottom-4 left-4">
+            <h2 className="font-regular text-sm md:text-lg lg:text-xl">Xperiun</h2>
+            <h1 className="font-bold text-sm md:text-lg lg:text-xl">Minicurso de Power BI</h1>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+          <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
+            2023
+          </p>
+
+          <div className="absolute bottom-4 left-4">
+            <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
+            <h1 className="font-bold text-sm md:text-lg lg:text-xl">MS Project: planejando cronogramas de projeto</h1>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
+          <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
+            2023
+          </p>
+
+          <div className="absolute bottom-4 left-4">
+            <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
+            <h1 className="font-bold text-sm md:text-lg lg:text-xl">PMBOK na prática parte 1: gerenciando seu projeto</h1>
           </div>
         </div>
           

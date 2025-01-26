@@ -8,7 +8,7 @@ const Navbar = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsSidebarOpen(false); // Fecha o menu no mobile
+      setIsSidebarOpen(false);
     }
   };
 
