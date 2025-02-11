@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowDownLeftIcon } from "@heroicons/react/24/outline";
 import figma from "../../assets/figma.png";
+import miro from "../../assets/miro.png";
 import amazon from "../../assets/amazon.png";
 
 const Projects = () => {
@@ -29,15 +30,22 @@ const Projects = () => {
               </div>
 
               <div className="flex flex-col">
-                <h2 className="font-regular text-xs md:text-lg lg:text-base">
-                  Ferramentas usadas
-                </h2>
-                <img
-                  src={figma}
-                  alt="Figma"
-                  className="w-12 h-12 object-contain mt-2"
-                />
-              </div>
+                  <h2 className="font-regular text-xs md:text-lg lg:text-base">
+                    Ferramentas usadas
+                  </h2>
+                  <div className="flex gap-4 mt-2">
+                    <img
+                      src={figma}
+                      alt="Figma"
+                      className="w-12 h-12 object-contain"
+                    />
+                    <img
+                      src={miro}
+                      alt="Miro"
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                </div>
             </div>
 
             <div className="w-2/3 h-full">

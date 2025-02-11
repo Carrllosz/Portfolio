@@ -12,7 +12,7 @@ import python from '../../assets/python.png';
 import react from '../../assets/react.png';
 import sql from '../../assets/sql.png';
 import miro from '../../assets/miro.png';
-import storybook from '../../assets/storybook.png';
+import ts from '../../assets/ts.png';
 import { DocumentIcon } from "@heroicons/react/24/outline";
 import { FaLinkedinIn, FaGithub, FaBehance   } from "react-icons/fa"; 
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
@@ -63,29 +63,23 @@ const Profile = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-4">
-            <div className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#007EBB] rounded-2xl relative flex flex-col items-center justify-center">
-              <a href="https://www.linkedin.com/in/carrllosz/" target="_blank" rel="noopener noreferrer" className="absolute top-2 right-0 w-12 h-12">
-                <FaLinkedinIn className="w-8 h-8 text-white" />
-              </a>
+            <a href="https://www.linkedin.com/in/carrllosz/" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#007EBB] rounded-2xl relative flex flex-col items-center justify-center">
+              <FaLinkedinIn className="w-8 h-8 text-white absolute top-2 right-4" />
               <div className="w-[calc(100%-2rem)] h-px absolute bottom-8 bg-white mt-4"></div>
               <p className="absolute bottom-2 left-4 text-white text-sm">@carrllosz</p>
-            </div>
+            </a>
 
-            <div className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#F4F3EF] border b-2 border-[#141414] rounded-2xl relative flex flex-col items-center justify-center">
-              <a href="https://github.com/Carrllosz" target="_blank" rel="noopener noreferrer" className="absolute top-2 right-0 w-12 h-12">
-                <FaGithub className="w-8 h-8 text-[#141414]" />
-              </a>
+            <a href="https://github.com/Carrllosz" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#F4F3EF] border b-2 border-[#141414] rounded-2xl relative flex flex-col items-center justify-center">
+              <FaGithub className="w-8 h-8 text-[#141414] absolute top-2 right-4" />
               <div className="w-[calc(100%-2rem)] h-px absolute bottom-8 bg-[#141414] mt-4"></div>
               <p className="absolute bottom-2 left-4 text-[#141414] text-sm">@carrllosz</p>
-            </div>
+            </a>
 
-            <div className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#0077FF] rounded-2xl relative flex flex-col items-center justify-center">
-              <a href="https://www.behance.net/uxcarrllosz" target="_blank" rel="noopener noreferrer" className="absolute top-2 right-0 w-12 h-12">
-                <FaBehance className="w-8 h-8 text-white" />
-              </a>
+            <a href="https://www.behance.net/uxcarrllosz" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#0077FF] rounded-2xl relative flex flex-col items-center justify-center">
+              <FaBehance className="w-8 h-8 text-white absolute top-2 right-4" />
               <div className="w-[calc(100%-2rem)] h-px absolute bottom-8  bg-white mt-4"></div>
               <p className="absolute bottom-2 left-4 text-white text-sm">@uxcarrllosz</p>
-            </div>
+            </a>
           </div>
 
         </div>
@@ -139,16 +133,15 @@ const Profile = () => {
       </div>
 
       <div className="my-6 mx-4 sm:mx-6 md:mx-10">
-        <div className="flex items-center justify-start gap-4 border-r border-gray-300 pr-4">
-          <h2 className="font-semibold text-lg">(Educação)</h2>
-          <ArrowDownRightIcon className="w-6 h-6" />
-        </div>
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 justify-start">
+      <div className="flex items-center justify-start gap-4 border-r border-gray-300 pr-4">
+        <h2 className="font-semibold text-lg">(Educação)</h2>
+        <ArrowDownRightIcon className="w-6 h-6" />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-start">
         <div className="w-full max-w-[350px] h-[200px] md:h-[250px] lg:h-[200px] mt-4 bg-[#F4F3EF] border border-[#141414] rounded-2xl relative flex flex-col items-start p-4">
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2022 - Atual
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Universidade Federal de Alagoas</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">Ciência da Computação</h1>
@@ -159,7 +152,6 @@ const Profile = () => {
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2024
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">UX Design: Elaborando Projetos Estratégicos</h1>
@@ -170,7 +162,6 @@ const Profile = () => {
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2024
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">UI Design: Criando o design de um protótipo</h1>
@@ -181,7 +172,6 @@ const Profile = () => {
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2023
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Xperiun</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">Minicurso de Power BI</h1>
@@ -192,7 +182,6 @@ const Profile = () => {
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2023
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">MS Project: planejando cronogramas de projeto</h1>
@@ -203,15 +192,12 @@ const Profile = () => {
           <p className="text-xs md:text-sm absolute top-4 left-4 bg-[#141414] text-white py-2 px-4 rounded-3xl">
             2023
           </p>
-
           <div className="absolute bottom-4 left-4">
             <h2 className="font-regular text-sm md:text-lg lg:text-xl">Alura</h2>
             <h1 className="font-bold text-sm md:text-lg lg:text-xl">PMBOK na prática parte 1: gerenciando seu projeto</h1>
           </div>
         </div>
-          
-        </div>
-
+      </div>
       </div>
 
       <div className="my-4">
@@ -236,12 +222,11 @@ const Profile = () => {
         <div className="w-full h-[350px] md:h-[300px] lg:h-[400px] bg-[#141414] rounded-3xl relative p-4 text-white">
           <div className="flex items-start justify-between w-full absolute top-0 left-0 p-4">
             <div>
-              <h2 className="font-bold text-base md:text-xl">Estagiário Front-end</h2>
+            <h2 className="font-bold text-base sm:text-lg md:text-xl">
+              Desenvolvedor Front-end <br />& UX/UI Designer
+            </h2>
               <p className="text-sm">Automining</p>
-            </div>
-
-            <div className="flex justify-end text-xs md:text-sm absolute top-0 right-0 p-4">
-              Outubro 2024 - Presente
+              <p className="text-sm text-[#FF5B23]"> Outubro 2024 - Presente</p>
             </div>
           </div>
 
@@ -260,11 +245,9 @@ const Profile = () => {
             <div>
               <h2 className="font-bold text-base md:text-xl">Estagiário de PMO</h2>
               <p className="text-sm">Mineração Vale Verde</p>
+              <p className="text-sm text-[#FF5B23]"> Abril 2023 - Setembro</p>
             </div>
 
-            <div className="flex justify-end text-xs md:text-sm absolute top-0 right-0 p-4">
-              Abril 2023 - Setembro
-            </div>
           </div>
 
           <div className="absolute bottom-0 left-0 text-white text-sm md:text-base p-4 hover:text-[#FF5B23]">
@@ -307,7 +290,7 @@ const Profile = () => {
           <img src={miro} alt="miro" className="w-12 h-12 object-contain" />
           <img src={msproject} alt="msproject" className="w-12 h-12 object-contain" />
           <img src={react} alt="react" className="w-12 h-12 object-contain" />
-          <img src={storybook} alt="storybook" className="w-12 h-12 object-contain" />
+          <img src={ts} alt="typescript" className="w-12 h-12 object-contain" />
         </div>
       </div>
 
