@@ -232,10 +232,13 @@ const Profile = () => {
 
           <div className="absolute bottom-0 left-0 text-white text-sm md:text-base p-4 hover:text-[#FF5B23]">
             <ul className="list-disc pl-5 space-y-2">
-              <li>Modelagem de processos com BPMN</li>
-              <li>Criação de protótipos interativos no Figma</li>
-              <li>Desenvolvimento de interfaces com Angular, HTML e CSS</li>
-              <li>Alinhamento de entregas com requisitos dos clientes</li>
+              <li>Desenvolve soluções front-end escaláveis com Angular, HTML e CSS.</li>
+              <li>Cria interfaces centradas no usuário, aplicando boas práticas de UX/UI.</li>
+              <li>Realiza pesquisas e testes de usabilidade para aprimorar fluxos de trabalho</li>
+              <li>Produz wireframes, protótipos e designs de alta fidelidade.</li>
+              <li>Otimiza a arquitetura da informação e a visualização de dados.</li>
+              <li>Melhora processos operacionais usando BPMN.</li>
+              <li>Colabora com a equipe para alinhar objetivos de negócio, viabilidade técnica e necessidades dos usuários.</li>
             </ul>
           </div>
         </div>
