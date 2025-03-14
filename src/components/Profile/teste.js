@@ -19,71 +19,36 @@ import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 
 const Profile = () => {
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center p-4">
-      <div className="max-w-6xl w-full bg-[#F4F3EF] rounded-md">
-        <div className="flex flex-col justify-start items-start p-6 md:p-10 text-[#141414]">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold">
-            JOÃO CARLOS
-          </h1>
-          <h2 className="text-xl md:text-2xl lg:text-3xl">
-          Product Designer | UX/UI Designer | Desenvolvedor Front-end
-          </h2>
+    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center">
+      <div className="w-full">
+
+      <div className="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-16 px-4 md:px-10 pb-6">
+        <div className="w-full md:w-[600px] lg:w-[600px] h-[600px] md:h-[500px] lg:h-[600px] bg-[#141414] rounded-3xl overflow-hidden">
+          <img src={perfil} alt="perfil" className="w-full h-full object-cover" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center justify-center px-4 md:px-10 pb-6">
-        <div className="w-full h-[300px] md:h-[500px] lg:h-[600px] bg-[#141414] rounded-3xl overflow-hidden">
-          <img
-            src={perfil}
-            alt="perfil"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <div className="w-full md:w-[600px] lg:w-[650px] h-[600px] md:h-[500px] lg:h-[550px] flex flex-col justify-between">
+          <h1 className="text-white font-bold text-4xl md:text-5xl lg:text-6xl">Hey!</h1>
 
-        <div className="w-full h-full">
-          <div className="h-[300px] md:h-[300px] lg:h-[440px] bg-[#141414] rounded-3xl relative p-4">
-            <div className="flex absolute top-0 right-0 gap-3 p-4">
-            <div className="relative group">
-              <button className="bg-[#F4F3EF] w-10 h-10 rounded-full flex items-center justify-center">
-                <a
-                  className="flex justify-center items-center w-full text-white"
-                  href={curriculo}
-                  download="Curriculo_JoaoCarlos.pdf"
-                >
-                  <DocumentIcon className="text-[#141414] w-6 h-6 hover:text-[#FF5B23]" />
-                </a>
-              </button>
-              <span className="absolute bottom-12 left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform bg-[#FF5B23] text-white text-xs py-1 px-2 rounded-md">
-                Download Currículo
-              </span>
-            </div>
-            </div>
-            <p className="absolute bottom-0 left-0 text-white text-base md:text-lg lg:text-4xl p-4 hover:text-[#FF5B23]">
-              Como Product Designer, eu me especializo em criar soluções digitais intuitivas e impactantes.
+          <div className="text-white text-base md:text-lg lg:text-4xl">
+            <p>
+              I'm João, a UX/UI Designer and Front-end Developer creating seamless and impactful digital experiences.
+            </p>
+            <p>
+              Currently at <span className="text-[#FF5B23]">Automining</span>, 
+              <span> previously at </span>
+              <span className="text-[#FF5B23]"> Mineração Vale Verde.</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
-            <a href="https://www.linkedin.com/in/carrllosz/" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#007EBB] rounded-2xl relative flex flex-col items-center justify-center">
-              <FaLinkedinIn className="w-8 h-8 text-white absolute top-2 right-4" />
-              <div className="w-[calc(100%-2rem)] h-px absolute bottom-8 bg-white mt-4"></div>
-              <p className="absolute bottom-2 left-4 text-white text-sm">@carrllosz</p>
-            </a>
-
-            <a href="https://github.com/Carrllosz" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#F4F3EF] border b-2 border-[#141414] rounded-2xl relative flex flex-col items-center justify-center">
-              <FaGithub className="w-8 h-8 text-[#141414] absolute top-2 right-4" />
-              <div className="w-[calc(100%-2rem)] h-px absolute bottom-8 bg-[#141414] mt-4"></div>
-              <p className="absolute bottom-2 left-4 text-[#141414] text-sm">@carrllosz</p>
-            </a>
-
-            <a href="https://www.behance.net/uxcarrllosz" target="_blank" rel="noopener noreferrer" className="w-full h-[100px] md:h-[300px] lg:h-[150px] bg-[#0077FF] rounded-2xl relative flex flex-col items-center justify-center">
-              <FaBehance className="w-8 h-8 text-white absolute top-2 right-4" />
-              <div className="w-[calc(100%-2rem)] h-px absolute bottom-8  bg-white mt-4"></div>
-              <p className="absolute bottom-2 left-4 text-white text-sm">@uxcarrllosz</p>
-            </a>
+          <div className="flex flex-wrap gap-4 text-white justify-start">
+            <p className="border border-white p-2 px-4 rounded-full">2+ years of exp</p>
+            <p className="border border-white p-2 px-4 rounded-full">Product Design</p>
+            <p className="border border-white p-2 px-4 rounded-full">BPMN</p>
+            <p className="border border-white p-2 px-4 rounded-full">UX Strategy</p>
           </div>
-
         </div>
-        </div>
+      </div>
 
         <div className="my-4">
           <div className="border border-gray-300 mx-10"></div>
