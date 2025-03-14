@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,10 +24,14 @@ const Navbar = () => {
 
         {/* Botão Menu (Mobile) */}
         <button
-          className="md:hidden text-white text-xl"
+          className="md:hidden text-white"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          {isSidebarOpen ? "Close" : "Menu"}
+          {isSidebarOpen ? (
+            <XMarkIcon className="w-8 h-8" />
+          ) : (
+            <Bars3Icon className="w-8 h-8" />
+          )}
         </button>
 
         {/* Links de navegação (Desktop) */}
@@ -48,7 +52,7 @@ const Navbar = () => {
           <button
             onClick={() => handleScrollToSection("contact")}
             className="flex items-center border border-[#141414] px-4 py-2 rounded-full text-[#FF5B23] hover:border hover:border-[#FF5B23] transition-all duration-300"
-          >         
+          >
             <div className="w-3 h-3 bg-[#FF5B23] rounded-full mr-2 transition-all duration-300"></div>
             Contact me
           </button>
@@ -56,33 +60,48 @@ const Navbar = () => {
       </nav>
 
       {/* Menu Mobile */}
-      {isSidebarOpen && (
-        <div className="fixed inset-0 bg-[#F4F3EF] flex flex-col items-start p-4 md:p-10 justify-center gap-8 text-[#141414] md:hidden">
-          <button
-            className="absolute top-4 right-4 p-3 text-xl text-[#141414] hover:text-[#FF5B23]"
-            onClick={() => setIsSidebarOpen(false)}
-          >
-            ✖
-          </button>
+      <div
+        className={`fixed top-0 right-0 bottom-0 w-full bg-[#F4F3EF] flex flex-col items-start p-6 md:p-10 justify-center gap-8 text-[#141414] md:hidden transform transition-all duration-500 ease-in-out ${
+          isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+        }`}
+        style={{ transition: "transform 0.4s ease-in-out, opacity 0.3s ease-in-out" }}
+      >
+        <button
+          className="absolute top-4 left-4 p-3 text-3xl text-[#141414] hover:text-[#FF5B23]"
+          onClick={() => setIsSidebarOpen(false)}
+        >
+          <XMarkIcon className="w-8 h-8" />
+        </button>
 
-          <button className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]" onClick={() => handleScrollToSection("home")}>
-            Home
-            <ArrowUpRightIcon className="w-6 h-6 md:w-8 md:h-8" />
-          </button>
-          <button className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]" onClick={() => handleScrollToSection("about")}>
-            About me
-            <ArrowUpRightIcon className="w-6 h-6 md:w-8 md:h-8" />
-          </button>
-          <button className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]" onClick={() => handleScrollToSection("projects")}>
-            Projects
-            <ArrowUpRightIcon className="w-6 h-6 md:w-8 md:h-8" />
-          </button>
-          <button className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23]" onClick={() => handleScrollToSection("contact")}>
-            Contact
-            <ArrowUpRightIcon className="w-6 h-6 md:w-8 md:h-8" />
-          </button>
-        </div>
-      )}
+        <button
+          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
+          onClick={() => handleScrollToSection("home")}
+        >
+          Home
+          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
+        </button>
+        <button
+          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
+          onClick={() => handleScrollToSection("about")}
+        >
+          About me
+          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
+        </button>
+        <button
+          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
+          onClick={() => handleScrollToSection("projects")}
+        >
+          Projects
+          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
+        </button>
+        <button
+          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
+          onClick={() => handleScrollToSection("contact")}
+        >
+          Contact
+          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
+        </button>
+      </div>
     </header>
   );
 };
