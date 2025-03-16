@@ -13,7 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#141414] fixed top-0 left-0 w-full z-50 px-4 py-8 md:px-10">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 py-8 md:px-10 backdrop-blur-md bg-[#141414]/60">
+      {/* Navbar com efeito Glass */}
       <nav className="flex items-center justify-between w-full text-white">
         {/* Nome */}
         <span className="text-xl md:text-2xl">
@@ -35,15 +36,15 @@ const Navbar = () => {
         </button>
 
         {/* Links de navegação (Desktop) */}
-        <div className="text-white/50 hidden md:flex justify-end gap-6 items-center">
+        <div className="text-white/50 hidden md:flex justify-center gap-4 items-center">
           <button onClick={() => handleScrollToSection("home")} className="hover:text-white">
             Home
           </button>
-          <button onClick={() => handleScrollToSection("about")} className="hover:text-white">
-            About me
-          </button>
           <button onClick={() => handleScrollToSection("projects")} className="hover:text-white">
             Projects
+          </button>
+          <button onClick={() => handleScrollToSection("profile")} className="hover:text-white">
+            About me
           </button>
         </div>
 
@@ -61,10 +62,13 @@ const Navbar = () => {
 
       {/* Menu Mobile */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-full bg-[#F4F3EF] flex flex-col items-start p-6 md:p-10 justify-center gap-8 text-[#141414] md:hidden transform transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 bottom-0 w-full bg-[#F4F3EF] flex flex-col items-start p-6 md:p-10 justify-center gap-8 text-[#141414] md:hidden transform transition-all duration-500 ease-in-out ${
           isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
-        style={{ transition: "transform 0.4s ease-in-out, opacity 0.3s ease-in-out" }}
+        style={{
+          transition: "transform 0.4s ease-in-out, opacity 0.3s ease-in-out",
+          height: "100vh", // Garante que o menu ocupe 100% da altura da tela
+        }}
       >
         <button
           className="absolute top-4 left-4 p-3 text-3xl text-[#141414] hover:text-[#FF5B23]"
@@ -82,16 +86,16 @@ const Navbar = () => {
         </button>
         <button
           className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("about")}
+          onClick={() => handleScrollToSection("projects")}
         >
-          About me
+          Projects
           <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
         </button>
         <button
           className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("projects")}
+          onClick={() => handleScrollToSection("profile")}
         >
-          Projects
+          About me
           <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
         </button>
         <button

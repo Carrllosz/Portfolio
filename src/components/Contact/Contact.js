@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { ArrowDownLeftIcon } from "@heroicons/react/24/outline";
 import computador from "../../assets/computador.png";
 
 const Contact = () => {
@@ -12,26 +11,18 @@ const Contact = () => {
     message: "",
   });
 
-  const [isPopUpVisible, setIsPopUpVisible] = useState(null); // Estado para controlar o pop-up de sucesso/erro
+  const [popUpStatus, setPopUpStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-      from_name: form.name,
-      to_name: "João Carlos",
-      message: form.message,
-      user_email: form.email,
-      user_phone: form.phone,
-    });
-
-    emailjs
-      .send(
+    try {
+      await emailjs.send(
         "service_psui2td",
         "template_t8yoovo",
         {
@@ -42,138 +33,110 @@ const Contact = () => {
           user_phone: form.phone,
         },
         "d5uVLyaWgOJB2LWEy"
-      )
-      .then(
-        (response) => {
-          setIsPopUpVisible("success"); // Exibe pop-up de sucesso
-          setForm({ name: "", email: "", phone: "", message: "" });
-        },
-        (error) => {
-          setIsPopUpVisible("error"); // Exibe pop-up de erro
-          console.error("Erro:", error);
-        }
       );
+
+      setPopUpStatus("success");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      setPopUpStatus("error");
+    }
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-start p-4">
-      <div className="max-w-6xl w-full border-2 border-[#F4F3EF] rounded-md">
-        <div className="flex items-center justify-between p-6 md:p-10">
-          <h1 className="text-6xl md:text-6xl lg:text-8xl font-thin text-[#F4F3EF]">
-            Contato
-          </h1>
-          <ArrowDownLeftIcon className="w-24 h-24 text-[#F4F3EF]" />
-        </div>
+    <div className="w-full min-h-screen flex bg-[#141414] justify-center items-end px-4 py-10">
+      <div className="w-full max-w-2xl bg-transparent border-2 border-white rounded-lg p-6 md:p-10 shadow-lg">
 
-        <div>
-          <div className="border border-gray-300"></div>
-        </div>
+        <h1 className="text-3xl text-white mb-6 text-center">Contato</h1>
+        <div className="border-t border-white/40 w-full mb-6"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-          <div className="flex justify-center">
-            <img
-              src={computador}
-              alt="Imagem de Contato"
-              className="w-80 h-80 object-cover rounded-md"
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <img
+            src={computador}
+            alt="Imagem de Contato"
+            className="w-full md:w-80 h-90 object-cover rounded-md mx-auto"
+          />
 
-          <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
-            <div className="relative">
+          <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
+            <div>
               <label className="text-[#F4F3EF] font-medium">Nome Completo</label>
-              <div className="border-b border-gray-300 mt-2">
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Digite seu nome"
-                  className="w-full bg-transparent outline-none text-[#F4F3EF] placeholder-gray-400"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Digite seu nome"
+                className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
+                required
+              />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="relative">
+              <div>
                 <label className="text-[#F4F3EF] font-medium">Email</label>
-                <div className="border-b border-gray-300 mt-2">
-                  <input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="Digite seu email"
-                    className="w-full bg-transparent outline-none text-[#F4F3EF] placeholder-gray-400"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="relative">
-                <label className="text-[#F4F3EF] font-medium">Telefone</label>
-                <div className="border-b border-gray-300 mt-2">
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="Digite seu telefone"
-                    className="w-full bg-transparent outline-none text-[#F4F3EF] placeholder-gray-400"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <label className="text-[#F4F3EF] font-medium">Mensagem</label>
-              <div className="border-b border-gray-300 mt-2">
-                <textarea
-                  name="message"
-                  value={form.message}
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
                   onChange={handleChange}
-                  placeholder="Digite sua mensagem"
-                  className="w-full bg-transparent outline-none text-[#F4F3EF] placeholder-gray-400"
+                  placeholder="Digite seu email"
+                  className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
                   required
+                />
+              </div>
+              <div>
+                <label className="text-[#F4F3EF] font-medium">Telefone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="Digite seu telefone"
+                  className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
                 />
               </div>
             </div>
 
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                className="flex items-center text-[#F4F3EF] hover:text-[#FF5B23] px-4 py-2 rounded-md"
-              >
-                <span className="mr-2">Enviar</span>
-                <ArrowRightIcon className="w-5 h-5" />
-              </button>
+            <div>
+              <label className="text-[#F4F3EF] font-medium">Mensagem</label>
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Digite sua mensagem"
+                className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2 resize-none"
+                required
+              />
             </div>
+
+            <button
+              type="submit"
+              className="flex items-center justify-center text-[#F4F3EF] hover:text-[#FF5B23] px-4 py-2 rounded-md transition"
+            >
+              <span className="mr-2">Enviar</span>
+              <ArrowRightIcon className="w-5 h-5" />
+            </button>
           </form>
         </div>
-      </div>
 
-      {isPopUpVisible && (
-        <div
-          className={`fixed top-0 left-0 right-0 bottom-0 bg-gray-300 bg-opacity-50 flex justify-center items-center`}
-        >
-          <div
-            className={`bg-white text-black p-6 rounded-md shadow-lg text-center ${
-              isPopUpVisible === "success" ? "bg-[#F4F3EF]" : "bg-red-500"
-            }`}
-          >
-            <p className="text-xl font-semibold">
-              {isPopUpVisible === "success"
-                ? "E-mail enviado com sucesso!"
-                : "Erro ao enviar o e-mail. Tente novamente mais tarde."}
-            </p>
-            <button
-              className="mt-4 bg-black hover:bg-[#FF5B23] text-white px-4 py-2 rounded-md"
-              onClick={() => setIsPopUpVisible(null)}
-            >
-              Fechar
-            </button>
+        {popUpStatus && (
+          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+            <div className="bg-white text-black p-6 rounded-md shadow-lg text-center">
+              <p className="text-lg font-semibold">
+                {popUpStatus === "success"
+                  ? "E-mail enviado com sucesso!"
+                  : "Erro ao enviar. Tente novamente."}
+              </p>
+              <button
+                className="mt-4 bg-black hover:bg-[#FF5B23] text-white px-4 py-2 rounded-md transition"
+                onClick={() => setPopUpStatus(null)}
+              >
+                Fechar
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

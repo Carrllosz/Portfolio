@@ -49,13 +49,13 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10">
+    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10 pb-8">
       <div className="w-full rounded-md">
         <div className="flex flex-col w-full">
           <div className="border-t border-white/40 w-full mb-4"></div>
 
           <div className="flex items-center justify-between">
-            <p className="text-white text-2xl md:text-3xl lg:text-4xl">
+            <p className="text-white text-2xl md:text-3xl lg:text-3xl">
               See my work
             </p>
             <ArrowDownIcon className="w-8 h-8 text-[#F4F3EF]" />
