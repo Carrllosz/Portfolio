@@ -45,10 +45,10 @@ const Contact = () => {
 
   return (
     <div className="w-full min-h-screen flex bg-[#141414] justify-center items-end px-4 py-10">
-      <div className="w-full max-w-2xl bg-transparent border-2 border-white rounded-lg p-6 md:p-10 shadow-lg">
+      <div className="w-full bg-transparent border-2 border-white rounded-lg p-6 md:p-10 shadow-lg">
 
-        <h1 className="text-3xl text-white mb-6 text-center">Contato</h1>
-        <div className="border-t border-white/40 w-full mb-6"></div>
+        <h1 className="text-3xl text-white mb-4 text-start">Contato</h1>
+        <div className="border-t border-white/40 w-full mb-4"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <img

@@ -1,28 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowDownIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
 
 const projects = [
   {
+    id: "amazon-redesign",
     title: "Redesign App Mobile - Amazon",
-    link: "https://www.behance.net/gallery/199894671/UX-UI-Case-Study-Redesign-do-App-da-Amazon",
     image: amazon,
     description: "Enhancing usability and design.",
     tags: ["Redesign", "Mobile"],
-    position: "left",
   },
   {
+    id: "friends-app",
     title: "Friends - App Mobile",
-    link: "https://www.behance.net/gallery/219990865/Friends-App-Mobile",
     image: friends,
     description: "Enhancing usability and design.",
     tags: ["Case Study", "Mobile"],
-    position: "right",
   },
 ];
 
 const Projects = () => {
+  const navigate = useNavigate();
   const [hoverPosition, setHoverPosition] = useState({
     x: 0,
     y: 0,
@@ -49,11 +49,10 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10 pb-8">
+    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10">
       <div className="w-full rounded-md">
         <div className="flex flex-col w-full">
           <div className="border-t border-white/40 w-full mb-4"></div>
-
           <div className="flex items-center justify-between">
             <p className="text-white text-2xl md:text-3xl lg:text-3xl">
               See my work
@@ -62,31 +61,22 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 mt-6">
+        <div className="flex gap-4 mt-6 ">
           {projects.map((project, index) => (
             <div
-              key={index}
-              className={`w-full md:w-1/2 flex flex-col items-center ${
-                project.position === "left" ? "self-start" : "self-end"
-              }`}
+              key={project.id}
+              className="w-full md:w-1/2 flex flex-col items-center cursor-pointer"
+              onClick={() => navigate(`/projects/${project.id}`)} // Redireciona para a página de detalhes
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={handleMouseLeave}
             >
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group block"
-              >
-                <div
-                  className="overflow-hidden rounded-2xl relative"
-                  onMouseMove={(e) => handleMouseMove(e, index)}
-                  onMouseLeave={handleMouseLeave}
-                >
+              <div className="relative group block">
+                <div className="overflow-hidden rounded-2xl relative">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                   />
-
                   {hoverPosition.visible && hoverPosition.projectIndex === index && (
                     <div
                       className="absolute w-16 h-16 bg-[#FF5B23] rounded-full flex justify-center items-center transition-transform duration-75 ease-out pointer-events-none"
@@ -99,7 +89,7 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
-              </a>
+              </div>
 
               <div className="flex justify-between w-full items-center mt-2">
                 <div>
