@@ -1,34 +1,37 @@
 import React from "react";
-import perfil from "../../assets/perfil.jpg";
-import { MapPinIcon } from "@heroicons/react/24/solid";
+import homeVideo from "../../assets/home.mp4";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10">
-      <div className="w-full flex flex-col md:flex-row items-center justify-start gap-6 md:gap-12">
+    <div className="w-full min-h-screen bg-white flex flex-col pt-[144px] items-end px-4 py-4">
+      <div className="w-full flex flex-col md:flex-row items-end justify-end gap-8 md:gap-16">
 
-        <div className="w-full flex flex-col justify-center gap-6 lg:gap-8">
-          <h1 className="text-white font-medium text-4xl md:text-5xl lg:text-9xl">Product Designer.</h1>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <h1 className="text-black font-medium text-5xl md:text-3xl lg:text-5xl">
+            Product Designer.
+          </h1>
 
-          <div className="lg:w-[850px]  text-white/50 text-base md:text-lg lg:text-xl leading-relaxed">
-            <p>
-            I'm an Arapiraca-based Product Designer with a strong background in UX and Front-end Development, crafting seamless and impactful digital experiences.
-            </p>
-            <p>
-              Currently at <span className="text-[#FF5B23]">Automining</span>, previously at 
-              <span className="text-[#FF5B23]"> Mineração Vale Verde</span>, blending design and technology to build intuitive, high-performing interfaces.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2 md:gap-4 text-white text-xs md:text-lg lg:text-sm">
-            <p className="border border-white/30 px-4 py-2 rounded-full">2+ years of exp</p>
-            <p className="border border-white/30 px-4 py-2 rounded-full">Product Design</p>
-            <p className="border border-white/30 px-4 py-2 rounded-full">BPMN</p>
-            <p className="border border-white/30 px-4 py-2 rounded-full">UX Strategy</p>
+          <div className="text-black/60 text-base md:text-base lg:text-base leading-relaxed">
+              <p>
+                I'm an Arapiraca-based Product Designer with a strong background in UX and Front-end Development, crafting seamless and impactful digital experiences.
+              </p>
+              <p>
+                Currently at <span className="text-[#FF5B23]">Automining</span>, previously at 
+                <span className="text-[#FF5B23]"> Mineração Vale Verde</span>, blending design and technology to build intuitive, high-performing interfaces.
+              </p>
           </div>
         </div>
+      </div>
 
-
+      <div className="w-full mt-10 rounded-xl overflow-hidden">
+        <video
+          className="w-full h-[50vh] object-cover rounded-xl"
+          src={homeVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
     </div>
   );

@@ -13,9 +13,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 py-8 md:px-10 backdrop-blur-md bg-[#141414]/60">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 py-8 md:px-10 backdrop-blur-md bg-white/60">
       {/* Navbar com efeito Glass */}
-      <nav className="flex items-center justify-between w-full text-white">
+      <nav className="flex items-center justify-between w-full text-black">
         {/* Nome */}
         <span className="text-xl md:text-2xl">
           João <span className="relative">Carlos
@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Botão Menu (Mobile) */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-black"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           {isSidebarOpen ? (
@@ -36,14 +36,14 @@ const Navbar = () => {
         </button>
 
         {/* Links de navegação (Desktop) */}
-        <div className="text-white/50 hidden md:flex justify-center gap-4 items-center">
-          <button onClick={() => handleScrollToSection("home")} className="hover:text-white">
+        <div className="text-black/50 hidden md:flex justify-center gap-4 items-center">
+          <button onClick={() => handleScrollToSection("home")} className="hover:text-black">
             Home
           </button>
-          <button onClick={() => handleScrollToSection("projects")} className="hover:text-white">
+          <button onClick={() => handleScrollToSection("projects")} className="hover:text-black">
             Projects
           </button>
-          <button onClick={() => handleScrollToSection("profile")} className="hover:text-white">
+          <button onClick={() => handleScrollToSection("profile")} className="hover:text-black">
             About me
           </button>
         </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center">
           <button
             onClick={() => handleScrollToSection("contact")}
-            className="flex items-center border border-[#141414] px-4 py-2 rounded-full text-[#FF5B23] hover:border hover:border-[#FF5B23] transition-all duration-300"
+            className="flex items-center border border-black/30 px-4 py-2 rounded-full text-[#FF5B23] hover:border hover:border-[#FF5B23] transition-all duration-300"
           >
             <div className="w-3 h-3 bg-[#FF5B23] rounded-full mr-2 transition-all duration-300"></div>
             Contact me

@@ -49,28 +49,28 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex justify-center items-center px-4 md:px-10">
+    <div className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4">
       <div className="w-full rounded-md">
         <div className="flex flex-col w-full">
-          <div className="border-t border-white/40 w-full mb-4"></div>
+          <div className="border-t border-black/40 w-full mb-4"></div>
           <div className="flex items-center justify-between">
-            <p className="text-white text-2xl md:text-3xl lg:text-3xl">
+            <p className="text-black text-2xl md:text-3xl lg:text-3xl">
               See my work
             </p>
-            <ArrowDownIcon className="w-8 h-8 text-[#F4F3EF]" />
+            <ArrowDownIcon className="w-8 h-8 text-black" />
           </div>
         </div>
 
-        <div className="flex gap-4 mt-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="w-full md:w-1/2 flex flex-col items-center cursor-pointer"
-              onClick={() => navigate(`/projects/${project.id}`)} // Redireciona para a página de detalhes
+              className="w-full flex flex-col items-center cursor-pointer"
+              onClick={() => navigate(`/projects/${project.id}`)}
               onMouseMove={(e) => handleMouseMove(e, index)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="relative group block">
+              <div className="relative group block w-full">
                 <div className="overflow-hidden rounded-2xl relative">
                   <img
                     src={project.image}
@@ -93,7 +93,7 @@ const Projects = () => {
 
               <div className="flex justify-between w-full items-center mt-2">
                 <div>
-                  <h2 className="text-white font-semibold text-base">
+                  <h2 className="text-black font-semibold text-base">
                     {project.title}
                   </h2>
                   <p className="text-gray-400 text-sm mt-1">
@@ -104,7 +104,7 @@ const Projects = () => {
                   {project.tags.map((tag, i) => (
                     <p
                       key={i}
-                      className="border border-white/30 px-4 py-2 rounded-full text-white text-xs"
+                      className="border border-black/30 px-4 py-2 rounded-full text-black text-xs"
                     >
                       {tag}
                     </p>
@@ -113,7 +113,8 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+
       </div>
     </div>
   );

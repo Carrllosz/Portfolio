@@ -1,6 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
+import { motion } from "framer-motion";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const projects = {
   "amazon-redesign": {
@@ -19,6 +22,39 @@ const projects = {
   },
 };
 
+const ExperienceItem = ({ company, role, description }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-t border-white/40 w-full py-2">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex justify-between items-center w-full text-left focus:outline-none"
+      >
+        <div>
+          <h2 className="text-2xl text-white">{company}</h2>
+          <p className="text-base text-white/60">{role}</p>
+        </div>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isOpen ? <FaMinus className="text-white" /> : <FaPlus className="text-white" />}
+        </motion.div>
+      </button>
+
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <p className="mt-2 text-white/40">{description}</p>
+      </motion.div>
+    </div>
+  );
+};
+
 const ProjectsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -29,7 +65,7 @@ const ProjectsDetail = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#141414] flex flex-col justify-center items-start px-4 md:px-10 pb-8">
+    <div className="w-full h-screen bg-[#141414] flex flex-col justify-center items-start px-4 md:px-10 pb-8">
       <button
         className="absolute top-4 left-4 text-white border border-white px-4 py-2 rounded-full hover:bg-[#FF5B23] hover:border-[#FF5B23]"
         onClick={() => navigate(-1)}
@@ -40,6 +76,7 @@ const ProjectsDetail = () => {
         <img
           src={project.image}
           alt={project.title}
+          href={project.link}
           className="w-full md:w-[800px] rounded-2xl h-[250px] md:h-[300px] lg:h-[350px] object-cover"
         />
         <div>
@@ -57,40 +94,31 @@ const ProjectsDetail = () => {
 
       <div className="border-t border-white/40 w-full mt-8 mb-8"></div>
 
-      {/* About Me Section 
-      <div className="flex flex-col md:flex-row justify-between items-start gap-6">
-        <div className="w-full md:w-1/4">
-          <h2 className="text-2xl md:text-3xl lg:text-3xl mb-2 text-white">About Me</h2>
-        </div>
-        
-        <div className="w-full md:w-3/4 text-gray-400 text-lg leading-relaxed">
-          <p>
-            I'm a multi-disciplinary <span className="text-white">Product Designer</span>  
-            with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I create 
-            intuitive and efficient digital experiences for the mining industry. My work bridges design and technology, ensuring 
-            seamless user interactions and visually compelling interfaces.
-          </p>
-          <br />
-          <p>
-            Previously, I worked as a PMO intern at <span className="text-[#FF5B23]">Mineração Vale Verde</span>, optimizing business processes and automation. 
-            Beyond work, I’ve participated in <span className="text-white">hackathons and innovation challenges</span>, always seeking new ways to push 
-            the boundaries of technology and design.
-          </p>
-          <br />
-          <p>
-            In my free time, you’ll find me exploring new design trends, training at the gym, or brainstorming my next big project.
-          </p>
-        </div>
-      </div>
-*/}
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 text-blue-400 underline"
-      >
-        Ver mais no Behance
-      </a>
+       <div className="text-white flex flex-col md:flex-row justify-between items-start gap-6">
+                <div className="w-full md:w-2/3">
+                  <div>
+                    I'm a multi-disciplinary <span>Product Designer</span>  
+                    with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I create 
+                    intuitive and efficient digital experiences for the mining industry. My work bridges design and technology, ensuring 
+                    seamless user interactions and visually compelling interfaces.
+                  </div>                  
+                </div>
+      
+                <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-8">
+                  <div>
+                    <h1>ola</h1>
+                    <p>,fffdsfdsdf</p>
+                  </div>
+
+                  <div className="border-t border-white/40 w-full mt-4 mb-4"></div>
+
+                  <div>
+                    <h1>ola</h1>
+                    <p>,fffdsfdsdf</p>
+                  </div>
+
+                </div>
+              </div>
     </div>
   );
 };
