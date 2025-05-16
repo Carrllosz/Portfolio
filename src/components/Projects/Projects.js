@@ -49,7 +49,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4">
+    <div id="projects" className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4">
       <div className="w-full rounded-md">
         <div className="flex flex-col w-full">
           <div className="border-t border-black/40 w-full mb-4"></div>

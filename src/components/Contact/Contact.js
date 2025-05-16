@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full h-fit flex bg-white justify-center items-end pt-8 px-4 py-4">
+    <div id="contact" className="w-full h-fit flex bg-white justify-center items-end pt-8 px-4 py-4">
       <div className="w-full border-2 bg-black border-white rounded-xl p-4 md:p-10 shadow-lg">
 
         <h1 className="text-3xl text-white mb-4 text-start">Contato</h1>

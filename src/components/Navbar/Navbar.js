@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleScrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsSidebarOpen(false);
+    setIsSidebarOpen(false);
+    
+    if (location.pathname !== "/") {
+      // Vai para a home com o parâmetro da seção
+      navigate(`/?section=${id}`);
+    } else {
+      // Já está na home: rola diretamente
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 py-8 md:px-10 backdrop-blur-md bg-white/60">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-10 backdrop-blur-md bg-white/60">
       {/* Navbar com efeito Glass */}
       <nav className="flex items-center justify-between w-full text-black">
         {/* Nome */}

@@ -5,6 +5,7 @@ import Contact from "./components/Contact/Contact";
 import Profile from "./components/Profile/Profile";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetail from "./components/Projects/ProjectsDetail";
+import ScrollToSectionOnLoad from "./ScrollToSectionOnLoad"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={  
           <>
             <Navbar />
+            <ScrollToSectionOnLoad />
             <div id="home">
               <Home />
             </div>
@@ -27,7 +29,11 @@ function App() {
             </div>
           </>
         }/>
-        <Route path="/projects/:id" element={<ProjectsDetail />} />
+        <Route path="/projects/:id" element={ 
+          <> 
+            <Navbar />
+            <ProjectsDetail />
+          </>} />
       </Routes>
     </Router>
   );

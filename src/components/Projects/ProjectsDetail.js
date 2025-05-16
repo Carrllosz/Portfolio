@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
 import { motion } from "framer-motion";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus, FaArrowLeft } from "react-icons/fa";
 
 const projects = {
   "amazon-redesign": {
@@ -61,64 +61,79 @@ const ProjectsDetail = () => {
   const project = projects[id];
 
   if (!project) {
-    return <h1 className="text-white text-center">Projeto não encontrado</h1>;
+    return <h1 className="text-black text-center">Projeto não encontrado</h1>;
   }
 
   return (
-    <div className="w-full h-screen bg-[#141414] flex flex-col justify-center items-start px-4 md:px-10 pb-8">
+    <div className="w-full min-h-screen bg-white flex flex-col justify-start items-start px-4 pt-[136px] py-4">
       <button
-        className="absolute top-4 left-4 text-white border border-white px-4 py-2 rounded-full hover:bg-[#FF5B23] hover:border-[#FF5B23]"
+        className="top-4 left-4 text-black py-4 flex justify-center items-center gap-4 hover:text-[#FF5B23]"
         onClick={() => navigate(-1)}
       >
+        <FaArrowLeft />
         Voltar
       </button>
-      <div className="flex gap-4">
+
+      <div className="flex flex-col lg:flex-row gap-4 w-full">
         <img
           src={project.image}
           alt={project.title}
-          href={project.link}
           className="w-full md:w-[800px] rounded-2xl h-[250px] md:h-[300px] lg:h-[350px] object-cover"
         />
         <div>
-          <h1 className="text-white text-3xl mt-6">{project.title}</h1>
+          <h1 className="text-black text-3xl mt-6">{project.title}</h1>
           <p className="text-gray-400 text-lg mt-2">{project.description}</p>
           <div className="flex gap-4 mt-4">
             {project.tags.map((tag, i) => (
-              <span key={i} className="bg-[#FF5B23] text-white px-4 py-2 rounded-full">
+              <span
+                key={i}
+                className="bg-transparent text-black px-4 py-2 rounded-full border border-black/30"
+              >
                 {tag}
               </span>
             ))}
           </div>
+
+          {/* Link do projeto logo abaixo das tags */}
+          <div className="mt-6">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FF5B23] text-lg underline hover:opacity-80 transition"
+            >
+              Ver projeto completo no Behance →
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-white/40 w-full mt-8 mb-8"></div>
+      <div className="border-t border-black/40 w-full mt-8 mb-8"></div>
 
-       <div className="text-white flex flex-col md:flex-row justify-between items-start gap-6">
-                <div className="w-full md:w-2/3">
-                  <div>
-                    I'm a multi-disciplinary <span>Product Designer</span>  
-                    with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I create 
-                    intuitive and efficient digital experiences for the mining industry. My work bridges design and technology, ensuring 
-                    seamless user interactions and visually compelling interfaces.
-                  </div>                  
-                </div>
-      
-                <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-8">
-                  <div>
-                    <h1>ola</h1>
-                    <p>,fffdsfdsdf</p>
-                  </div>
+      <div className="text-black flex flex-col md:flex-row justify-between items-start gap-6 w-full">
+        <div className="w-full md:w-2/3">
+          <div>
+            I'm a multi-disciplinary <span>Product Designer</span>  
+            with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I create 
+            intuitive and efficient digital experiences for the mining industry. My work bridges design and technology, ensuring 
+            seamless user interactions and visually compelling interfaces.
+          </div>                  
+        </div>
 
-                  <div className="border-t border-white/40 w-full mt-4 mb-4"></div>
+        <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-8">
+          <div>
+            <h1>Em desenvolvimento</h1>
+            <p>Em desenvolvimento</p>
+          </div>
 
-                  <div>
-                    <h1>ola</h1>
-                    <p>,fffdsfdsdf</p>
-                  </div>
+          <div className="border-t border-black/40 w-full mt-4 mb-4"></div>
 
-                </div>
-              </div>
+          <div>
+            <h1>Em desenvolvimento</h1>
+            <p>Em desenvolvimento</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

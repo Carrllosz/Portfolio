@@ -39,7 +39,7 @@ const ExperienceItem = ({ company, role, description, className = "" }) => {
 
 const Profile = () => {
   return (
-    <div className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-4">
+    <div id="profile" className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-4">
       <div className="flex flex-col w-full rounded-md text-black gap-8">
 
         <div>
