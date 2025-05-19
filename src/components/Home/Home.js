@@ -21,7 +21,7 @@ const Home = () => {
   }, [location]);
 
   return (
-    <div className="w-full min-h-screen bg-white flex flex-col pt-[144px] items-end px-4 py-4" id="home">
+    <div className="w-full min-h-screen bg-white flex flex-col pt-[160px] items-end px-4 py-4" id="home">
       <div className="w-full flex flex-col md:flex-row items-end justify-end gap-8 md:gap-16">
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -43,7 +43,7 @@ const Home = () => {
 
       <div className="w-full mt-10 rounded-xl overflow-hidden">
         <video
-          className="w-full h-[50vh] object-cover rounded-xl"
+          className="w-full h-[55vh] object-cover rounded-xl"
           src={homeVideo}
           autoPlay
           loop
