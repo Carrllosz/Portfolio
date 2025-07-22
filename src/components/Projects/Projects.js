@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowDownIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
+import fluxus from "../../assets/fluxus.png";
 
 const projects = [
   {
@@ -16,8 +17,15 @@ const projects = [
     id: "friends-app",
     title: "Friends - App Mobile",
     image: friends,
-    description: "Enhancing usability and design.",
+    description: "Connecting friends around the world",
     tags: ["Case Study", "Mobile"],
+  },
+  {
+    id: "fluxus-app",
+    title: "Fluxus - ERP",
+    image: fluxus,
+    description: "Turn chaos into flow.",
+    tags: ["ERP", "CrossPlatform"],
   },
 ];
 
@@ -61,7 +69,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
           {projects.map((project, index) => (
             <div
               key={project.id}
