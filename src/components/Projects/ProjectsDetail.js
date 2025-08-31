@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import React from "react";
-import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa";
 import { projects } from "../../data/projectData"; // novo local dos dados
 
@@ -74,21 +73,6 @@ const ProjectsDetail = () => {
           <p className="text-lg text-black/60">{project.details.impact}</p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold text-black/80 mb-4">Mockups</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.details.mockups.map((mockup, index) => (
-              <div key={index} className="flex flex-col">
-                <img
-                  src={mockup.img}
-                  alt={mockup.caption}
-                  className="rounded-xl"
-                />
-                <p className="text-black/50 mt-2">{mockup.caption}</p>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   );

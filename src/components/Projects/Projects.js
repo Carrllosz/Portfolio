@@ -4,6 +4,7 @@ import { ArrowDownIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
 import fluxus from "../../assets/fluxus.png";
+import varejonacional from "../../assets/varejonacional.png";
 
 const projects = [
   {
@@ -26,6 +27,13 @@ const projects = [
     image: fluxus,
     description: "Turn chaos into flow.",
     tags: ["ERP", "CrossPlatform"],
+  },
+  {
+    id: "varejo-bi",
+    title: "BI - Varejo Nacional",
+    image: varejonacional,
+    description: "From raw data to revenue intelligence.",
+    tags: ["BI", "Data Visualization"],
   },
 ];
 

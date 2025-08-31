@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { FaLinkedinIn, FaBehance, FaGithub, FaPlus, FaMinus } from "react-icons/fa";
-import curriculo from '../../assets/JoaoCarlos_Curriculo.pdf';
+import curriculo from '../../assets/JoaoCarlos_CVPT.pdf';
+import curriculoEN from '../../assets/JoaoCarlos_CVEN.pdf';
 
 const ExperienceItem = ({ company, role, description, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,17 +70,26 @@ const Profile = () => {
                   href="https://github.com/carrllosz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black w-10 h-10 flex items-center justify-center rounded-full text-white hover:tect-gray-500 transition"
+                  className="bg-black w-10 h-10 flex items-center justify-center rounded-full text-white hover:text-gray-500 transition"
                 >
                   <FaGithub size={24} />
                 </a>
 
                 <a
                   href={curriculo}
-                  download="Carlos_CV.pdf"
-                  className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] transition"
+                  download="JoaoCarlos_CVPT.pdf"
+                  className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
                 >
-                  Download CV
+                  Download CV - PT
+                  <ArrowDownTrayIcon className="w-3 h-3" />
+                </a>
+
+                <a
+                  href={curriculoEN}
+                  download="JoaoCarlos_CVEN.pdf"
+                  className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
+                >
+                  Download CV - EN
                   <ArrowDownTrayIcon className="w-3 h-3" />
                 </a>
               </div>
@@ -132,17 +142,19 @@ const Profile = () => {
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-2">
+              <h2 className="text-4xl">Business Intelligence</h2>
               <h2 className="text-4xl">User Research</h2>
               <h2 className="text-4xl">User Experience</h2>
+              <h2 className="text-4xl">Data Analysis</h2>
+              <h2 className="text-4xl">Project & Product Management</h2>
+              <h2 className="text-4xl">Data Modeling</h2>
+              <h2 className="text-4xl">Data Modeling</h2>
               <h2 className="text-4xl">UI Design & Prototyping</h2>
               <h2 className="text-4xl">Design Systems</h2>
-              <h2 className="text-4xl">Interaction Design</h2>
               <h2 className="text-4xl">Front-End Development</h2>
               <h2 className="text-4xl">Data Visualization</h2>
-              <h2 className="text-4xl">Responsive & Adaptive Design</h2>
-              <h2 className="text-4xl">Accessibility & Inclusive Design</h2>
               <h2 className="text-4xl">Product Thinking</h2>
-              <h2 className="text-4xl">Agile & Design Sprints</h2>
+              <h2 className="text-4xl">Agile Methodologies</h2>
             </div>
           </div>
         </div>
