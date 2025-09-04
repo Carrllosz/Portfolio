@@ -57,22 +57,52 @@ const ProjectsDetail = () => {
 
       <div className="border-t border-black/40 w-full mt-8 mb-8"></div>
 
-      <div className="text-black flex flex-col gap-10 w-full">
-        <section>
-          <h2 className="text-2xl font-semibold text-black/80 mb-2">Problema</h2>
-          <p className="text-lg text-black/60">{project.details.problem}</p>
-        </section>
+      <div className="w-full grid grid-cols-2 gap-16">
+        <div className="text-black flex flex-col gap-10 w-full">
+          <section>
+            <p className="text-lg text-black/60">{project.details.description}</p>
+          </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold text-black/80 mb-2">Solução</h2>
-          <p className="text-lg text-black/60">{project.details.solution}</p>
-        </section>
+           <section>
+              <h2 className="text-2xl font-semibold text-black/80 mb-2">Ferramentas</h2>
+              <div className="flex flex-wrap gap-4">
+                {project.details.tools && project.details.tools.length > 0 ? (
+                  project.details.tools.map((tool, index) => (
+                    <img
+                      key={index}
+                      src={tool}
+                      alt={`Ferramenta ${index + 1}`}
+                      className="w-16 h-16 object-contain hover:scale-110 transition-transform"
+                    />
+                  ))
+                ) : (
+                  <p className="text-lg text-black/60">Nenhuma ferramenta informada.</p>
+                )}
+              </div>
+            </section>
+        </div>
 
-        <section>
-          <h2 className="text-2xl font-semibold text-black/80 mb-2">Impacto</h2>
-          <p className="text-lg text-black/60">{project.details.impact}</p>
-        </section>
+        <div className="text-black flex flex-col gap-4 w-full">
+          <section>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Problema</h2>
+            <p className="text-lg text-black/60">{project.details.problem}</p>
+          </section>
+          
+          <div className="border-t border-black/40 w-full"></div>
 
+          <section>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Solução</h2>
+            <p className="text-lg text-black/60">{project.details.solution}</p>
+          </section>
+
+          <div className="border-t border-black/40 w-full"></div>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Impacto</h2>
+            <p className="text-lg text-black/60">{project.details.impact}</p>
+          </section>
+
+        </div>
       </div>
     </div>
   );
