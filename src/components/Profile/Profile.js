@@ -138,7 +138,7 @@ const Profile = () => {
           <div className="border-t border-black/40 w-full mb-4"></div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-xl md:text-1xl lg:text-xl mb-2">What I'm known for</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-3xl mb-2">What I'm known for</h2>
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-2">
