@@ -5,6 +5,8 @@ import amazon from "../../assets/amazon.png";
 import friends from "../../assets/friends.jpg";
 import fluxus from "../../assets/fluxus.png";
 import varejonacional from "../../assets/varejonacional.png";
+import easyroute from "../../assets/easyroute.png";
+import moobi from "../../assets/moobi.png";
 
 const projects = [
   {
@@ -19,11 +21,11 @@ const projects = [
     title: "Friends - App Mobile",
     image: friends,
     description: "Connecting friends around the world",
-    tags: ["Case Study", "Mobile"],
+    tags: ["Case Study", "App Mobile"],
   },
   {
     id: "fluxus-app",
-    title: "Fluxus - ERP",
+    title: "Fluxus",
     image: fluxus,
     description: "Turn chaos into flow.",
     tags: ["ERP", "CrossPlatform"],
@@ -34,6 +36,20 @@ const projects = [
     image: varejonacional,
     description: "From raw data to revenue intelligence.",
     tags: ["BI", "Data Visualization"],
+  },
+  {
+    id: "easyroute",
+    title: "Easyroute",
+    image: easyroute,
+    description: "Collaborative route optimization made simple.",
+    tags: ["Redesign", "App Mobile"],
+  },
+  {
+    id: "moobi",
+    title: "Moobi",
+    image: moobi,
+    description: "Smarter and more human urban mobility.",
+    tags: ["Case Study", "App Mobile"],
   },
 ];
 

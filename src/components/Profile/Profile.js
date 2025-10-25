@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import { FaLinkedinIn, FaBehance, FaGithub, FaPlus, FaMinus } from "react-icons/fa";
+import { FaLinkedinIn, FaBehance, FaPlus, FaMinus } from "react-icons/fa";
 import curriculo from '../../assets/JoaoCarlos_CVPT.pdf';
 import curriculoEN from '../../assets/JoaoCarlos_CVEN.pdf';
 
@@ -66,14 +66,6 @@ const Profile = () => {
                 >
                   <FaBehance size={24} />
                 </a>
-                <a
-                  href="https://github.com/carrllosz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-black w-10 h-10 flex items-center justify-center rounded-full text-white hover:text-gray-500 transition"
-                >
-                  <FaGithub size={24} />
-                </a>
 
                 <a
                   href={curriculo}
@@ -96,22 +88,22 @@ const Profile = () => {
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-8">
-              <div>
-                I'm a multi-disciplinary <span className="text-black">Product Designer</span>  
-                with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I create 
-                intuitive and efficient digital experiences for the mining industry. My work bridges design and technology, ensuring 
-                seamless user interactions and visually compelling interfaces.
+             <div>
+                I'm a multidisciplinary <span className="text-black">Product Designer </span>  
+                with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I design 
+                intuitive and efficient digital experiences for the mining industry. My work bridges design, data, and technology to deliver 
+                seamless user interactions and visually engaging interfaces.
 
                 <br /><br />
 
-                Previously, I worked as a PMO intern at <span className="text-[#FF5B23]">Mineração Vale Verde</span>, optimizing business processes and automation. 
-                Beyond work, I’ve participated in <span className="text-black">hackathons and innovation challenges</span>, always seeking new ways to push 
-                the boundaries of technology and design.
+                Previously, I worked as a PMO intern at <span className="text-[#FF5B23]">Mineração Vale Verde</span>, where I optimized business processes and implemented automation solutions. 
+                I’ve also participated in <span className="text-black">hackathons and innovation challenges</span>, constantly exploring new ways to connect creativity and technology.
 
                 <br /><br />
 
-                In my free time, you’ll find me exploring new design trends, training at the gym, or brainstorming my next big project.
-              </div>
+                When I’m not designing, you’ll find me exploring new design trends, reading a romance, or developing ideas for my next big project.
+             </div>
+
 
               <div className="flex flex-col gap-2">
                 <h2 className="text-[#FF5B23]">Experience</h2>
@@ -119,8 +111,8 @@ const Profile = () => {
                 <ExperienceItem 
                   className="text-black"
                   company="Automining"
-                  role="UX/UI Designer and Front-end Developer"
-                  description="As a Front-End Developer & UX/UI Designer at Automining, I create scalable digital solutions using Angular, HTML, and CSS, ensuring usability and efficiency. I design intuitive interfaces, conduct user research to refine interactions, and develop wireframes and prototypes to enhance user experience. Additionally, I optimize data visualization, maintain design consistency, and streamline workflows with BPMN to improve operational efficiency."
+                  role="UX/UI Designer"
+                  description="As a UX/UI Designer at Automining, I craft intuitive and visually appealing digital experiences, focusing on usability, interaction design, and data-driven decision-making. I develop wireframes, prototypes, and high-fidelity interfaces, conduct user research to inform design decisions, and optimize data visualization for actionable insights. Additionally, I ensure design consistency across platforms and streamline workflows with BPMN, enhancing both user experience and operational efficiency."
                 />
 
                 <ExperienceItem
@@ -142,19 +134,18 @@ const Profile = () => {
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-2">
-              <h2 className="text-4xl">Business Intelligence</h2>
-              <h2 className="text-4xl">User Research</h2>
-              <h2 className="text-4xl">User Experience</h2>
-              <h2 className="text-4xl">Data Analysis</h2>
-              <h2 className="text-4xl">Project & Product Management</h2>
-              <h2 className="text-4xl">Data Modeling</h2>
-              <h2 className="text-4xl">Data Modeling</h2>
-              <h2 className="text-4xl">UI Design & Prototyping</h2>
-              <h2 className="text-4xl">Design Systems</h2>
-              <h2 className="text-4xl">Front-End Development</h2>
-              <h2 className="text-4xl">Data Visualization</h2>
-              <h2 className="text-4xl">Product Thinking</h2>
-              <h2 className="text-4xl">Agile Methodologies</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Product Strategy</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Product & Project Management</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">User Research</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">UX/UI Design</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Prototyping & Design Systems</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Data Analysis & Visualization</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Business Intelligence</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Data Modeling</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Front-End Development</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Process Optimization (BPMN)</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Agile Methodologies</h2>
+              <h2 className="text-4xl hover:text-[#FF5B23]">Product Thinking</h2>
             </div>
           </div>
         </div>

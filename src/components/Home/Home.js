@@ -29,10 +29,11 @@ const Home = () => {
 
           <div className="text-black/60 text-2xl sm:text-lg md:text-1xl lg:text-xl leading-relaxed space-y-4">
             <p>
-I'm a Product Designer based in Arapiraca with a strong background in UX/UI and Data Analysis/BI, creating intuitive, data-informed, and impactful digital experiences.            </p>
+              I'm a Product Designer based in Arapiraca, with a strong foundation in UX/UI and Data Analysis. I design intuitive and data-driven digital experiences that connect users' needs with business goals.
+            </p>
             <p>
-              Currently at <span className="text-[#FF5B23]">Automining</span>, previously at 
-              <span className="text-[#FF5B23]"> Mineração Vale Verde</span>, blending design and technology to build intuitive, high-performing interfaces.
+              Currently at <span className="text-[#FF5B23]">Automining</span> and previously at 
+              <span className="text-[#FF5B23]"> Mineração Vale Verde</span>, I combine design, analytics, and technology to craft high-performing interfaces and smarter digital products.
             </p>
           </div>
         </div>

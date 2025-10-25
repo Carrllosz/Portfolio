@@ -47,7 +47,7 @@ const Contact = () => {
     <div id="contact" className="w-full h-fit flex bg-white justify-center items-end pt-8 px-4 py-4">
       <div className="w-full border-2 bg-black border-white rounded-xl p-4 md:p-10 shadow-lg">
 
-        <h1 className="text-3xl text-white mb-4 text-start">Contato</h1>
+        <h1 className="text-3xl text-white mb-4 text-start">Contact</h1>
         <div className="border-t border-white/40 w-full mb-4"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -59,13 +59,13 @@ const Contact = () => {
 
           <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
             <div>
-              <label className="text-[#F4F3EF] font-medium">Nome Completo</label>
+              <label className="text-[#F4F3EF] font-medium">Name</label>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Digite seu nome"
+                placeholder="Enter your name"
                 className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
                 required
               />
@@ -73,37 +73,37 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="text-[#F4F3EF] font-medium">Email</label>
+                <label className="text-[#F4F3EF] font-medium">E-mail</label>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Digite seu email"
+                  placeholder="Enter your email"
                   className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
                   required
                 />
               </div>
               <div>
-                <label className="text-[#F4F3EF] font-medium">Telefone</label>
+                <label className="text-[#F4F3EF] font-medium">Telephone</label>
                 <input
                   type="tel"
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
-                  placeholder="Digite seu telefone"
+                  placeholder="Enter your telephone"
                   className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-[#F4F3EF] font-medium">Mensagem</label>
+              <label className="text-[#F4F3EF] font-medium">Message</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Digite sua mensagem"
+                placeholder="Enter your message"
                 className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2 resize-none"
                 required
               />
@@ -113,28 +113,29 @@ const Contact = () => {
               type="submit"
               className="flex items-center justify-center text-[#F4F3EF] hover:text-[#FF5B23] px-4 py-2 rounded-md transition"
             >
-              <span className="mr-2">Enviar</span>
+              <span className="mr-2">Send</span>
               <ArrowRightIcon className="w-5 h-5" />
             </button>
           </form>
         </div>
 
         {popUpStatus && (
-          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
             <div className="bg-white text-black p-6 rounded-md shadow-lg text-center">
               <p className="text-lg font-semibold">
                 {popUpStatus === "success"
-                  ? "E-mail enviado com sucesso!"
-                  : "Erro ao enviar. Tente novamente."}
+                  ? "Email sent successfully!"
+                  : "Error sending email. Please try again."}
               </p>
               <button
                 className="mt-4 bg-black hover:bg-[#FF5B23] text-white px-4 py-2 rounded-md transition"
                 onClick={() => setPopUpStatus(null)}
               >
-                Fechar
+                Close
               </button>
             </div>
           </div>
+
         )}
       </div>
     </div>

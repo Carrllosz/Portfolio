@@ -33,14 +33,14 @@ const ProjectsDetail = () => {
             </p>
           </div>
 
-          <div className="w-full md:w-1/3 flex md:justify-start items-center">
+          <div className="w-full md:w-1/3 flex md:justify-end items-end">
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#FF5B23] text-lg underline hover:opacity-80 transition"
             >
-              Ver projeto completo no Behance →
+              Ver projeto completo →
             </a>
           </div>
         </div>
@@ -84,21 +84,21 @@ const ProjectsDetail = () => {
 
         <div className="text-black flex flex-col gap-4 w-full">
           <section>
-            <h2 className="text-2xl font-semibold text-black/80 mb-2">Problema</h2>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Problem</h2>
             <p className="text-lg text-black/60">{project.details.problem}</p>
           </section>
           
           <div className="border-t border-black/40 w-full"></div>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black/80 mb-2">Solução</h2>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Solution</h2>
             <p className="text-lg text-black/60">{project.details.solution}</p>
           </section>
 
           <div className="border-t border-black/40 w-full"></div>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black/80 mb-2">Impacto</h2>
+            <h2 className="text-2xl font-semibold text-black/80 mb-2">Impact</h2>
             <p className="text-lg text-black/60">{project.details.impact}</p>
           </section>
 
