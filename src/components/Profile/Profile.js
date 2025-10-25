@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { FaLinkedinIn, FaBehance, FaPlus, FaMinus } from "react-icons/fa";
-import curriculo from '../../assets/JoaoCarlos_CVPT.pdf';
-import curriculoEN from '../../assets/JoaoCarlos_CVEN.pdf';
+import curriculo from '../../assets/Curriculo_JoaoC_PT.pdf';
+import curriculoEN from '../../assets/Resume_JoaoC_EN.pdf';
 
 const ExperienceItem = ({ company, role, description, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
