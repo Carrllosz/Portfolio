@@ -69,7 +69,7 @@ const Profile = () => {
 
                 <a
                   href={curriculo}
-                  download="JoaoCarlos_CVPT.pdf"
+                  download="Curriculo_JoaoC_PT.pdf"
                   className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
                 >
                   Download CV - PT
@@ -78,7 +78,7 @@ const Profile = () => {
 
                 <a
                   href={curriculoEN}
-                  download="JoaoCarlos_CVEN.pdf"
+                  download="Resume_JoaoC_EN.pdf"
                   className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
                 >
                   Download CV - EN
