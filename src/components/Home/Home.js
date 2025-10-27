@@ -23,11 +23,11 @@ const Home = () => {
     <div className="w-full min-h-screen bg-white flex flex-col pt-[160px] justify-between items-start px-4 py-4" id="home">
       <div className="w-full flex flex-col md:flex-row items-end justify-end gap-8 md:gap-16">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <h1 className="text-black font-medium text-8xl sm:text-7xl md:text-8xl lg:text-8xl leading-tight">
+          <h1 className="text-black font-medium text-4xl sm:text-7xl md:text-8xl lg:text-8xl leading-tight">
             Product Designer.
           </h1>
 
-          <div className="text-black/60 text-2xl sm:text-lg md:text-1xl lg:text-xl leading-relaxed space-y-4">
+          <div className="text-black/60 text-medium sm:text-lg md:text-1xl lg:text-xl leading-relaxed space-y-4">
             <p>
               I'm a Product Designer based in Arapiraca, with a strong foundation in UX/UI and Data Analysis. I design intuitive and data-driven digital experiences that connect users' needs with business goals.
             </p>

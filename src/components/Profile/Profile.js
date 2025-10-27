@@ -49,7 +49,7 @@ const Profile = () => {
             <div className="w-full md:w-2/3">
               <h2 className="text-2xl md:text-3xl lg:text-3xl mb-2">About Me</h2>
 
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-2 mb-4">
                 <a
                   href="https://www.linkedin.com/in/carrllosz"
                   target="_blank"
@@ -106,7 +106,7 @@ const Profile = () => {
 
 
               <div className="flex flex-col gap-2">
-                <h2 className="text-[#FF5B23]">Experience</h2>
+                <h2 className="text-[#FF5B23]">Experiences</h2>
 
                 <ExperienceItem 
                   className="text-black"
@@ -121,7 +121,27 @@ const Profile = () => {
                   role="PMO Intern"
                   description="At Mineração Vale Verde, I structured and optimized process flows using BPMN to enhance operational efficiency and ensure consistency in project management activities. I developed detailed reports and project status updates for internal and external stakeholders while monitoring key performance indicators (KPIs) to provide valuable insights for continuous improvement. Additionally, I created strategic presentations and documentation to support communication efforts and assisted in refining project management methodologies and best practices."
                 />
+                <div className="flex justify-end items-center gap-8 mb-4">
+                <a
+                  href={curriculo}
+                  download="Curriculo_JoaoC_PT.pdf"
+                  className="flex items-center gap-2 rounded-full text-black text-sm hover:text-[#FF5B23] hover:border-[#FF5B23] transition"
+                >
+                  <ArrowDownTrayIcon className="w-3 h-3" />
+                  Download CV - PT
+                </a>
+
+                <a
+                  href={curriculoEN}
+                  download="Resume_JoaoC_EN.pdf"
+                  className="flex items-center gap-2 rounded-full text-black text-sm hover:text-[#FF5B23] hover:border-[#FF5B23] transition"
+                >
+                  <ArrowDownTrayIcon className="w-3 h-3" />
+                  Download CV - EN
+                </a>
               </div>
+              </div>
+
             </div>
           </div>
         </div>

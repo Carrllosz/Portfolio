@@ -6,50 +6,47 @@ import friends from "../../assets/friends.jpg";
 import fluxus from "../../assets/fluxus.png";
 import varejonacional from "../../assets/varejonacional.png";
 import easyroute from "../../assets/easyroute.png";
-import moobi from "../../assets/moobi.png";
+import moobimp4 from "../../assets/moobi.mp4";
+import fluxusmp4 from "../../assets/fluxus.mp4";
+import amazonmp4 from "../../assets/amazon.mp4";
+import appfriends from "../../assets/appfr.png";
 
 const projects = [
   {
     id: "amazon-redesign",
     title: "Redesign App Mobile - Amazon",
-    image: amazon,
+    video: amazonmp4,
     description: "Enhancing usability and design.",
-    tags: ["Redesign", "Mobile"],
   },
   {
     id: "friends-app",
     title: "Friends - App Mobile",
-    image: friends,
+    image: appfriends,
     description: "Connecting friends around the world",
-    tags: ["Case Study", "App Mobile"],
   },
   {
     id: "fluxus-app",
     title: "Fluxus",
-    image: fluxus,
+    video: fluxusmp4,
     description: "Turn chaos into flow.",
-    tags: ["ERP", "CrossPlatform"],
   },
   {
     id: "varejo-bi",
     title: "BI - Varejo Nacional",
     image: varejonacional,
     description: "From raw data to revenue intelligence.",
-    tags: ["BI", "Data Visualization"],
   },
   {
     id: "easyroute",
     title: "Easyroute",
     image: easyroute,
     description: "Collaborative route optimization made simple.",
-    tags: ["Redesign", "App Mobile"],
   },
   {
     id: "moobi",
     title: "Moobi",
-    image: moobi,
+    video: moobimp4,
     description: "Smarter and more human urban mobility.",
-    tags: ["Case Study", "App Mobile"],
   },
 ];
 
@@ -81,7 +78,10 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4">
+    <div
+      id="projects"
+      className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4"
+    >
       <div className="w-full rounded-md">
         <div className="flex flex-col w-full">
           <div className="border-t border-black/40 w-full mb-4"></div>
@@ -93,7 +93,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-6">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -104,49 +104,62 @@ const Projects = () => {
             >
               <div className="relative group block w-full">
                 <div className="overflow-hidden rounded-2xl relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {hoverPosition.visible && hoverPosition.projectIndex === index && (
-                    <div
-                      className="absolute w-16 h-16 bg-[#FF5B23] rounded-full flex justify-center items-center transition-transform duration-75 ease-out pointer-events-none"
-                      style={{
-                        top: `${hoverPosition.y - 32}px`,
-                        left: `${hoverPosition.x - 32}px`,
-                      }}
-                    >
-                      <ArrowUpRightIcon className="w-8 h-8 text-white" />
-                    </div>
+                  {/* 👇 Condicional: vídeo ou imagem */}
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-[300px] md:h-[300px] lg:h-[600px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-[300px] md:h-[300px] lg:h-[600px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                    />
                   )}
-                </div>
-              </div>
 
-              <div className="flex justify-between w-full items-center mt-2">
-                <div>
-                  <h2 className="text-black font-semibold text-base">
-                    {project.title}
-                  </h2>
-                  <p className="text-gray-400 text-sm mt-1">
-                    {project.description}
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  {project.tags.map((tag, i) => (
-                    <p
-                      key={i}
-                      className="border border-black/30 px-4 py-2 rounded-full text-black text-xs"
+                  {/* 🧠 Hover text overlay (nome + descrição) */}
+                  <div
+                      className={`flex justify-between absolute inset-x-0 bottom-0 p-4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl`}
                     >
-                      {tag}
-                    </p>
-                  ))}
+                      <p
+                        className={`text-sm font-semibold ${
+                          project.id === "moobi" ? "text-black" : "text-white"
+                        }`}
+                      >
+                        {project.title}
+                      </p>
+                      <p
+                        className={`text-sm opacity-90 ${
+                          project.id === "moobi" ? "text-black" : "text-white"
+                        }`}
+                      >
+                        {project.description}
+                      </p>
+                    </div>
+
+                  {/* 🔸 Hover circle animation */}
+                  {hoverPosition.visible &&
+                    hoverPosition.projectIndex === index && (
+                      <div
+                        className="absolute w-16 h-16 bg-[#FF5B23] rounded-full flex justify-center items-center transition-transform duration-75 ease-out pointer-events-none"
+                        style={{
+                          top: `${hoverPosition.y - 32}px`,
+                          left: `${hoverPosition.x - 32}px`,
+                        }}
+                      >
+                        <ArrowUpRightIcon className="w-8 h-8 text-white" />
+                      </div>
+                    )}
                 </div>
               </div>
             </div>
           ))}
-          </div>
-
+        </div>
       </div>
     </div>
   );
