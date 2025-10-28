@@ -10,6 +10,7 @@ import moobimp4 from "../../assets/moobi.mp4";
 import fluxusmp4 from "../../assets/fluxus.mp4";
 import amazonmp4 from "../../assets/amazon.mp4";
 import appfriends from "../../assets/appfr.png";
+import easyrout from "../../assets/easyrouter.mp4";
 
 const projects = [
   {
@@ -39,7 +40,7 @@ const projects = [
   {
     id: "easyroute",
     title: "Easyroute",
-    image: easyroute,
+    video: easyrout,
     description: "Collaborative route optimization made simple.",
   },
   {
