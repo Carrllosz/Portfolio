@@ -67,23 +67,6 @@ const Profile = () => {
                   <FaBehance size={24} />
                 </a>
 
-                <a
-                  href={curriculo}
-                  download="Curriculo_JoaoC_PT.pdf"
-                  className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
-                >
-                  Download CV - PT
-                  <ArrowDownTrayIcon className="w-3 h-3" />
-                </a>
-
-                <a
-                  href={curriculoEN}
-                  download="Resume_JoaoC_EN.pdf"
-                  className="flex items-center border gap-2 border-black px-4 py-2 rounded-full text-black text-xs hover:bg-[#FF5B23] hover:text-white hover:border-[#FF5B23] transition"
-                >
-                  Download CV - EN
-                  <ArrowDownTrayIcon className="w-3 h-3" />
-                </a>
               </div>
             </div>
 
