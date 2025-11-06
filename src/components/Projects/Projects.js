@@ -81,20 +81,11 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-full h-fit bg-white flex justify-center items-center pb-16 px-4 py-4"
+      className="w-full h-fit bg-white flex justify-center items-center pb-4 px-4"
     >
       <div className="w-full rounded-md">
-        <div className="flex flex-col w-full">
-          <div className="border-t border-black/40 w-full mb-4"></div>
-          <div className="flex items-center justify-between">
-            <p className="text-black text-2xl md:text-3xl lg:text-3xl">
-              See my work
-            </p>
-            <ArrowDownIcon className="w-8 h-8 text-black" />
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-1">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -113,13 +104,13 @@ const Projects = () => {
                       muted
                       loop
                       playsInline
-                      className="w-full h-[300px] md:h-[300px] lg:h-[600px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-[300px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[300px] md:h-[300px] lg:h-[600px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-[300px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
 
@@ -128,14 +119,14 @@ const Projects = () => {
                       className={`flex justify-between absolute inset-x-0 bottom-0 p-4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl`}
                     >
                       <p
-                        className={`text-sm font-semibold ${
+                        className={` text-[10px] sm:text-sm md:text-[14px] font-semibold ${
                           project.id === "moobi" ? "text-black" : "text-white"
                         }`}
                       >
                         {project.title}
                       </p>
                       <p
-                        className={`text-sm opacity-90 ${
+                        className={` text-[10px] sm:text-sm md:text-[14px] opacity-90 ${
                           project.id === "moobi" ? "text-black" : "text-white"
                         }`}
                       >

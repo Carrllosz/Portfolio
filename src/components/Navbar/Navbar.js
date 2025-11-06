@@ -9,12 +9,16 @@ const Navbar = () => {
 
   const handleScrollToSection = (id) => {
     setIsSidebarOpen(false);
-    
+
+    if (id === "profile") {
+      // Agora o "ABOUT" leva para a página /profile
+      navigate("/profile");
+      return;
+    }
+
     if (location.pathname !== "/") {
-      // Vai para a home com o parâmetro da seção
       navigate(`/?section=${id}`);
     } else {
-      // Já está na home: rola diretamente
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -23,15 +27,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-10 backdrop-blur-md bg-white/60">
-      {/* Navbar com efeito Glass */}
+    <header className="fixed top-0 left-0 w-full z-50 px-4 py-6 md:px-4 bg-white">
       <nav className="flex items-center justify-between w-full text-black">
         {/* Nome */}
-        <span className="text-xl md:text-2xl">
-          João <span className="relative">Carlos
-            <span className="absolute left-0 bottom-0 w-full h-[3px] bg-[#FF5B23]"></span>
-          </span>
-        </span>
+        <button
+          onClick={() => handleScrollToSection("home")}
+          className="text-sm font-bold md:text-[12px]"
+        >
+          JOÃO CARLOS
+        </button>
 
         {/* Botão Menu (Mobile) */}
         <button
@@ -46,27 +50,22 @@ const Navbar = () => {
         </button>
 
         {/* Links de navegação (Desktop) */}
-        <div className="text-black/50 hidden md:flex justify-center gap-4 items-center">
-          <button onClick={() => handleScrollToSection("home")} className="hover:text-black">
-            Home
-          </button>
-          <button onClick={() => handleScrollToSection("projects")} className="hover:text-black">
-            Projects
-          </button>
-          <button onClick={() => handleScrollToSection("profile")} className="hover:text-black">
-            About me
-          </button>
-        </div>
-
-        {/* Botão Contact me (Somente Desktop) */}
-        <div className="hidden md:flex items-center">
-          <button
-            onClick={() => handleScrollToSection("contact")}
-            className="flex items-center border border-black/30 px-4 py-2 rounded-full text-[#FF5B23] hover:border hover:border-[#FF5B23] transition-all duration-300"
-          >
-            <div className="w-3 h-3 bg-[#FF5B23] rounded-full mr-2 transition-all duration-300"></div>
-            Contact me
-          </button>
+        <div className="text-black text-[12px] hidden md:flex justify-center gap-4 items-center">
+          {["home", "projects", "profile", "contact"].map((item, index) => (
+            <button
+              key={index}
+              onClick={() => handleScrollToSection(item)}
+              className="hover:text-[#FF5B23] transition-transform duration-500 ease-in-out hover:animate-rotate-up"
+            >
+              {item === "home"
+                ? "HOME"
+                : item === "projects"
+                ? "WORK"
+                : item === "profile"
+                ? "ABOUT"
+                : "CONTACT"}
+            </button>
+          ))}
         </div>
       </nav>
 
@@ -77,7 +76,7 @@ const Navbar = () => {
         }`}
         style={{
           transition: "transform 0.4s ease-in-out, opacity 0.3s ease-in-out",
-          height: "100vh", // Garante que o menu ocupe 100% da altura da tela
+          height: "100vh",
         }}
       >
         <button
@@ -87,35 +86,44 @@ const Navbar = () => {
           <XMarkIcon className="w-8 h-8" />
         </button>
 
-        <button
-          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("home")}
-        >
-          Home
-          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
-        </button>
-        <button
-          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("projects")}
-        >
-          Projects
-          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
-        </button>
-        <button
-          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("profile")}
-        >
-          About me
-          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
-        </button>
-        <button
-          className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
-          onClick={() => handleScrollToSection("contact")}
-        >
-          Contact
-          <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
-        </button>
+        {["home", "projects", "profile", "contact"].map((item, index) => (
+          <button
+            key={index}
+            className="w-full flex items-center justify-between text-left border-b border-gray-700 hover:text-[#FF5B23] text-2xl"
+            onClick={() => handleScrollToSection(item)}
+          >
+            {item === "home"
+              ? "HOME"
+              : item === "projects"
+              ? "WORK"
+              : item === "profile"
+              ? "ABOUT"
+              : "CONTACT"}
+            <ArrowUpRightIcon className="w-8 h-8 md:w-10 md:h-10" />
+          </button>
+        ))}
       </div>
+
+      {/* Estilo da animação */}
+      <style>{`
+        @keyframes rotateUp {
+          0% {
+            transform: translateY(0) rotateX(0deg);
+          }
+          30% {
+            transform: translateY(-5px) rotateX(180deg);
+          }
+          100% {
+            transform: translateY(0) rotateX(360deg);
+          }
+        }
+
+        .hover\\:animate-rotate-up:hover {
+          animation: rotateUp 0.7s ease-in-out forwards;
+          transform-origin: center;
+          display: inline-block;
+        }
+      `}</style>
     </header>
   );
 };

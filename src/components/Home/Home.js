@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import homeVideo from "../../assets/home.mp4";
+import homeMoobi from "../../assets/homemoobi.mp4";
 
 const Home = () => {
   const location = useLocation();
@@ -20,34 +21,42 @@ const Home = () => {
   }, [location]);
 
   return (
-    <div className="w-full min-h-screen bg-white flex flex-col pt-[160px] justify-between items-start px-4 py-4" id="home">
+    <div
+      className="w-full min-h-[160vh] bg-white flex flex-col pt-[160px] justify-between items-start px-4"
+      id="home"
+    >
       <div className="w-full flex flex-col md:flex-row items-end justify-end gap-8 md:gap-16">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <h1 className="text-black font-medium text-4xl sm:text-7xl md:text-8xl lg:text-8xl leading-tight">
-            Product Designer.
-          </h1>
-
-          <div className="text-black/60 text-medium sm:text-lg md:text-1xl lg:text-xl leading-relaxed space-y-4">
+        <div className="w-full">
+          <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl">
             <p>
-              I'm a Product Designer based in Arapiraca, with a strong foundation in UX/UI and Data Analysis. I design intuitive and data-driven digital experiences that connect users' needs with business goals.
+              WELCOME TO MY SPACE ON THE INTERNET, WHERE I SHOWCASE MY WORK,
             </p>
             <p>
-              Currently at <span className="text-[#FF5B23]">Automining</span> and previously at 
-              <span className="text-[#FF5B23]"> Mineração Vale Verde</span>, I combine design, analytics, and technology to craft high-performing interfaces and smarter digital products.
+              CREATIVE PROCESS, ANIMATIONS, AND A VARIETY OF OTHER THINGS
+            </p>
+            <p>
+              I'M CURRENTLY EXPLORING.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="w-full mt-10 rounded-xl overflow-hidden">
-        <video
-          className="w-full h-[30vh] sm:h-[35vh] md:h-[40vh] object-cover rounded-xl"
-          src={homeVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+      <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex justify-between items-center text-black text-[12px] sm:text-sm md:text-[12px]">
+          <span>BASED OUT OF ARAPIRACA</span>
+          <span>WORKING AT AUTOMINING</span>
+        </div>
+
+        <div className="w-full rounded-xl overflow-hidden">
+          <video
+            className="w-full h-[60vh] sm:h-[65vh] md:h-[100vh] object-cover rounded-xl"
+            src={homeMoobi}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
       </div>
     </div>
   );

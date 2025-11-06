@@ -1,142 +1,124 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import computador from "../../assets/computador.png";
+import React from "react";
+import homeMoobi from "../../assets/homemoobi.mp4";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [popUpStatus, setPopUpStatus] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      await emailjs.send(
-        "service_psui2td",
-        "template_t8yoovo",
-        {
-          from_name: form.name,
-          to_name: "João Carlos",
-          message: form.message,
-          user_email: form.email,
-          user_phone: form.phone,
-        },
-        "d5uVLyaWgOJB2LWEy"
-      );
-
-      setPopUpStatus("success");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error("Erro ao enviar:", error);
-      setPopUpStatus("error");
-    }
-  };
-
   return (
-    <div id="contact" className="w-full h-fit flex bg-white justify-center items-end pt-8 px-4 py-4">
-      <div className="w-full border-2 bg-black border-white rounded-xl p-4 md:p-10 shadow-lg">
-
-        <h1 className="text-3xl text-white mb-4 text-start">Contact</h1>
-        <div className="border-t border-white/40 w-full mb-4"></div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <img
-            src={computador}
-            alt="Imagem de Contato"
-            className="w-full md:w-80 h-90 object-cover rounded-md mx-auto"
+    <div
+      id="contact"
+      className="w-full h-screen bg-white flex flex-col justify-start items-center px-6 py-10 "
+    >
+      {/* CONTEÚDO PRINCIPAL: imagem (esquerda) + bloco direito (frase + colunas) */}
+      <div className="w-full flex flex-col md:flex-row items-center gap-12 flex-grow border-t border-black/10">
+        {/* COLUNA ESQUERDA - IMAGEM */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <video
+            src={homeMoobi}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-[10vh] sm:h-[25vh] md:h-[60vh] object-cover rounded-xl"
           />
-
-          <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
-            <div>
-              <label className="text-[#F4F3EF] font-medium">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
-                required
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-[#F4F3EF] font-medium">E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-[#F4F3EF] font-medium">Telephone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder="Enter your telephone"
-                  className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="text-[#F4F3EF] font-medium">Message</label>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Enter your message"
-                className="w-full bg-transparent border-b border-gray-300 outline-none text-[#F4F3EF] placeholder-gray-400 mt-2 p-2 resize-none"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="flex items-center justify-center text-[#F4F3EF] hover:text-[#FF5B23] px-4 py-2 rounded-md transition"
-            >
-              <span className="mr-2">Send</span>
-              <ArrowRightIcon className="w-5 h-5" />
-            </button>
-          </form>
         </div>
 
-        {popUpStatus && (
-         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-            <div className="bg-white text-black p-6 rounded-md shadow-lg text-center">
-              <p className="text-lg font-semibold">
-                {popUpStatus === "success"
-                  ? "Email sent successfully!"
-                  : "Error sending email. Please try again."}
-              </p>
-              <button
-                className="mt-4 bg-black hover:bg-[#FF5B23] text-white px-4 py-2 rounded-md transition"
-                onClick={() => setPopUpStatus(null)}
-              >
-                Close
-              </button>
-            </div>
+        {/* COLUNA DIREITA - FRASE NO TOPO E AS DUAS COLUNAS ABAIXO */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          {/* FRASE PRINCIPAL */}
+          <div className="mb-6">
+            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-2">
+              Let’s talk...
+            </h2>
+            <p className="text-lg md:text-xl text-black/70">Drop me a line.</p>
           </div>
 
-        )}
+          {/* LINKS ABAIXO DA FRASE - GRID COM DUAS COLUNAS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* PÁGINAS */}
+            <div>
+              <h3 className="text-black/60 mb-2 font-medium text-sm uppercase tracking-widest">
+                Pages
+              </h3>
+              <ul className="flex flex-col gap-2 text-black/80">
+                <li>
+                  <Link to="/" className="hover:text-[#E4572E] transition cursor-pointer">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/profile" className="hover:text-[#E4572E] transition cursor-pointer">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#projects" className="hover:text-[#E4572E] transition cursor-pointer">
+                    Work
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#contact" className="hover:text-[#E4572E] transition cursor-pointer">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* SOCIAL */}
+            <div>
+              <h3 className="text-black/60 mb-2 font-medium text-sm uppercase tracking-widest">
+                Social
+              </h3>
+              <ul className="flex flex-col gap-2 text-black/80">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/carrllosz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#E4572E] transition"
+                  >
+                    Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.behance.net/uxcarrllosz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#E4572E] transition"
+                  >
+                    Behance
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:joaocar2003@gmail.com"
+                    className="hover:text-[#E4572E] transition"
+                  >
+                    G-Mail
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/Resume_JoaoC_EN.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#E4572E] transition"
+                  >
+                    See Full CV
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* LINHA INFERIOR - MAIS PRÓXIMA DO CONTEÚDO */}
+      <div className="w-full flex justify-between items-center border-t border-black/10 mt-8 pt-4 text-sm text-black/50">
+        <p>©2025 João Carlos</p>
+        <p>
+          Made with <span className="text-[#E4572E]">love</span>
+        </p>
       </div>
     </div>
   );

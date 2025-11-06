@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { FaLinkedinIn, FaBehance, FaPlus, FaMinus } from "react-icons/fa";
-import curriculo from '../../assets/Curriculo_JoaoC_PT.pdf';
-import curriculoEN from '../../assets/Resume_JoaoC_EN.pdf';
+import curriculo from "../../assets/Curriculo_JoaoC_PT.pdf";
+import curriculoEN from "../../assets/Resume_JoaoC_EN.pdf";
 
 const ExperienceItem = ({ company, role, description, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,14 +15,18 @@ const ExperienceItem = ({ company, role, description, className = "" }) => {
         className="flex justify-between items-center w-full text-left focus:outline-none"
       >
         <div>
-          <h2 className="text-2xl text-black">{company}</h2>
+          <h2 className="text-xl font-medium text-black">{company}</h2>
           <p className="text-base text-black/70">{role}</p>
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {isOpen ? <FaMinus className="text-black" /> : <FaPlus className="text-black" />}
+          {isOpen ? (
+            <FaMinus className="text-black" />
+          ) : (
+            <FaPlus className="text-black" />
+          )}
         </motion.div>
       </button>
 
@@ -40,115 +44,130 @@ const ExperienceItem = ({ company, role, description, className = "" }) => {
 
 const Profile = () => {
   return (
-    <div id="profile" className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-4">
-      <div className="flex flex-col w-full rounded-md text-black gap-8">
+    <div
+      id="profile"
+      className="w-full min-h-screen bg-white flex pt-[100px] justify-center items-center px-4 py-4"
+    >
+      <div className="flex flex-col w-full rounded-md text-black gap-32">
+        {/* INTRO */}
+        <div className="w-full min-h-[60vh] bg-white flex flex-col pt-[140px] justify-between items-start px-4">
+         <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl leading-snug ">
+          <p>I DESIGN AND MANAGE DIGITAL EXPERIENCES THAT BALANCE CREATIVITY,</p>
+          <p>STRATEGY, AND IMPACT — TURNING IDEAS INTO PRODUCTS THAT TRULY MATTER.</p>
+        </div>
+        </div>
 
+        {/* ABOUT */}
         <div>
-          <div className="border-t border-black/40 w-full mb-4"></div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-2xl md:text-3xl lg:text-3xl mb-2">About Me</h2>
-
-              <div className="flex items-center gap-2 mb-4">
-                <a
-                  href="https://www.linkedin.com/in/carrllosz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 w-10 h-10 flex items-center justify-center rounded-full text-white hover:text-blue-700 transition"
-                >
-                  <FaLinkedinIn size={24} />
-                </a>
-                <a
-                  href="https://www.behance.net/uxcarrllosz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-400 w-10 h-10 flex items-center justify-center rounded-full text-white hover:text-blue-600 transition"
-                >
-                  <FaBehance size={24} />
-                </a>
-
-              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+                About Me
+              </h2>
             </div>
 
-            <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-8">
-             <div>
-                I'm a multidisciplinary <span className="text-black">Product Designer </span>  
-                with over two years of experience, currently working at <span className="text-[#FF5B23]">Automining</span>, where I design 
-                intuitive and efficient digital experiences for the mining industry. My work bridges design, data, and technology to deliver 
-                seamless user interactions and visually engaging interfaces.
+            <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-6 text-sm text-black/80">
+              <p>
+                I'm a multidisciplinary Product Designer with over two years of
+                experience, currently working at{" "}
+                <span className="relative group font-medium">
+                  Automining
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#E4572E] transition-all duration-300 group-hover:w-full"></span>
+                </span>
+                , where I design intuitive and efficient digital experiences for
+                the mining industry. My work bridges design, data, and
+                technology to deliver seamless user interactions and visually
+                engaging interfaces.
+              </p>
 
-                <br /><br />
+              <p>
+                Previously, I worked as a PMO intern at{" "}
+                <span className="relative group font-medium">
+                  Mineração Vale Verde
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#E4572E] transition-all duration-300 group-hover:w-full"></span>
+                </span>
+                , where I optimized business processes and implemented automation
+                solutions.
+              </p>
 
-                Previously, I worked as a PMO intern at <span className="text-[#FF5B23]">Mineração Vale Verde</span>, where I optimized business processes and implemented automation solutions. 
-                I’ve also participated in <span className="text-black">hackathons and innovation challenges</span>, constantly exploring new ways to connect creativity and technology.
-
-                <br /><br />
-
-                When I’m not designing, you’ll find me exploring new design trends, reading a romance, or developing ideas for my next big project.
-             </div>
-
-
-              <div className="flex flex-col gap-2">
-                <h2 className="text-[#FF5B23]">Experiences</h2>
-
-                <ExperienceItem 
-                  className="text-black"
-                  company="Automining"
-                  role="UX/UI Designer"
-                  description="As a UX/UI Designer at Automining, I craft intuitive and visually appealing digital experiences, focusing on usability, interaction design, and data-driven decision-making. I develop wireframes, prototypes, and high-fidelity interfaces, conduct user research to inform design decisions, and optimize data visualization for actionable insights. Additionally, I ensure design consistency across platforms and streamline workflows with BPMN, enhancing both user experience and operational efficiency."
-                />
-
-                <ExperienceItem
-                  className="text-black"
-                  company="Mineração Vale Verde"
-                  role="PMO Intern"
-                  description="At Mineração Vale Verde, I structured and optimized process flows using BPMN to enhance operational efficiency and ensure consistency in project management activities. I developed detailed reports and project status updates for internal and external stakeholders while monitoring key performance indicators (KPIs) to provide valuable insights for continuous improvement. Additionally, I created strategic presentations and documentation to support communication efforts and assisted in refining project management methodologies and best practices."
-                />
-                <div className="flex justify-end items-center gap-8 mb-4">
-                <a
-                  href={curriculo}
-                  download="Curriculo_JoaoC_PT.pdf"
-                  className="flex items-center gap-2 rounded-full text-black text-sm hover:text-[#FF5B23] hover:border-[#FF5B23] transition"
-                >
-                  <ArrowDownTrayIcon className="w-3 h-3" />
-                  Download CV - PT
-                </a>
-
-                <a
-                  href={curriculoEN}
-                  download="Resume_JoaoC_EN.pdf"
-                  className="flex items-center gap-2 rounded-full text-black text-sm hover:text-[#FF5B23] hover:border-[#FF5B23] transition"
-                >
-                  <ArrowDownTrayIcon className="w-3 h-3" />
-                  Download CV - EN
-                </a>
-              </div>
-              </div>
-
+              <p>
+                When I’m not designing, you’ll find me exploring new design
+                trends, reading a romance, or developing ideas for my next big
+                project.
+              </p>
             </div>
           </div>
         </div>
 
+        {/* EXPERIENCE */}
         <div>
-          <div className="border-t border-black/40 w-full mb-4"></div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-2xl md:text-3xl lg:text-3xl mb-2">What I'm known for</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+                Experiences
+              </h2>
+            </div>
+
+            <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-6 text-sm">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col"
+              >
+                <h3 className="text-lg font-medium text-black">
+                  UX/UI Designer
+                </h3>
+                <span className="text-[#E4572E] text-sm">Automining</span>
+                <p className="text-black/50 text-sm">2024 - Present</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col"
+              >
+                <h3 className="text-lg font-medium text-black">PMO Intern</h3>
+                <span className="text-[#E4572E] text-sm">
+                  Mineração Vale Verde
+                </span>
+                <p className="text-black/50 text-sm">2023 - 2024</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* KNOWN FOR */}
+        <div>
+          <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+            <div className="w-full md:w-2/3">
+              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+                What I'm known for
+              </h2>
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-2">
-              <h2 className="text-4xl hover:text-[#FF5B23]">Product Strategy</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Product & Project Management</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">User Research</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">UX/UI Design</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Prototyping & Design Systems</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Data Analysis & Visualization</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Business Intelligence</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Data Modeling</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Front-End Development</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Process Optimization (BPMN)</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Agile Methodologies</h2>
-              <h2 className="text-4xl hover:text-[#FF5B23]">Product Thinking</h2>
+              {[
+                "Product Strategy",
+                "Product & Project Management",
+                "User Research",
+                "UX/UI Design",
+                "Prototyping & Design Systems",
+                "Data Analysis & Visualization",
+                "Business Intelligence",
+                "Data Modeling",
+                "Front-End Development",
+                "Process Optimization (BPMN)",
+                "Agile Methodologies",
+                "Product Thinking",
+              ].map((item) => (
+                <motion.h2
+                  key={item}
+                  whileHover={{ x: 4 }}
+                  className="text-sm cursor-default hover:text-[#E4572E] transition"
+                >
+                  {item}
+                </motion.h2>
+              ))}
             </div>
           </div>
         </div>

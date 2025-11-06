@@ -5,35 +5,57 @@ import Contact from "./components/Contact/Contact";
 import Profile from "./components/Profile/Profile";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetail from "./components/Projects/ProjectsDetail";
-import ScrollToSectionOnLoad from "./ScrollToSectionOnLoad"
+import ScrollToSectionOnLoad from "./ScrollToSectionOnLoad";
+import Brands from "./components/Projects/MovingBrands";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={  
-          <>
-            <Navbar />
-            <ScrollToSectionOnLoad />
-            <div id="home">
-              <Home />
-            </div>
-            <div id="projects">
-              <Projects />
-            </div>
-            <div id="profile">
+        {/* Página principal */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <ScrollToSectionOnLoad />
+              <div id="home">
+                <Home />
+              </div>
+              <div id="projects">
+                <Projects />
+                <Brands />
+              </div>
+              <div id="contact">
+                <Contact />
+              </div>
+            </>
+          }
+        />
+
+        {/* Página de perfil separada */}
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Navbar />
               <Profile />
-            </div>
-            <div id="contact">
               <Contact />
-            </div>
-          </>
-        }/>
-        <Route path="/projects/:id" element={ 
-          <> 
-            <Navbar />
-            <ProjectsDetail />
-          </>} />
+            </>
+          }
+        />
+
+        {/* Página de detalhes do projeto */}
+        <Route
+          path="/projects/:id"
+          element={
+            <>
+              <Navbar />
+              <ProjectsDetail />
+              <Contact />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
