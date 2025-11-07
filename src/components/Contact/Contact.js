@@ -1,24 +1,27 @@
 import React from "react";
-import homeMoobi from "../../assets/homemoobi.mp4";
+import footer from "../../assets/tech.mp4";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full h-screen bg-white flex flex-col justify-start items-center px-6 py-10 "
+      className="w-full h-screen bg-white flex flex-col justify-start items-center px-6 py-10  border-t border-black/10 "
     >
+      <div className="">
+
+      </div>
       {/* CONTEÚDO PRINCIPAL: imagem (esquerda) + bloco direito (frase + colunas) */}
-      <div className="w-full flex flex-col md:flex-row items-center gap-12 flex-grow border-t border-black/10">
+      <div className="w-full flex flex-col md:flex-row items-center gap-12 flex-grow">
         {/* COLUNA ESQUERDA - IMAGEM */}
         <div className="w-full md:w-1/2 flex justify-center">
           <video
-            src={homeMoobi}
+            src={footer}
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-[10vh] sm:h-[25vh] md:h-[60vh] object-cover rounded-xl"
+            className="w-full h-[30vh] sm:h-[35vh] md:h-[60vh] object-cover rounded-xl"
           />
         </div>
 
@@ -33,7 +36,7 @@ const Contact = () => {
           </div>
 
           {/* LINKS ABAIXO DA FRASE - GRID COM DUAS COLUNAS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
             {/* PÁGINAS */}
             <div>
               <h3 className="text-black/60 mb-2 font-medium text-sm uppercase tracking-widest">
