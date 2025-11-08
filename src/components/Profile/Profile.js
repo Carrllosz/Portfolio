@@ -1,46 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import { FaLinkedinIn, FaBehance, FaPlus, FaMinus } from "react-icons/fa";
-import curriculo from "../../assets/Curriculo_JoaoC_PT.pdf";
-import curriculoEN from "../../assets/Resume_JoaoC_EN.pdf";
 
-const ExperienceItem = ({ company, role, description, className = "" }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className={`border-t border-black/40 w-full py-2 ${className}`}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-full text-left focus:outline-none"
-      >
-        <div>
-          <h2 className="text-xl font-medium text-black">{company}</h2>
-          <p className="text-base text-black/70">{role}</p>
-        </div>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {isOpen ? (
-            <FaMinus className="text-black" />
-          ) : (
-            <FaPlus className="text-black" />
-          )}
-        </motion.div>
-      </button>
-
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="overflow-hidden"
-      >
-        <p className="mt-2 text-black/60">{description}</p>
-      </motion.div>
-    </div>
-  );
-};
 
 const Profile = () => {
   return (

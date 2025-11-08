@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import homeVideo from "../../assets/home.mp4";
 import homeMoobi from "../../assets/homemoobi.mp4";
 
 const Home = () => {
