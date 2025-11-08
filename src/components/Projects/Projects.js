@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowDownIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import amazon from "../../assets/amazon.png";
-import friends from "../../assets/friends.jpg";
-import fluxus from "../../assets/fluxus.png";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import varejonacional from "../../assets/varejonacional.png";
-import easyroute from "../../assets/easyroute.png";
 import moobimp4 from "../../assets/moobi.mp4";
 import fluxusmp4 from "../../assets/fluxus.mp4";
 import amazonmp4 from "../../assets/amazon.mp4";
