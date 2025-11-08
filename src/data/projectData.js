@@ -11,7 +11,7 @@ import sql from "../assets/sql.png";
 import pyspark from "../assets/pyspark.jpg";
 import easyroute from "../assets/easyroute.png";
 import moobi from "../assets/moobi.png";
-
+import homeMoobi from "../assets/homemoobi.mp4";
 
 export const projects = {
   "amazon-redesign": {
@@ -76,7 +76,7 @@ export const projects = {
   },
   "easyroute": {
     title: "Easyroute",
-    image: easyroute,
+    "image": easyroute,
     subtitle: "Collaborative route optimization made simple.",
     description: "Easyroute is a mobile application for route optimization that leverages user collaboration to plan and execute routes efficiently. The system allows users to create, track, and share routes in real-time, with role-based permissions and subscription plans tailored to different usage levels.",
     tags: ["Redesign", "App Mobile"],
@@ -91,7 +91,8 @@ export const projects = {
   },
   "moobi": {
     title: "Moobi",
-    image: moobi,
+    "image": homeMoobi,
+    "video": homeMoobi,
     subtitle: "Smarter and more human urban mobility.",
     description: "Moobi is a smart urban mobility platform designed to improve public transportation experiences in large Brazilian cities. It offers real-time tracking, personalized alerts, and route comparisons based on travel time and crowding, focusing on accessibility and inclusivity.",
     tags: ["UI/UX Design", "Urban Mobility"],

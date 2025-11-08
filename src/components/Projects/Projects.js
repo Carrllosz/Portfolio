@@ -104,13 +104,13 @@ const Projects = () => {
                       muted
                       loop
                       playsInline
-                      className="w-full h-[300px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-[350px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[300px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-[350px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
 

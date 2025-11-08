@@ -109,29 +109,29 @@ const Profile = () => {
             </div>
 
             <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-6 text-sm">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                className="flex flex-col"
-              >
-                <h3 className="text-lg font-medium text-black">
+              <div className="flex flex-col">
+                <h3 className="text-sm font-medium text-black">
                   UX/UI Designer
                 </h3>
                 <span className="text-[#E4572E] text-sm">Automining</span>
                 <p className="text-black/50 text-sm">2024 - Present</p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                className="flex flex-col"
-              >
-                <h3 className="text-lg font-medium text-black">PMO Intern</h3>
+              <div className="flex flex-col">
+                <h3 className="text-sm font-medium text-black">
+                  Research | Data Analyst
+                </h3>
+                <span className="text-[#E4572E] text-sm">ORION</span>
+                <p className="text-black/50 text-sm">2025 - Present</p>
+              </div>
+
+              <div className="flex flex-col">
+                <h3 className="text-sm font-medium text-black">PMO Intern</h3>
                 <span className="text-[#E4572E] text-sm">
                   Mineração Vale Verde
                 </span>
                 <p className="text-black/50 text-sm">2023 - 2024</p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

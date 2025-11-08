@@ -1,6 +1,7 @@
 import React from "react";
 import footer from "../../assets/tech.mp4";
 import { Link } from "react-router-dom";
+import resume from "../../assets/Resume_JoaoC_EN.pdf";
 
 const Contact = () => {
   return (
@@ -102,7 +103,7 @@ const Contact = () => {
                 </li>
                 <li>
                   <a
-                    href="/Resume_JoaoC_EN.pdf"
+                    href={resume}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#E4572E] transition"

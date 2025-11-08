@@ -13,101 +13,76 @@ const ProjectsDetail = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-white flex flex-col justify-start items-start px-6 md:px-4 pt-[88px] pb-10">
-      {/* Botão Voltar */}
-      <button
-        className="flex items-center gap-3 text-black hover:text-[#FF5B23] transition-all duration-300 mb-6"
-        onClick={() => navigate(-1)}
-      >
-        <FaArrowLeft />
-        <span className="font-medium">Voltar</span>
-      </button>
+    <div className="w-full min-h-screen bg-white flex flex-col justify-start items-start px-6 md:px-10 pt-[88px] pb-12 gap-16">
+
+      {/* Linha: Voltar + Link */}
+      <div className="w-full flex items-center justify-between mb-8">
+        <button
+          className="flex items-center gap-2 text-black hover:text-[#FF5B23] transition"
+          onClick={() => navigate(-1)}
+        >
+          <FaArrowLeft />
+          <span className="font-medium">Voltar</span>
+        </button>
+
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#FF5B23] text-sm font-medium underline hover:opacity-80 transition"
+        >
+          Ver projeto completo →
+        </a>
+      </div>
 
       {/* Cabeçalho */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 mb-10">
-        <div className="w-full md:w-2/3 flex flex-col gap-4">
-          <h1 className="text-black text-4xl md:text-5xl leading-tight">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 mb-10">
+        <div className="w-full items-center justify-center flex flex-col gap-2">
+          <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-7xl">
             {project.title}
           </h1>
-          <p className="text-black/60 leading-relaxed text-lg">{project.subtitle}</p>
-        </div>
-
-        <div className="w-full md:w-1/3 flex md:justify-end items-end">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#FF5B23] text-base font-medium underline hover:opacity-80 transition"
-          >
-            Ver projeto completo →
-          </a>
+          <p className="text-black/60 leading-relaxed text-sm md:text-base">
+            {project.subtitle}
+          </p>
         </div>
       </div>
 
-      {/* Imagem principal */}
+      {/* Imagem */}
+      {/* Mídia (Imagem ou Vídeo) */}
       <div className="w-full rounded-xl overflow-hidden mb-10">
-        <img
-          className="w-full h-[55vh] object-cover rounded-xl"
-          src={project.image}
-          alt={project.title}
-          loading="lazy"
-        />
+        {project.video ? (
+          <video
+            className="w-full h-[45vh] md:h-[100vh] object-cover rounded-xl"
+            src={project.video}
+            autoPlay
+            loop
+            muted
+          />
+        ) : (
+          <img
+            className="w-full h-[22vh] md:h-[45vh] object-cover rounded-xl"
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+          />
+        )}
       </div>
 
-      <div className="border-t border-black/10 w-full mb-10"></div>
+      {/* Corpo */}
+      <div className="w-full flex flex-col justify-center items-center gap-12">
 
-      {/* Corpo principal */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Descrição e Ferramentas */}
+        {/* Descrição + Ferramentas */}
         <div className="text-black flex flex-col gap-10 w-full">
-          <section>
-            <p className="text-base text-black/70 leading-relaxed">
+
+          <section className="w-full flex justify-center">
+            <p className="text-center text-xl sm:text-2xl md:text-2xl font-medium text-black leading-relaxed max-w-4xl">
               {project.details.description}
             </p>
           </section>
 
-          <section>
-            <h2 className="text-xl font-medium text-black/80 mb-3">Ferramentas</h2>
-            <div className="flex flex-wrap gap-4">
-              {project.details.tools && project.details.tools.length > 0 ? (
-                project.details.tools.map((tool, index) => (
-                  <img
-                    key={index}
-                    src={tool}
-                    alt={`Ferramenta ${index + 1}`}
-                    className="w-12 h-12 object-contain hover:scale-110 transition-transform"
-                  />
-                ))
-              ) : (
-                <p className="text-sm text-black/50">Nenhuma ferramenta informada.</p>
-              )}
-            </div>
-          </section>
         </div>
 
-        {/* Problem, Solution e Impact */}
-        <div className="text-black flex flex-col gap-8 w-full">
-          <section>
-            <h2 className="text-xl font-medium text-black/80 mb-2">Problem</h2>
-            <p className="text-sm text-black/60 leading-relaxed">
-              {project.details.problem}
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-medium text-black/80 mb-2">Solution</h2>
-            <p className="text-sm text-black/60 leading-relaxed">
-              {project.details.solution}
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-medium text-black/80 mb-2">Impact</h2>
-            <p className="text-sm text-black/60 leading-relaxed">
-              {project.details.impact}
-            </p>
-          </section>
-        </div>
+        
       </div>
     </div>
   );
