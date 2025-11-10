@@ -1,5 +1,4 @@
 import amazon from "../assets/amazon.png";
-import friends from "../assets/friends.jpg";
 import fluxus from "../assets/fluxus.png";
 import varejonacional from "../assets/varejonacional.png";
 import easyroute from "../assets/easyroute.png";
