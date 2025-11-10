@@ -1,20 +1,46 @@
 import React from "react";
 import footer from "../../assets/tech.mp4";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import resume from "../../assets/Resume_JoaoC_EN.pdf";
 
 const Contact = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goTo = (id) => {
+    // Se for ABOUT → vai para /profile
+    if (id === "profile") {
+      navigate("/profile");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 80);
+      return;
+    }
+
+    // Se não está na home → navega para home e sobe
+    if (location.pathname !== "/") {
+      navigate(`/?section=${id}`);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 80);
+      return;
+    }
+
+    // Se já está na home → rola direto para a seção
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       id="contact"
-      className="w-full h-screen bg-white flex flex-col justify-start items-center px-6 py-10  border-t border-black/10 "
+      className="w-full h-screen bg-white flex flex-col justify-start items-center px-6 py-10 border-t border-black/10"
     >
-      <div className="">
-
-      </div>
-      {/* CONTEÚDO PRINCIPAL: imagem (esquerda) + bloco direito (frase + colunas) */}
+      {/* conteúdo principal */}
       <div className="w-full flex flex-col md:flex-row items-center gap-12 flex-grow">
-        {/* COLUNA ESQUERDA - IMAGEM */}
+        {/* Imagem */}
         <div className="w-full md:w-1/2 flex justify-center">
           <video
             src={footer}
@@ -26,9 +52,8 @@ const Contact = () => {
           />
         </div>
 
-        {/* COLUNA DIREITA - FRASE NO TOPO E AS DUAS COLUNAS ABAIXO */}
+        {/* Texto e links */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          {/* FRASE PRINCIPAL */}
           <div className="mb-6">
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-2">
               Let’s talk...
@@ -36,38 +61,49 @@ const Contact = () => {
             <p className="text-lg md:text-xl text-black/70">Drop me a line.</p>
           </div>
 
-          {/* LINKS ABAIXO DA FRASE - GRID COM DUAS COLUNAS */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
-            {/* PÁGINAS */}
+          <div className="grid grid-cols-2 gap-6">
+            {/* Pages */}
             <div>
               <h3 className="text-black/60 mb-2 font-medium text-sm uppercase tracking-widest">
                 Pages
               </h3>
               <ul className="flex flex-col gap-2 text-black/80">
                 <li>
-                  <Link to="/" className="hover:text-[#E4572E] transition cursor-pointer">
+                  <button
+                    onClick={() => goTo("home")}
+                    className="hover:text-[#E4572E] transition cursor-pointer"
+                  >
                     Home
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/profile" className="hover:text-[#E4572E] transition cursor-pointer">
+                  <button
+                    onClick={() => goTo("profile")}
+                    className="hover:text-[#E4572E] transition cursor-pointer"
+                  >
                     About
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/#projects" className="hover:text-[#E4572E] transition cursor-pointer">
+                  <button
+                    onClick={() => goTo("projects")}
+                    className="hover:text-[#E4572E] transition cursor-pointer"
+                  >
                     Work
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/#contact" className="hover:text-[#E4572E] transition cursor-pointer">
+                  <button
+                    onClick={() => goTo("contact")}
+                    className="hover:text-[#E4572E] transition cursor-pointer"
+                  >
                     Contact
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
 
-            {/* SOCIAL */}
+            {/* Social */}
             <div>
               <h3 className="text-black/60 mb-2 font-medium text-sm uppercase tracking-widest">
                 Social
@@ -117,7 +153,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* LINHA INFERIOR - MAIS PRÓXIMA DO CONTEÚDO */}
+      {/* Footer */}
       <div className="w-full flex justify-between items-center border-t border-black/10 mt-8 pt-4 text-sm text-black/50">
         <p>©2025 João Carlos</p>
         <p>

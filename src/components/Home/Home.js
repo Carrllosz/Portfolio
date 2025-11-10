@@ -41,7 +41,7 @@ const Home = () => {
       </div>
 
       <div className="w-full flex flex-col gap-4">
-        <div className="w-full flex justify-between items-center text-black text-[12px] sm:text-sm md:text-[12px]">
+        <div className="w-full flex justify-between items-center text-black text-[10px] sm:text-sm md:text-[12px]">
           <span>BASED OUT OF ARAPIRACA</span>
           <span>WORKING AT AUTOMINING</span>
         </div>

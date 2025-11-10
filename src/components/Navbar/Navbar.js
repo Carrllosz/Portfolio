@@ -10,19 +10,28 @@ const Navbar = () => {
   const handleScrollToSection = (id) => {
     setIsSidebarOpen(false);
 
+    // ABOUT → navega para /profile e volta ao topo suavemente
     if (id === "profile") {
-      // Agora o "ABOUT" leva para a página /profile
       navigate("/profile");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 80);
       return;
     }
 
+    // Se não estiver na Home → vai para Home e sobe suave
     if (location.pathname !== "/") {
       navigate(`/?section=${id}`);
-    } else {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 80);
+      return;
+    }
+
+    // Se já está na Home → scroll suave direto na seção
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -49,7 +58,7 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Links de navegação (Desktop) */}
+        {/* Desktop Nav */}
         <div className="text-black text-[12px] hidden md:flex justify-center gap-4 items-center">
           {["home", "projects", "profile", "contact"].map((item, index) => (
             <button
