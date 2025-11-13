@@ -1,26 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
-import varejonacional from "../../assets/varejonacional.png";
 import moobimp4 from "../../assets/moobi.mp4";
 import fluxusmp4 from "../../assets/fluxus.mp4";
-import amazonmp4 from "../../assets/amazon.mp4";
-import appfriends from "../../assets/appfr.png";
-import easyrout from "../../assets/easyrouter.mp4";
+import easyrout from "../../assets/route.mp4";
+import bi from "../../assets/bi.mp4";
 
 const projects = [
-  {
-    id: "amazon-redesign",
-    title: "Redesign App Mobile - Amazon",
-    video: amazonmp4,
-    description: "Enhancing usability and design.",
-  },
-  {
-    id: "friends-app",
-    title: "Friends - App Mobile",
-    image: appfriends,
-    description: "Connecting friends around the world",
-  },
   {
     id: "fluxus-app",
     title: "Fluxus",
@@ -29,8 +15,8 @@ const projects = [
   },
   {
     id: "varejo-bi",
-    title: "BI - Varejo Nacional",
-    image: varejonacional,
+    title: "National Retail",
+    video: bi,
     description: "From raw data to revenue intelligence.",
   },
   {
@@ -100,7 +86,7 @@ const Projects = () => {
                       muted
                       loop
                       playsInline
-                      className="w-full h-[350px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-[400px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <img
@@ -116,18 +102,23 @@ const Projects = () => {
                     >
                       <p
                         className={` text-[10px] sm:text-sm md:text-[14px] font-semibold ${
-                          project.id === "moobi" ? "text-black" : "text-white"
+                          project.id === "moobi" || project.id === "fluxus-app"
+                            ? "text-black"
+                            : "text-white"
                         }`}
                       >
                         {project.title}
                       </p>
                       <p
                         className={` text-[10px] sm:text-sm md:text-[14px] opacity-90 ${
-                          project.id === "moobi" ? "text-black" : "text-white"
+                          project.id === "moobi" || project.id === "fluxus-app"
+                            ? "text-black"
+                            : "text-white"
                         }`}
                       >
                         {project.description}
                       </p>
+
                     </div>
 
                   {/* 🔸 Hover circle animation */}

@@ -53,7 +53,9 @@ const ProjectsDetail = () => {
             return (
               <figure key={index} className="flex flex-col items-center gap-40">
                 <img className="rounded-xl w-full object-cover" src={block.src} alt="" />
-                {block.caption && <figcaption className="text-black  w-[800px] text-center text-xl sm:text-xl md:text-2xl lg:text-2xl  text-center">{block.caption}</figcaption>}
+                {block.caption && <figcaption className="text-black max-w-2xl text-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-4">
+                    {block.caption}
+                  </figcaption>}
               </figure>
             );
           }
@@ -62,7 +64,9 @@ const ProjectsDetail = () => {
             return (
               <figure key={index} className="flex flex-col items-center gap-40">
                 <video className="rounded-xl w-full object-cover" src={block.src} autoPlay loop muted />
-                {block.caption && <figcaption className="text-black  w-[800px] text-center text-xl sm:text-xl md:text-2xl lg:text-2xl  text-center">{block.caption}</figcaption>}
+                {block.caption &&  <figcaption className="text-black max-w-2xl text-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-4">
+                    {block.caption}
+                  </figcaption>}
               </figure>
             );
           }
