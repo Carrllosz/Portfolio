@@ -73,7 +73,7 @@ const ProjectsDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {block.items.map((item, i) =>
                     item.type === "image" ? (
-                      <img key={i} className="rounded-xl w-full h-[70vh] object-cover" src={item.src} alt="" />
+                      <img key={i} className="rounded-xl w-full object-cover" src={item.src} alt="" />
                     ) : (
                       <video key={i} className="rounded-xl w-full h-[70vh] object-cover" src={item.src} autoPlay loop muted />
                     )

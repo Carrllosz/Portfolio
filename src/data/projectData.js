@@ -15,7 +15,22 @@ import easy1 from "../assets/easyroutelogin.png";
 import easy3 from "../assets/principal.png";
 import easy4 from "../assets/easy4.mp4";
 import bi2 from "../assets/bi2.png";
-import appfriends from "../assets/appfr.png";
+import friends1 from "../assets/friends1.png";
+import friends2 from "../assets/friends2.png";
+import friends3 from "../assets/friends3.png";
+import amazon1 from "../assets/amazon1.mp4";
+import amazon2 from "../assets/amazon2.png";
+import amazon3 from "../assets/amazon3.png";
+import amazon5 from "../assets/amazon6.mp4";
+import amazon8 from "../assets/amazon9.png";
+import flu1 from "../assets/fluxus.mp4";
+import flu2 from "../assets/fluxus2.png";
+import flu3 from "../assets/fluxus3.png";
+import flu4 from "../assets/fluxus4.mp4";
+import flu5 from "../assets/fluxus6.mp4";
+import flu7 from "../assets/fluxus7.mp4";
+import flu8 from "../assets/fluxus8.mp4";
+import flu9 from "../assets/fluxus9.png";
 
 export const projects = {
 
@@ -25,14 +40,17 @@ export const projects = {
     link: "https://www.behance.net/gallery/199894671/UX-UI-Case-Study-Redesign-do-App-da-Amazon",
 
     hero: {
-      type: "image",
-      src: amazon,
+      type: "video",
+      src: amazon1,
       caption: "A redesigned Amazon shopping experience focused on clarity, usability, and product discovery efficiency. The interface organizes hierarchy and navigation paths to reduce friction and guide users more confidently through the marketplace."
     },
 
     contentBlocks: [
-      { type: "image", src: amazon, caption: "Em desenvolvimento..." },
-    ],
+        { type: "image", src: amazon2, caption: "Em desenvolvimento..." },
+        { type: "image", src: amazon3},
+        { type: "image", src: amazon8, caption: "Em desenvolvimento..." },
+        { type: "video", src: amazon5 },
+      ],
 
     keyAchievements: [
       "Clearer product discovery flow.",
@@ -56,13 +74,13 @@ export const projects = {
 
     hero: {
       type: "image",
-      src: appfriends,
+      src: friends1,
       caption: "A lightweight social platform focused on simple and intentional content sharing. Designed to reduce noise and create a more direct connection between expression and audience."
     },
 
     contentBlocks: [
-      { type: "image", src: appfriends, caption: "Em desenvolvimento..." },
-
+      { type: "image", src: friends2, caption: "Em desenvolvimento..." },
+      { type: "image", src: friends3 },
     ],
 
     keyAchievements: [
@@ -86,13 +104,19 @@ export const projects = {
     link: "https://www.behance.net/gallery/228821855/fluxus-Process-Management-System-with-BPMN",
 
     hero: {
-      type: "image",
-      src: fluxus,
+      type: "video",
+      src: flu1,
       caption: "A collaborative platform for mapping, analyzing, and improving business processes. Designed for transparency, operational control, and aligned decision-making across multiple teams."
     },
 
     contentBlocks: [
-      { type: "image", src: fluxus, caption: "Em desenvolvimento..." },
+      { type: "image", src: flu2 },
+      { type: "image", src: flu3, caption: "Em desenvolvimento..." },
+      { type: "video", src: flu8, caption: "Em desenvolvimento..." },
+      { type: "video", src: flu4, caption: "Em desenvolvimento..." },
+      { type: "video", src: flu7},
+      { type: "video", src: flu5, caption: "Em desenvolvimento..."  },
+      { type: "image", src: flu9 },
     ],
 
     keyAchievements: [
