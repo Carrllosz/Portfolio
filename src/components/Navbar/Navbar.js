@@ -112,27 +112,6 @@ const Navbar = () => {
           </button>
         ))}
       </div>
-
-      {/* Estilo da animação */}
-      <style>{`
-        @keyframes rotateUp {
-          0% {
-            transform: translateY(0) rotateX(0deg);
-          }
-          30% {
-            transform: translateY(-5px) rotateX(180deg);
-          }
-          100% {
-            transform: translateY(0) rotateX(360deg);
-          }
-        }
-
-        .hover\\:animate-rotate-up:hover {
-          animation: rotateUp 0.7s ease-in-out forwards;
-          transform-origin: center;
-          display: inline-block;
-        }
-      `}</style>
     </header>
   );
 };

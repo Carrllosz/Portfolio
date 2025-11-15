@@ -157,7 +157,7 @@ const Contact = () => {
       <div className="w-full flex justify-between items-center border-t border-black/10 mt-8 pt-4 text-sm text-black/50">
         <p>©2025 João Carlos</p>
         <p>
-          Made with <span className="text-[#E4572E]">love</span>
+          Be your on <span className="text-[#E4572E]">guide</span>
         </p>
       </div>
     </div>

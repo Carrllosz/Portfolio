@@ -24,19 +24,13 @@ const Home = () => {
       className="w-full min-h-[160vh] bg-white flex flex-col pt-[160px] justify-between items-start px-4"
       id="home"
     >
-      <div className="w-full flex flex-col md:flex-row items-end justify-end gap-8 md:gap-16">
-        <div className="w-full">
-          <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl">
-            <p>
-              WELCOME TO MY SPACE ON THE INTERNET, WHERE I SHOWCASE MY WORK,
-            </p>
-            <p>
-              CREATIVE PROCESS, ANIMATIONS, AND A VARIETY OF OTHER THINGS
-            </p>
-            <p>
-              I'M CURRENTLY EXPLORING.
-            </p>
-          </div>
+     {/* INTRO */}
+      {/* INTRO */}
+      <div className="w-full min-h-[60vh] flex flex-col pt-[140px] justify-between items-start px-4">
+        <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl leading-snug">
+          <p>WELCOME TO MY SPACE ON THE INTERNET, WHERE I SHOWCASE MY WORK,</p>
+          <p>DESIGN PROJECTS, PRODUCT CONCEPTS, AND THE EXPERIENCES</p>
+          <p>I'M CURRENTLY CREATING.</p>
         </div>
       </div>
 

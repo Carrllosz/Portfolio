@@ -21,7 +21,7 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+              <h2 className="text-2xl md:text-3xl lg:text-base mb-2 text-black/50">
                 About Me
               </h2>
             </div>
@@ -63,7 +63,7 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+              <h2 className="text-2xl md:text-3xl lg:text-base mb-2 text-black/50">
                 Experiences
               </h2>
             </div>
@@ -100,7 +100,7 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-2xl md:text-3xl lg:text-sm mb-2 text-black/50">
+              <h2 className="text-2xl md:text-3xl lg:text-base mb-2 text-black/50">
                 What I'm known for
               </h2>
             </div>
