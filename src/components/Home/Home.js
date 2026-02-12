@@ -28,16 +28,16 @@ const Home = () => {
       {/* INTRO */}
       <div className="w-full min-h-[60vh] flex flex-col pt-[140px] justify-between items-start px-4">
         <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl leading-snug">
-          <p>WELCOME TO MY SPACE ON THE INTERNET, WHERE I SHOWCASE MY WORK,</p>
-          <p>DESIGN PROJECTS, PRODUCT CONCEPTS, AND THE EXPERIENCES</p>
-          <p>I'M CURRENTLY CREATING.</p>
+          <p>WELCOME TO MY CORNER OF THE WEB, WHERE I SHARE ONE PART OF ME.</p>
+          <p>HERE YOU'LL FIND MY DESIGN PROJECTS, PRODUCT CONCEPTS, ART,</p>
+          <p>AND THE EXPERIENCES I'M CURRENTLY CREATING.</p>
         </div>
       </div>
 
       <div className="w-full flex flex-col gap-4">
-        <div className="w-full flex justify-between items-center text-black text-[10px] sm:text-sm md:text-[12px]">
+        <div className="w-full flex justify-between items-center text-black text-[14px] sm:text-sm md:text-[16px]">
           <span>BASED OUT OF ARAPIRACA</span>
-          <span>WORKING AT AUTOMINING</span>
+          <span><span className="text-[#FF5B23]">PRODUCT DESIGNER</span> AT AUTOMINING</span>
         </div>
 
         <div className="w-full rounded-xl overflow-hidden">

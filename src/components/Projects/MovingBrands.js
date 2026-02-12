@@ -8,8 +8,9 @@ import aura from "../../assets/aura.png";
 import aguas from "../../assets/aguas.png";
 import orion from "../../assets/orion.svg";
 import bahia from "../../assets/bahia.png";
+import nees from "../../assets/nees.png";
 
-const brandLogos = [usiminas, verum, mvv, appian, atn, aura, aguas, orion, bahia];
+const brandLogos = [usiminas, verum, mvv, appian, atn, aura, aguas, orion, bahia, nees];
 
 const MovingBrands = () => {
   return (

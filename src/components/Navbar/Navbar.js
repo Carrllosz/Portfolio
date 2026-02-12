@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Nome */}
         <button
           onClick={() => handleScrollToSection("home")}
-          className="text-sm font-bold md:text-[12px]"
+          className="text-sm font-bold md:text-[14px]"
         >
           JOÃO CARLOS
         </button>
@@ -59,7 +59,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Nav */}
-        <div className="text-black text-[12px] hidden md:flex justify-center gap-4 items-center">
+        <div className="text-black text-[14px] hidden md:flex justify-center gap-4 items-center">
           {["home", "projects", "profile", "contact"].map((item, index) => (
             <button
               key={index}
