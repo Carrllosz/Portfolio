@@ -6,7 +6,6 @@ import Profile from "./components/Profile/Profile";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetail from "./components/Projects/ProjectsDetail";
 import ScrollToSectionOnLoad from "./ScrollToSectionOnLoad";
-import Brands from "./components/Projects/MovingBrands";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
               </div>
               <div id="projects">
                 <Projects />
-                <Brands />
               </div>
               <div id="contact">
                 <Contact />

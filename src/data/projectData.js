@@ -155,40 +155,4 @@ export const projects = {
     ],
   },
 
-  "varejo-bi": {
-    title: "Varejo Nacional",
-    subtitle: "Transforming retail operations through digital integration.",
-    link: "https://www.behance.net/gallery/233633213/BI-Varejo-Nacional",
-
-    impact: [
-      "↑ Increased operational visibility across retail units.",
-      "↓ Reduced manual reporting through dashboard automation.",
-      "↑ Faster strategic decision-making with consolidated metrics.",
-      "↑ Improved inventory and sales tracking accuracy.",
-    ],
-
-    problem:
-      "Retail management faced decentralized data, inconsistent reporting processes, and limited strategic visibility, impairing operational agility and performance optimization.",
-
-    strategy:
-      "The solution focused on integrating retail performance data into centralized dashboards, aligning operational KPIs with strategic goals to enable real-time monitoring and better decision-making.",
-
-    highlights: [
-      "Consolidated retail performance dashboard.",
-      "Automated KPI tracking.",
-      "Cross-unit data visibility.",
-      "Strategic performance monitoring.",
-    ],
-
-    decisions: [
-      "Aligned metrics with executive-level decision needs.",
-      "Simplified visualization to accelerate insights.",
-      "Structured data for long-term scalability.",
-      "Focused on operational clarity over excessive complexity.",
-    ],
-
-    hero: { type: "image", src: varejonacional },
-
-    contentBlocks: [{ type: "image", src: varejonacional }],
-  },
 };

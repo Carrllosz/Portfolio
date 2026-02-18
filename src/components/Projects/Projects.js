@@ -14,12 +14,6 @@ const projects = [
     description: "Turn chaos into flow.",
   },
   {
-    id: "varejo-bi",
-    title: "National Retail",
-    video: bi,
-    description: "From raw data to revenue intelligence.",
-  },
-  {
     id: "easyroute",
     title: "Easyroute",
     video: easyrout,

@@ -26,7 +26,7 @@ const Home = () => {
     >
      {/* INTRO */}
       {/* INTRO */}
-      <div className="w-full min-h-[60vh] flex flex-col pt-[140px] justify-between items-start px-4">
+      <div className="w-full min-h-[60vh] flex flex-col pt-[140px] justify-between items-start">
         <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl leading-snug">
           <p>WELCOME TO MY CORNER OF THE WEB, WHERE I SHARE ONE PART OF ME.</p>
           <p>HERE YOU'LL FIND MY DESIGN PROJECTS, PRODUCT CONCEPTS, ART,</p>
