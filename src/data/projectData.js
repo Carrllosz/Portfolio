@@ -103,7 +103,6 @@ export const projects = {
       { type: "image", src: easy1 },
       { type: "image", src: easy3 },
       { type: "video", src: easy4 },
-      { type: "image", src: bi2 },
     ],
   },
 
