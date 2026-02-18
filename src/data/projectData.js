@@ -1,5 +1,3 @@
-import varejonacional from "../assets/varejonacional.png";
-import easyroute from "../assets/easyroute.png";
 import homeMoobi from "../assets/homemoobi.mp4";
 import moobi1 from "../assets/moobi1.png";
 import moobi2 from "../assets/802.png";
@@ -12,7 +10,6 @@ import easyroutedetail from "../assets/easyroutedetail.mp4";
 import easy1 from "../assets/easyroutelogin.png";
 import easy3 from "../assets/principal.png";
 import easy4 from "../assets/easy4.mp4";
-import bi2 from "../assets/bi2.png";
 import flu1 from "../assets/fluxus.mp4";
 import flu2 from "../assets/fluxus2.png";
 import flu3 from "../assets/fluxus3.png";

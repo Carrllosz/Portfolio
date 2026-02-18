@@ -4,7 +4,6 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import moobimp4 from "../../assets/moobi.mp4";
 import fluxusmp4 from "../../assets/fluxus.mp4";
 import easyrout from "../../assets/route.mp4";
-import bi from "../../assets/bi.mp4";
 
 const projects = [
   {
