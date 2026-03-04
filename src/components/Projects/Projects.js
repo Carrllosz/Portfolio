@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
-import moobimp4 from "../../assets/moobi.mp4";
-import fluxusmp4 from "../../assets/fluxus.mp4";
-import easyrout from "../../assets/route.mp4";
+import moobi from "../../assets/moobilogo.png";
+import fluxus from "../../assets/fluxuslogo.png";
+import easyroute from "../../assets/easyroutelogo.png";
 
 const projects = [
   {
     id: "fluxus-app",
-    title: "Fluxus",
-    video: fluxusmp4,
+    image: fluxus,
     description: "Turn chaos into flow.",
   },
   {
     id: "easyroute",
-    title: "Easyroute",
-    video: easyrout,
+    image: easyroute,
     description: "Collaborative route optimization made simple.",
   },
   {
     id: "moobi",
-    title: "Moobi",
-    video: moobimp4,
+    image: moobi,
     description: "Smarter and more human urban mobility.",
   },
 ];
@@ -84,24 +81,14 @@ const Projects = () => {
                   ) : (
                     <img
                       src={project.image}
-                      alt={project.title}
                       className="w-full h-[350px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
 
                   {/* 🧠 Hover text overlay (nome + descrição) */}
                   <div
-                      className={`flex justify-between absolute inset-x-0 bottom-0 p-4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl`}
+                      className={`flex justify-center absolute inset-x-0 bottom-0 p-4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl`}
                     >
-                      <p
-                        className={` text-[10px] sm:text-sm md:text-[14px] font-semibold ${
-                          project.id === "moobi" || project.id === "fluxus-app"
-                            ? "text-black"
-                            : "text-white"
-                        }`}
-                      >
-                        {project.title}
-                      </p>
                       <p
                         className={` text-[10px] sm:text-sm md:text-[14px] opacity-90 ${
                           project.id === "moobi" || project.id === "fluxus-app"
