@@ -81,6 +81,7 @@ const Projects = () => {
                   ) : (
                     <img
                       src={project.image}
+                      alt={project.description}
                       className="w-full h-[350px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
