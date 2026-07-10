@@ -4,6 +4,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import moobi from "../../assets/moobilogo.png";
 import fluxus from "../../assets/fluxuslogo.png";
 import easyroute from "../../assets/easyroutelogo.png";
+import bradesco from "../../assets/bradesco.png";
 
 const projects = [
   {
@@ -20,6 +21,11 @@ const projects = [
     id: "moobi",
     image: moobi,
     description: "Smarter and more human urban mobility.",
+  },
+  {
+    id: "bradesco",
+    image: bradesco,
+    description: "Accessible digital banking for everyone",
   },
 ];
 
@@ -92,7 +98,7 @@ const Projects = () => {
                     >
                       <p
                         className={` text-[10px] sm:text-sm md:text-[14px] opacity-90 ${
-                          project.id === "moobi" || project.id === "fluxus-app"
+                          project.id === "moobi" 
                             ? "text-black"
                             : "text-white"
                         }`}

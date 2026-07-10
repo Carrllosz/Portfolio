@@ -18,6 +18,15 @@ import flu5 from "../assets/fluxus6.mp4";
 import flu7 from "../assets/fluxus7.mp4";
 import flu8 from "../assets/fluxus8.mp4";
 import flu9 from "../assets/fluxus9.png";
+import bradescohero from "../assets/bradescohero.mp4";
+import research from "../assets/research.png";
+import benchmarking from "../assets/benchmarking.png";
+import personas from "../assets/personas.png";
+import fluxo from "../assets/Fluxo.png";
+import interacao from "../assets/interacao.png";
+import comecar from "../assets/comecar.png";
+import conversa from "../assets/conversa.png";
+import home from "../assets/home.png";
 
 export const projects = {
   "fluxus-app": {
@@ -148,6 +157,58 @@ export const projects = {
       { type: "image", src: moobi5 },
       { type: "image", src: moobi6 },
       { type: "image", src: moobi7 },
+    ],
+  },
+
+  "bradesco": {
+   title: "Bradesco",
+
+  subtitle:
+    "Transforming digital banking onboarding through accessibility and inclusive UX.",
+
+  link: "https://www.behance.net/gallery/246731067/Accessible-Onboarding-Redesign-Bradesco-App",
+
+  impact: [
+    "↑ Reduced accessibility barriers during first-time onboarding.",
+    "↑ Improved task completion for users with visual and motor disabilities.",
+    "↑ Increased user confidence through guided onboarding flows.",
+    "↑ Enhanced inclusivity with accessible interaction patterns.",
+  ],
+
+  problem:
+    "The existing onboarding experience presented accessibility barriers for users with visual and motor disabilities. Complex navigation, small touch targets, limited guidance, and inconsistent assistive technology support made it difficult for many users to independently complete their first interaction with the banking app.",
+
+  strategy:
+    "The redesign applied a human-centered design process, combining UX research, accessibility best practices, and simplified interaction patterns to create an onboarding experience that is more inclusive, intuitive, and supportive from the very first access.",
+
+  highlights: [
+    "Accessibility-first onboarding experience.",
+    "Simplified navigation and interaction flows.",
+    "Voice guidance and screen reader optimization.",
+    "Inclusive UI following accessibility principles.",
+  ],
+
+  decisions: [
+    "Simplified the onboarding journey to reduce cognitive load.",
+    "Increased touch targets for easier interaction.",
+    "Improved visual hierarchy with higher contrast and clearer typography.",
+    "Designed onboarding components compatible with screen readers and assistive technologies.",
+  ],
+
+  hero: {
+    type: "video",
+    src: bradescohero,
+  },
+
+    contentBlocks: [
+      { type: "research", src: research },
+      { type: "benchmarking", src: benchmarking },
+      { type: "personas", src: personas },
+      { type: "fluxo", src: fluxo },
+      { type: "interacao", src: interacao },
+      { type: "comecar", src: comecar },
+      { type: "conversa", src: conversa },
+            { type: "home", src: home },
     ],
   },
 

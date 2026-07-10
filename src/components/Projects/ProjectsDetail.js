@@ -143,6 +143,11 @@ const ProjectsDetail = () => {
       {blocks[3] && (
         <div className="flex flex-col gap-12 items-center">
           <MediaBlock block={blocks[3]} />
+                    <MediaBlock block={blocks[4]} />
+                    <MediaBlock block={blocks[5]} />
+                    <MediaBlock block={blocks[6]} />
+                    <MediaBlock block={blocks[7]} />
+
           <BulletSection
             title="Key Product Decisions"
             items={project.decisions}
