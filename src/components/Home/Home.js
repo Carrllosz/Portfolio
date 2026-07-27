@@ -37,7 +37,7 @@ const Home = () => {
       <div className="w-full flex flex-col gap-4">
         <div className="w-full flex justify-between items-center text-black text-[12px] sm:text-sm md:text-[14px]">
           <span>BASED OUT OF ARAPIRACA</span>
-          <span><span className="text-[#FF5B23]">PRODUCT DESIGNER</span> AT AUTOMINING</span>
+          <span><span className="text-[#FF5B23]">PRODUCT DESIGNER</span> AT EDGE</span>
         </div>
 
         <div className="w-full rounded-xl overflow-hidden">
