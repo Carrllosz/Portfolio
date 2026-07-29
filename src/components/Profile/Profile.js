@@ -10,13 +10,27 @@ const Profile = () => {
       <div className="flex flex-col w-full rounded-md text-black gap-32">
         {/* INTRO - Strategic Statement */}
         <div className="w-full min-h-[60vh] bg-white flex flex-col pt-[140px] justify-between items-start px-4">
-          <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-medium tracking-tight">
-  <p>I DESIGN DIGITAL PRODUCTS THROUGH</p>
-  <p>RESEARCH, STRATEGY AND SYSTEMS,</p>
-  <p className="text-neutral-400">
-    CREATING EXPERIENCES THAT BALANCE BUSINESS
-    GOALS WITH HUMAN NEEDS.
-  </p>
+          <div className="max-w-6xl">
+  <div
+    className="
+      text-black
+      font-normal
+      uppercase
+      leading-[1.05]
+      tracking-[-0.03em]
+      text-[2rem]
+      sm:text-[3rem]
+      md:text-[4rem]
+      lg:text-[5rem]
+      xl:text-[2rem]
+    "
+  >
+    <p>DESIGNING PRODUCTS</p>
+    <p>THAT FEEL</p>
+    <p className="text-neutral-400">
+      EFFORTLESS.
+    </p>
+  </div>
 </div>
         </div>
 
@@ -24,26 +38,34 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-base mb-2 text-black/60 uppercase tracking-wider font-semibold">
-                01 — About
+              <h2 className="text-base mb-2 text-black uppercase tracking-wider">
+                About
               </h2>
             </div>
 
-          <div className="flex flex-col w-full md:w-2/3 leading-relaxed gap-6 text-[18px] md:text-[20px] text-neutral-800">
+          <div className="flex flex-col w-full md:w-2/3 gap-8 text-[18px] md:text-[20px] leading-relaxed text-neutral-800">
+
   <p>
-    I am a <span className="text-[#E4572E] font-semibold">Product Designer.</span> I design end-to-end digital products, combining research, strategy and interaction design to transform complex problems into intuitive experiences.
+    I'm a <span className="text-[#E4572E] font-semibold">Product Designer </span>
+    focused on turning complex problems into intuitive digital products through
+    research, strategy and interaction design.
   </p>
 
   <p>
-    Currently, I work at <span className="font-medium">Edge</span>, leading projects from Discovery to delivery. My work involves UX Research, Information Architecture, User Flows, Design Systems and close collaboration with Product, Engineering and Business teams.
+    At <span className="font-medium">Edge</span>, I lead products from discovery
+    to delivery, working across UX Research, Information Architecture,
+    Design Systems and cross-functional collaboration.
   </p>
 
   <p>
-    Throughout my experience, I have designed enterprise platforms, data-driven dashboards and operational systems, always focusing on usability, accessibility and scalable design decisions that support both users and business objectives.
+    I've designed enterprise platforms, operational systems and data-driven
+    dashboards, balancing user needs with business goals.
   </p>
 
   <p>
-    I also integrate <span className="text-[#E4572E] font-semibold">Artificial Intelligence</span> into my design workflow, using it to accelerate research, documentation, ideation and prototyping while maintaining a human-centered approach.
+    I also use <span className="text-[#E4572E] font-semibold">AI</span> to
+    accelerate research, ideation and prototyping while keeping every decision
+    human-centred.
   </p>
 
 </div>
@@ -54,8 +76,8 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6">
             <div className="w-full md:w-2/3">
-              <h2 className="text-base mb-2 text-black/60 uppercase tracking-wider font-semibold">
-                02 — Experiences
+              <h2 className="text-base mb-2 text-black uppercase tracking-wider">
+                Experiences
               </h2>
             </div>
 
@@ -117,8 +139,8 @@ const Profile = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 pb-20">
             <div className="w-full md:w-2/3">
-              <h2 className="text-base mb-2 text-black/60 uppercase tracking-wider font-semibold">
-                03 — Expertise
+              <h2 className="text-base mb-2 text-black uppercase tracking-wider">
+                Expertise
               </h2>
             </div>
 

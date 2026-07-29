@@ -12,46 +12,69 @@ const Home = () => {
     if (section) {
       setTimeout(() => {
         const element = document.getElementById(section);
+
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
         }
       }, 300);
     }
   }, [location]);
 
   return (
-    <div
-      className="w-full min-h-[160vh] bg-white flex flex-col pt-[160px] justify-between items-start px-4"
+    <section
       id="home"
+      className="w-full bg-white px-5 sm:px-8 lg:px-4 pt-28 lg:pt-36 "
     >
-     {/* INTRO */}
-      {/* INTRO */}
-      <div className="w-full min-h-[60vh] flex flex-col pt-[140px] justify-between items-start">
-        <div className="text-black text-xl sm:text-3xl md:text-4xl lg:text-4xl leading-snug">
-          <p>WELCOME TO MY CORNER OF THE WEB, WHERE I SHARE ONE PART OF ME.</p>
-          <p>HERE YOU'LL FIND MY DESIGN PROJECTS, PRODUCT CONCEPTS, ART,</p>
-          <p>AND THE EXPERIENCES I'M CURRENTLY CREATING.</p>
-        </div>
-      </div>
+      <div className="max-w-[1600px] mx-auto flex flex-col gap-20">
 
-      <div className="w-full flex flex-col gap-4">
-        <div className="w-full flex justify-between items-center text-black text-[12px] sm:text-sm md:text-[14px]">
-          <span>BASED OUT OF ARAPIRACA</span>
-          <span><span className="text-[#FF5B23]">PRODUCT DESIGNER</span> AT EDGE</span>
+        {/* INTRO */}
+        <div className="min-h-[45vh] flex items-end">
+          <div className="max-w-6xl">
+            <h1 className="text-black font-normal uppercase leading-[1.05] tracking-[-0.03em]
+                           text-[2rem]
+                           sm:text-[3rem]
+                           md:text-[4rem]
+                           lg:text-[5rem]
+                           xl:text-[2rem]">
+
+              <p>WELCOME TO MY CORNER OF THE WEB.</p>
+              <p>HERE YOU'LL FIND THE THINGS I'VE BEEN DESIGNING,</p>
+              <p>BUILDING, AND EXPLORING.</p>
+
+            </h1>
+          </div>
         </div>
 
-        <div className="w-full rounded-xl overflow-hidden">
-          <video
-            className="w-full h-[60vh] sm:h-[65vh] md:h-[100vh] object-cover rounded-xl"
-            src={homeMoobi}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+        {/* INFO + VIDEO */}
+        <div className="flex flex-col gap-5">
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 text-[13px] sm:text-sm text-black">
+
+            <div className="flex flex-wrap gap-x-5 gap-y-2 uppercase tracking-wide">
+
+              <span>Based in Arapiraca, Brazil</span>
+
+              <span className="text-neutral-400">•</span>
+
+              <span>2+ Years of Experience</span>
+
+            </div>
+
+            <span className="uppercase tracking-wide">
+              <span className="text-[#FF5B23]">Product Designer</span> at Edge
+            </span>
+
+          </div>
+
+          <div className="w-full rounded-xl overflow-hidden"> <video className="w-full h-[60vh] sm:h-[65vh] md:h-[100vh] object-cover rounded-xl" src={homeMoobi} autoPlay loop muted playsInline />
+          </div>
+
         </div>
+
       </div>
-    </div>
+    </section>
   );
 };
 
