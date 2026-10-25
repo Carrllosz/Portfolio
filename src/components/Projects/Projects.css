@@ -1,4 +1,4 @@
-.works-page { min-height: 100svh; background: var(--color-black); color: var(--color-white); font: 14px/1.4 Arial, Helvetica, sans-serif; padding: 15px 15px 15px 26.6%; }
+.works-page { min-height: 100svh; background: var(--color-black); color: var(--color-white); font: 14px/1.4 var(--font-family); padding: 15px 15px 15px 26.6%; }
 .works-sidebar { position: fixed; top: 50%; left: 2.65%; width: 21%; transform: translateY(-50%); }
 .works-sidebar nav { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .works-sidebar button { background: none; color: var(--color-white); border: 0; text-align: left; min-height: 44px; padding: 8px 0; transition: color .4s; }
@@ -18,7 +18,8 @@
 .works-caption { display: flex; justify-content: space-between; gap: 10px; max-height: 0; padding-top: 0; overflow: hidden; opacity: 0; transition: max-height .4s ease, padding-top .4s ease, opacity .3s ease; }
 .works-caption span:last-child { color: var(--color-gray); text-align: right; }
 .works-card.is-active .works-caption { max-height: 100px; padding-top: 6px; opacity: 1; }
-.works-empty { grid-column: 1 / -1; padding: 35vh 20px; color: var(--color-gray); }
+.works-grid.is-empty { min-height: calc(100svh - 30px); place-items: center; }
+.works-empty { grid-column: 1 / -1; margin: 0; padding: 20px; color: var(--color-gray); text-align: center; }
 .works-empty button { color: var(--color-red); }
 .works-page :focus-visible { outline: 1px solid var(--color-red); outline-offset: 4px; }
 @media (hover: none) { .works-card:focus-within .works-caption { max-height: 100px; padding-top: 6px; opacity: 1; } }
@@ -31,3 +32,22 @@
 .works-card.is-coming-soon.is-active .works-coming-soon { opacity: 1; }
 @media (hover: none) { .works-coming-soon { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .works-coming-soon { transition: none; } }
+
+/* Wrapped filters determine the gallery's position without a fixed spacer. */
+@media (max-width: 700px) {
+  .works-page { display: flex; flex-direction: column; gap: 16px; padding: 94px 22px 24px; }
+  .works-sidebar { position: static; width: 100%; transform: none; }
+  .works-grid { width: 100%; }
+}
+
+/* Full-width cards and persistent captions on compact screens. */
+@media (max-width: 700px) {
+  .works-sidebar nav { gap: 4px; }
+  .works-sidebar nav button { padding-inline: 4px; }
+  .works-grid { display: flex; flex-direction: column; gap: 24px; }
+  .works-column { display: contents; }
+  .works-grid .works-card .works-caption { opacity: 1; max-height: none; overflow: visible; padding-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+  .works-grid .works-caption span:last-child { text-align: left; }
+  .works-grid .works-coming-soon { display: none; }
+  .works-grid.is-empty { flex: 1; min-height: 0; justify-content: center; align-items: center; }
+}

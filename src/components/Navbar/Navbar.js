@@ -10,6 +10,13 @@ const links = [["/", "HOME"], ["/works", "WORKS"], ["/profile", "ABOUT"], ["mail
 export default function Navbar() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(() => window.matchMedia("(max-width: 700px)").matches);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 700px)");
+    const update = () => setSmallScreen(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
   const trigger = useRef(null);
   const panel = useRef(null);
   const home = pathname === "/";
@@ -17,7 +24,8 @@ export default function Navbar() {
   const [intro, setIntro] = useState(() => home && !hasSeenIntro());
   const wordmark = useRef(null);
   const finishIntro = useCallback(() => setIntro(false), []);
-  const showMenu = dark;
+  const showMenu = dark || (home && smallScreen);
+  useEffect(() => { if (!showMenu) setOpen(false); }, [showMenu]);
   useEffect(() => { setOpen(false); window.scrollTo(0, 0); }, [pathname]);
   useEffect(() => {
     if (!open) return;

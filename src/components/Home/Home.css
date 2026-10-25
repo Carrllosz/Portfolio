@@ -1,5 +1,5 @@
 /* Home reference palette: var(--color-black) / var(--color-red) / var(--color-gray) / var(--color-white). */
-.portfolio-home { position: relative; width: 100%; height: 100svh; min-height: 0; overflow: hidden; background: var(--color-white); color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.portfolio-home { position: relative; width: 100%; height: 100svh; min-height: 0; overflow: hidden; background: var(--color-white); color: var(--color-black); font-family: var(--font-family); }
 .home-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.3s ease; pointer-events: none; }
 .is-playing .home-background { opacity: 1; }
 .home-video-surface { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; cursor: none; }
@@ -14,7 +14,7 @@
 .home-disciplines > span:nth-child(2) { margin-right: 3.4em; }
 
 .home-slash { color: var(--color-red); }
-.home-navigation { position: absolute; inset: 0 0 auto; height: 100svh; min-height: 0; z-index: 10; pointer-events: none; color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.home-navigation { position: absolute; inset: 0 0 auto; height: 100svh; min-height: 0; z-index: 10; pointer-events: none; color: var(--color-black); font-family: var(--font-family); }
 .home-navigation button { pointer-events: auto; text-align: left; background: transparent; border: 0; padding: 0; color: inherit; }
 .home-wordmark { position: absolute; top: 3.1%; left: 2.65%; display: flex; flex-direction: column; line-height: 1; }
 .home-wordmark > span { font-size: clamp(14px, 1vw, 25px); font-weight: 700; }
@@ -36,7 +36,7 @@
 @media (max-width: 700px) { .portfolio-home { min-height: 0; } .home-wordmark { top: 26px; left: 22px; } .home-biography { top: 125px; right: 22px; width: calc(100% - 44px); max-width: 430px; font-size: 14px; } .home-menu { left: 22px; top: 61%; gap: 20px; } .home-contact { left: 22px; bottom: 26px; } .home-video-toggle { right: 22px; bottom: 20px; } .home-disciplines > span:nth-child(1) { margin-right: 7em; } .home-disciplines > span:nth-child(2) { margin-right: 2.8em; } }
 @media (prefers-reduced-motion: reduce) { .typed-letter { animation: none; opacity: 1; } .home-background, .home-place img, .home-disciplines > span { transition: none; } }
 
-.portfolio-header { position: fixed; z-index: 50; inset: 0 auto auto 0; width: 26%; min-width: 260px; padding: 28px 2.65vw; font: 14px Arial, Helvetica, sans-serif; color: var(--color-black); pointer-events: none; }
+.portfolio-header { position: fixed; z-index: 50; inset: 0 auto auto 0; width: 26%; min-width: 260px; padding: 28px 2.65vw; font: 14px var(--font-family); color: var(--color-black); pointer-events: none; }
 .portfolio-header a, .portfolio-header button { pointer-events: auto; }
 .portfolio-header.on-home { height: 100svh; }
 .portfolio-header.on-dark, .portfolio-header.menu-is-open { color: var(--color-white); }
@@ -98,7 +98,7 @@
 }
 
 /* The opening types real text so its visible width stays centered as it grows. */
-.home-opening { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: var(--color-white); color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.home-opening { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: var(--color-white); color: var(--color-black); font-family: var(--font-family); }
 .home-opening-mark { position: relative; display: flex; flex-direction: column; font-size: clamp(44px, 7.3vw, 148px); line-height: .88; font-weight: 700; letter-spacing: -.045em; transform-origin: top left; will-change: transform; }
 .home-opening-mark > span { font-size: .35em; line-height: .9; letter-spacing: -.025em; }
 .home-opening-mark strong { position: relative; font-size: 1em; min-height: .88em; white-space: pre; }
@@ -152,3 +152,16 @@
 .intro-typing-caret { transition: left 850ms cubic-bezier(.65, 0, .35, 1), margin-left 850ms ease; }
 .intro-typing-caret.is-at-start { left: -.32em; margin-left: 0; }
 @media (prefers-reduced-motion: reduce) { .intro-given-caret { display: none; } .intro-typing-caret { transition: none; } }
+
+/* Compact Home uses the dropdown and keeps the introduction beneath the name. */
+@media (max-width: 700px) {
+  .portfolio-header.on-home { height: auto; }
+  .portfolio-header.on-home .home-menu,
+  .portfolio-header.on-home .home-contact { display: none; }
+  .home-biography { top: 88px; left: 22px; right: 22px; width: auto; max-width: none; text-align: left; line-height: 1.45; }
+  .home-disciplines { align-items: flex-start; margin-top: 4px; }
+  .home-disciplines > span:nth-child(1),
+  .home-disciplines > span:nth-child(2) { margin-right: 0; }
+  .home-disciplines > span:nth-child(2) { margin-left: 1.6em; }
+  .home-disciplines > span:nth-child(3) { margin-left: 3.2em; }
+}

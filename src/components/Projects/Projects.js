@@ -19,9 +19,9 @@ function WorkCard({ project, active, setActive }) {
   const attributes = comingSoon
     ? { tabIndex: 0, role: "group", "aria-disabled": true, "aria-label": `${project.title}: Saindo do forno já já.` }
     : { to: `/projects/${project.id}` };
-  return <Tag {...attributes} className={`works-card${active === project.id ? " is-active" : ""}${comingSoon ? " is-coming-soon" : ""}`} style={{ "--card-ratio": project.ratio, "--card-position": project.position || "center" }} onMouseEnter={() => setActive(project.id)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(project.id)} onBlur={() => setActive(null)}>
+  return <Tag {...attributes} className={`works-card${active === project.id ? " is-active" : ""}${comingSoon ? " is-coming-soon" : ""}`} style={{ "--card-ratio": project.ratio, "--card-position": project.position || "center", order: works.indexOf(project) }} onMouseEnter={() => setActive(project.id)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(project.id)} onBlur={() => setActive(null)}>
     <div className="works-card-media">{project.video ? <video src={project.video} autoPlay muted loop playsInline aria-label={project.title} /> : <img src={project.image} alt={project.title} loading="lazy" />}{comingSoon && <span className="works-coming-soon">Saindo do forno já já.</span>}</div>
-    <div className="works-caption"><span>{project.title}</span>{!comingSoon && <span>{project.description}</span>}</div>
+    <div className="works-caption"><span>{project.title}</span><span>{comingSoon ? "Saindo do forno já já." : project.description}</span></div>
   </Tag>;
 }
 export default function Projects() {
@@ -30,6 +30,6 @@ export default function Projects() {
   const visible = works.filter(project => !filter || project.categories.includes(filter));
   return <main className="works-page">
     <aside className="works-sidebar"><nav aria-label="Filter projects">{categories.map(category => <button key={category} className={`wave-trigger${filter === category ? " is-selected" : ""}`} aria-pressed={filter === category} onClick={() => { setFilter(value => value === category ? null : category); setActive(null); }}><span className="home-slash">/ </span><WaveText>{category}</WaveText> <span className="works-count">({works.filter(project => project.categories.includes(category)).length})</span></button>)}</nav></aside><PortfolioClock className="works-clock" />
-    <div className={`works-grid${active ? " has-active" : ""}`} onMouseLeave={() => setActive(null)}>{[0, 1].map(column => <div className="works-column" key={column}>{visible.filter((_, index) => index % 2 === column).map(project => <WorkCard key={project.id} project={project} active={active} setActive={setActive} />)}</div>)}{visible.length === 0 && <p className="works-empty" role="status">No projects in this category yet. Select another category.</p>}</div>
+    <div className={`works-grid${active ? " has-active" : ""}${visible.length === 0 ? " is-empty" : ""}`} onMouseLeave={() => setActive(null)}>{visible.length > 0 ? [0, 1].map(column => <div className="works-column" key={column}>{visible.filter((_, index) => index % 2 === column).map(project => <WorkCard key={project.id} project={project} active={active} setActive={setActive} />)}</div>) : <p className="works-empty" role="status">No projects in this category yet.</p>}</div>
   </main>;
 }

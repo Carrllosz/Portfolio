@@ -1,5 +1,6 @@
 /* Shared portfolio palette. */
 :root {
+  --font-family: 'Google Sans Flex', sans-serif;
   --color-black: #060606;
   --color-red: #EE0000;
   --color-gray: #919191;
@@ -10,22 +11,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importação e definição de Bohemian Soul */
-@font-face {
-  font-family: 'Bohemian Soul';
-  src: url('./assets/Bohemian Soul.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Definição de Montserrat (já está no seu projeto) */
+html,
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Classe específica para Bohemian Soul */
+button, input, textarea, select {
+  font-family: inherit;
+}
+
 .font-bohemian {
-  font-family: 'Bohemian Soul', sans-serif;
+  font-family: var(--font-family);
 }
