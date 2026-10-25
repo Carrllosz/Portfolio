@@ -1,0 +1,4 @@
+.portfolio-clock { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.portfolio-clock-dot { display: inline-block; flex: 0 0 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-red); animation: clock-dot-pulse 3s ease-in-out infinite; }
+@keyframes clock-dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { .portfolio-clock-dot { animation: none; } }

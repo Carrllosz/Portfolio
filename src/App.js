@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PageTransition from "./components/PageTransition";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Contact from "./components/Contact/Contact";
 import Profile from "./components/Profile/Profile";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetail from "./components/Projects/ProjectsDetail";
-import ScrollToSectionOnLoad from "./ScrollToSectionOnLoad";
+
 
 function App() {
   return (
     <Router>
+      <PageTransition>
       <Routes>
         {/* Página principal */}
         <Route
@@ -17,20 +19,13 @@ function App() {
           element={
             <>
               <Navbar />
-              <ScrollToSectionOnLoad />
-              <div id="home">
-                <Home />
-              </div>
-              <div id="projects">
-                <Projects />
-              </div>
-              <div id="contact">
-                <Contact />
-              </div>
+              <Home />
             </>
           }
         />
 
+        <Route path="/works" element={<><Navbar /><Projects /></>} />
+        <Route path="/contact" element={<><Navbar /><Contact /></>} />
         {/* Página de perfil separada */}
         <Route
           path="/profile"
@@ -38,7 +33,6 @@ function App() {
             <>
               <Navbar />
               <Profile />
-              <Contact />
             </>
           }
         />
@@ -50,11 +44,11 @@ function App() {
             <>
               <Navbar />
               <ProjectsDetail />
-              <Contact />
             </>
           }
         />
       </Routes>
+      </PageTransition>
     </Router>
   );
 }

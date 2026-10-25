@@ -74,7 +74,7 @@ const Contact = () => {
             href={resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#E4572E] transition text-md font-medium"
+            className="hover:text-[#EE0000] transition text-md font-medium"
           >
             CV EN
           </a>
@@ -84,14 +84,14 @@ const Contact = () => {
             href={curriculo}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#E4572E] transition text-md font-medium"
+            className="hover:text-[#EE0000] transition text-md font-medium"
           >
             CV PT-BR
           </a>
 
           {/* Feedback */}
           {copied && (
-            <span className="absolute -bottom-8 text-sm text-[#E4572E] animate-fadeIn">
+            <span className="absolute -bottom-8 text-sm text-[#EE0000] animate-fadeIn">
               E-mail copiado
             </span>
           )}

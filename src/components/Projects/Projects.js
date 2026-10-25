@@ -1,134 +1,35 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
-import moobi from "../../assets/moobilogo.png";
-import fluxus from "../../assets/fluxuslogo.png";
-import easyroute from "../../assets/easyroutelogo.png";
+import { Link } from "react-router-dom";
 import bradesco from "../../assets/bradesco.png";
+import "./Projects.css";
+import PortfolioClock from "../PortfolioClock";
+import { projects } from "../../data/projectData";
+import WaveText from "../WaveText";
 
-const projects = [
-  {
-    id: "fluxus-app",
-    image: fluxus,
-    description: "Turn chaos into flow.",
-  },
-  {
-    id: "easyroute",
-    image: easyroute,
-    description: "Collaborative route optimization made simple.",
-  },
-  {
-    id: "moobi",
-    image: moobi,
-    description: "Smarter and more human urban mobility.",
-  },
-  {
-    id: "bradesco",
-    image: bradesco,
-    description: "Accessible digital banking for everyone",
-  },
+const categories = ["Branding", "UX/UI", "Motion", "Campaign", "Game Design"];
+const works = [
+  { id: "moobi", ratio: 1.4, title: "Moobi", description: "More human urban mobility.", video: projects.moobi.hero.src, categories: projects.moobi.services },
+  { id: "bradesco", ratio: .96, title: "Bradesco", description: "Accessible digital banking for everyone.", image: bradesco, categories: projects.bradesco.services },
+  { id: "caramelandia", ratio: .9, title: "Caramelândia", description: projects.caramelandia.subtitle, image: projects.caramelandia.hero.src, categories: projects.caramelandia.services },
+  { id: "naia", ratio: 1.3, position: "50% 28%", title: "NAIA", description: projects.naia.subtitle, video: projects.naia.hero.src, categories: projects.naia.services },
 ];
-
-const Projects = () => {
-  const navigate = useNavigate();
-  const [hoverPosition, setHoverPosition] = useState({
-    x: 0,
-    y: 0,
-    visible: false,
-    projectIndex: null,
-  });
-
-  const handleMouseMove = (e, index) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setHoverPosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-      visible: true,
-      projectIndex: index,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoverPosition({
-      ...hoverPosition,
-      visible: false,
-      projectIndex: null,
-    });
-  };
-
-  return (
-    <div
-      id="projects"
-      className="w-full h-fit bg-white flex justify-center items-center pb-4 px-4"
-    >
-      <div className="w-full rounded-md">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-1">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className="w-full flex flex-col items-center cursor-pointer"
-              onClick={() => navigate(`/projects/${project.id}`)}
-              onMouseMove={(e) => handleMouseMove(e, index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="relative group block w-full">
-                <div className="overflow-hidden rounded-2xl relative">
-                  {/* 👇 Condicional: vídeo ou imagem */}
-                  {project.video ? (
-                    <video
-                      src={project.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-[400px] md:h-[300px] lg:h-[700px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <img
-                      src={project.image}
-                      alt={project.description}
-                      className="w-full h-[250px] md:h-[200px] lg:h-[350px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                    />
-                  )}
-
-                  {/* 🧠 Hover text overlay (nome + descrição) */}
-                  <div
-                      className={`flex justify-center absolute inset-x-0 bottom-0 p-4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl`}
-                    >
-                      <p
-                        className={` text-[10px] sm:text-sm md:text-[14px] opacity-90 ${
-                          project.id === "moobi" 
-                            ? "text-black"
-                            : "text-white"
-                        }`}
-                      >
-                        {project.description}
-                      </p>
-
-                    </div>
-
-                  {/* 🔸 Hover circle animation */}
-                  {hoverPosition.visible &&
-                    hoverPosition.projectIndex === index && (
-                      <div
-                        className="absolute w-16 h-16 bg-[#FF5B23] rounded-full flex justify-center items-center transition-transform duration-75 ease-out pointer-events-none"
-                        style={{
-                          top: `${hoverPosition.y - 32}px`,
-                          left: `${hoverPosition.x - 32}px`,
-                        }}
-                      >
-                        <ArrowUpRightIcon className="w-8 h-8 text-white" />
-                      </div>
-                    )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Projects;
+function WorkCard({ project, active, setActive }) {
+  const comingSoon = Boolean(projects[project.id].comingSoon);
+  const Tag = comingSoon ? "div" : Link;
+  const attributes = comingSoon
+    ? { tabIndex: 0, role: "group", "aria-disabled": true, "aria-label": `${project.title}: Saindo do forno já já.` }
+    : { to: `/projects/${project.id}` };
+  return <Tag {...attributes} className={`works-card${active === project.id ? " is-active" : ""}${comingSoon ? " is-coming-soon" : ""}`} style={{ "--card-ratio": project.ratio, "--card-position": project.position || "center" }} onMouseEnter={() => setActive(project.id)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(project.id)} onBlur={() => setActive(null)}>
+    <div className="works-card-media">{project.video ? <video src={project.video} autoPlay muted loop playsInline aria-label={project.title} /> : <img src={project.image} alt={project.title} loading="lazy" />}{comingSoon && <span className="works-coming-soon">Saindo do forno já já.</span>}</div>
+    <div className="works-caption"><span>{project.title}</span>{!comingSoon && <span>{project.description}</span>}</div>
+  </Tag>;
+}
+export default function Projects() {
+  const [filter, setFilter] = useState(null);
+  const [active, setActive] = useState(null);
+  const visible = works.filter(project => !filter || project.categories.includes(filter));
+  return <main className="works-page">
+    <aside className="works-sidebar"><nav aria-label="Filter projects">{categories.map(category => <button key={category} className={`wave-trigger${filter === category ? " is-selected" : ""}`} aria-pressed={filter === category} onClick={() => { setFilter(value => value === category ? null : category); setActive(null); }}><span className="home-slash">/ </span><WaveText>{category}</WaveText> <span className="works-count">({works.filter(project => project.categories.includes(category)).length})</span></button>)}</nav></aside><PortfolioClock className="works-clock" />
+    <div className={`works-grid${active ? " has-active" : ""}`} onMouseLeave={() => setActive(null)}>{[0, 1].map(column => <div className="works-column" key={column}>{visible.filter((_, index) => index % 2 === column).map(project => <WorkCard key={project.id} project={project} active={active} setActive={setActive} />)}</div>)}{visible.length === 0 && <p className="works-empty" role="status">No projects in this category yet. Select another category.</p>}</div>
+  </main>;
+}

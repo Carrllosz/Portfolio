@@ -1,0 +1,154 @@
+/* Home reference palette: var(--color-black) / var(--color-red) / var(--color-gray) / var(--color-white). */
+.portfolio-home { position: relative; width: 100%; height: 100svh; min-height: 0; overflow: hidden; background: var(--color-white); color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.home-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.3s ease; pointer-events: none; }
+.is-playing .home-background { opacity: 1; }
+.home-video-surface { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; cursor: none; }
+.home-biography { position: absolute; z-index: 2; top: 3.1%; right: 2.65%; width: 35%; max-width: 890px; text-align: right; font-size: 14px; line-height: 1.2; pointer-events: none; }
+.home-biography p { margin: 0; }
+.home-place { position: relative; pointer-events: auto; cursor: default; }
+.home-place img { position: absolute; width: 1.95em; height: 2.15em; object-fit: contain; left: 50%; bottom: .35em; opacity: 0; transform: translate(-50%, 8px) scale(.85) rotate(-8deg); transition: opacity .3s, transform .4s; pointer-events: none;  }
+.home-place:hover img, .home-place:focus img { opacity: 1; transform: translate(-50%, 0) scale(1) rotate(0); }
+.home-disciplines { display: flex; flex-direction: column; align-items: flex-end; pointer-events: auto; }
+.home-disciplines > span { transition: color .65s ease; }
+.home-disciplines > span:nth-child(1) { margin-right: 8.1em; }
+.home-disciplines > span:nth-child(2) { margin-right: 3.4em; }
+
+.home-slash { color: var(--color-red); }
+.home-navigation { position: absolute; inset: 0 0 auto; height: 100svh; min-height: 0; z-index: 10; pointer-events: none; color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.home-navigation button { pointer-events: auto; text-align: left; background: transparent; border: 0; padding: 0; color: inherit; }
+.home-wordmark { position: absolute; top: 3.1%; left: 2.65%; display: flex; flex-direction: column; line-height: 1; }
+.home-wordmark > span { font-size: clamp(14px, 1vw, 25px); font-weight: 700; }
+.home-wordmark strong { font-size: clamp(30px, 2.55vw, 65px); font-weight: 700; letter-spacing: -.045em; }
+.home-menu { position: absolute; left: 2.65%; top: 46.4%; display: flex; flex-direction: column; gap: 1.1em; font-size: 14px; }
+.home-contact { position: absolute; bottom: 3.6%; left: 2.65%; font-size: 14px; }
+.home-menu button, .home-contact { transition: color .5s; }
+.home-menu button:hover, .home-navigation .home-contact:hover { color: var(--color-red); }
+.home-play-cursor { position: fixed; top: 0; left: 0; transform: translate(var(--cursor-x, 48vw), var(--cursor-y, 49vh)); display: flex; align-items: center; gap: 12px; z-index: 20; color: var(--color-red); font-size: 14px; opacity: 0; pointer-events: none; }
+.home-play-cursor.is-visible { opacity: 1; }
+.home-play-cursor svg { width: 1em; height: 1em; flex-shrink: 0; }
+.home-video-toggle { position: absolute; bottom: 4.2%; right: 3.3%; z-index: 3; color: var(--color-gray); padding: 8px; background: transparent; transition: color .3s; }
+.home-video-toggle svg { width: 25px; height: 25px; }
+.home-video-toggle:hover { color: var(--color-red); }
+.typed-letter { opacity: 0; animation: home-type .01s linear var(--letter-delay) forwards; }
+@keyframes home-type { to { opacity: 1; } }
+.home-navigation button:focus-visible, .home-place:focus-visible, .home-video-toggle:focus-visible { outline: 2px solid var(--color-red); outline-offset: 6px; }
+@media (hover: none), (pointer: coarse) { .home-play-cursor { display: none; } .home-video-surface { cursor: auto; } .home-video-toggle { color: var(--color-red); } }
+@media (max-width: 700px) { .portfolio-home { min-height: 0; } .home-wordmark { top: 26px; left: 22px; } .home-biography { top: 125px; right: 22px; width: calc(100% - 44px); max-width: 430px; font-size: 14px; } .home-menu { left: 22px; top: 61%; gap: 20px; } .home-contact { left: 22px; bottom: 26px; } .home-video-toggle { right: 22px; bottom: 20px; } .home-disciplines > span:nth-child(1) { margin-right: 7em; } .home-disciplines > span:nth-child(2) { margin-right: 2.8em; } }
+@media (prefers-reduced-motion: reduce) { .typed-letter { animation: none; opacity: 1; } .home-background, .home-place img, .home-disciplines > span { transition: none; } }
+
+.portfolio-header { position: fixed; z-index: 50; inset: 0 auto auto 0; width: 26%; min-width: 260px; padding: 28px 2.65vw; font: 14px Arial, Helvetica, sans-serif; color: var(--color-black); pointer-events: none; }
+.portfolio-header a, .portfolio-header button { pointer-events: auto; }
+.portfolio-header.on-home { height: 100svh; }
+.portfolio-header.on-dark, .portfolio-header.menu-is-open { color: var(--color-white); }
+.portfolio-brand-row { display: flex; align-items: center; gap: 18px; position: relative; z-index: 2; }
+.portfolio-header .home-wordmark { position: static; display: flex; flex-direction: column; color: inherit; text-decoration: none; line-height: .88; }
+.portfolio-header .home-wordmark > span { font-size: 12px; line-height: .9; font-weight: 700; }
+.portfolio-header .home-wordmark strong { font-size: clamp(28px, 2.55vw, 52px); white-space: nowrap; }
+.portfolio-menu-trigger { flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-white); color: var(--color-red); border: 0; font-size: 14px; display: grid; place-items: center; box-shadow: 0 3px 20px rgb(6 6 6 / 13%); }
+.portfolio-menu-shade { position: fixed; z-index: 40; inset: 0; background: rgb(6 6 6 / 73%); border: 0; animation: menu-appear .3s ease; }
+.portfolio-menu-panel { position: relative; display: flex; flex-direction: column; gap: 28px; padding-top: 38px; }
+.portfolio-header nav a, .portfolio-header .home-contact a { color: inherit; text-decoration: none; transition: color .4s; }
+
+.portfolio-header .home-menu { left: 2.65vw; gap: 24px; }
+.portfolio-header .home-contact { left: 2.65vw; }
+.portfolio-header :focus-visible, .home-disciplines > span:focus-visible { outline: 1px solid var(--color-red); outline-offset: 5px; }
+@keyframes menu-appear { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 700px) { .portfolio-header { width: 100%; min-width: 0; padding: 26px 22px; } .portfolio-header .home-menu, .portfolio-header .home-contact { left: 22px; } .portfolio-header .home-wordmark strong { font-size: 30px; } .home-biography { font-size: 14px; } }
+@media (max-height: 500px) { .home-biography { top: 24px; width: 50%; } .portfolio-header .home-menu { top: 36%; gap: 14px; } }
+@media (prefers-reduced-motion: reduce) { .portfolio-menu-shade { animation: none; } }
+
+/* Keep the text aligned while providing generous pointer and touch targets. */
+.portfolio-header.on-home .home-menu { gap: 0; }
+.portfolio-header.on-home .home-menu a,
+.portfolio-header.on-home .home-contact a { display: flex; align-items: center; gap: 4px; min-height: 48px; min-width: 160px; padding: 12px 16px; margin-left: -16px; border-radius: 4px; }
+.portfolio-header.on-home .home-menu a:hover,
+.portfolio-header.on-home .home-contact a:hover { background: transparent; }
+
+/* Playback ring follows the video's actual currentTime, including pauses and loops. */
+.home-video-toggle { width: 44px; height: 44px; padding: 11px; display: grid; place-items: center; }
+.home-video-toggle > svg:not(.home-video-progress) { width: 14px; height: 14px; }
+.home-video-toggle .home-video-progress { position: absolute; inset: 0; width: 44px; height: 44px; transform: rotate(-90deg); fill: none; stroke-width: 1.3; pointer-events: none; }
+.video-progress-track { stroke: var(--color-gray); opacity: .25; }
+.video-progress-value { stroke: var(--color-red); stroke-linecap: round; }
+.home-intro-screen { position: fixed; inset: 0; background: var(--color-white); z-index: 49; pointer-events: auto; animation: home-intro-curtain 3200ms ease forwards; }
+.portfolio-header.home-intro-active .home-wordmark { position: fixed; animation: home-brand-arrive 3200ms cubic-bezier(.65, 0, .35, 1) both; }
+.home-intro-active .home-menu, .home-intro-active .home-contact { visibility: hidden; }
+.portfolio-home.has-opening .typed-letter { animation-delay: calc(9500ms + var(--letter-delay)); }
+@keyframes home-brand-arrive {
+  0%, 62% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  100% { top: 28px; left: 2.65vw; transform: translate(0, 0); }
+}
+@keyframes home-intro-curtain { 0%, 65% { opacity: 1; } 100% { opacity: 0; } }
+/* Dropdown panel sits behind the wordmark and above the dimmed page. */
+.portfolio-header.menu-is-open::before { content: ""; position: absolute; z-index: -1; top: 28px; left: 2.65vw; right: 12px; bottom: 0; background: color-mix(in srgb, var(--color-gray) 45%, var(--color-black)); animation: menu-appear .3s ease; }
+.portfolio-header.menu-is-open { padding-bottom: 14px; isolation: isolate; }
+.portfolio-header.menu-is-open .portfolio-brand-row { gap: 14px; }
+.portfolio-header.menu-is-open .portfolio-menu-panel { gap: 0; padding: 18px 0 0 12px; }
+.portfolio-menu-panel a { display: flex; align-items: center; gap: 4px; min-height: 44px; }
+.portfolio-menu-shade { background: rgb(6 6 6 / 45%); }
+@media (max-width: 700px) {
+  .portfolio-header.menu-is-open { width: min(330px, 100%); }
+  .portfolio-header.menu-is-open::before { top: 26px; left: 22px; right: 8px; }
+  @keyframes home-brand-arrive { 0%, 62% { top: 50%; left: 50%; transform: translate(-50%, -50%); } 100% { top: 26px; left: 22px; transform: translate(0, 0); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-intro-screen { display: none; }
+  .portfolio-header.home-intro-active .home-wordmark { position: static; animation: none; }
+  .home-intro-active .home-menu, .home-intro-active .home-contact { visibility: visible; }
+}
+
+/* The opening types real text so its visible width stays centered as it grows. */
+.home-opening { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: var(--color-white); color: var(--color-black); font-family: Arial, Helvetica, sans-serif; }
+.home-opening-mark { position: relative; display: flex; flex-direction: column; font-size: clamp(44px, 7.3vw, 148px); line-height: .88; font-weight: 700; letter-spacing: -.045em; transform-origin: top left; will-change: transform; }
+.home-opening-mark > span { font-size: .35em; line-height: .9; letter-spacing: -.025em; }
+.home-opening-mark strong { position: relative; font-size: 1em; min-height: .88em; white-space: pre; }
+.intro-slash { position: absolute; right: 100%; top: 0; margin-right: .03em; color: var(--color-red); font-style: normal; opacity: 0; }
+.intro-slash.is-typed { opacity: 1; }
+.portfolio-header.home-intro-active .home-wordmark { position: static; animation: none; visibility: hidden; }
+
+.portfolio-header .home-wordmark strong { position: relative; }
+.wordmark-slash { position: absolute; right: 100%; top: 0; margin-right: .03em; color: var(--color-red); font-style: normal; }
+
+/* Keep the panel mounted so opening and closing can both interpolate. */
+.portfolio-header.has-dropdown { padding-bottom: 14px; isolation: isolate; transition: color 500ms ease; }
+.portfolio-header.has-dropdown::before { content: ""; position: absolute; z-index: -1; top: 28px; left: 2.65vw; right: 12px; bottom: 0; background: color-mix(in srgb, var(--color-gray) 45%, var(--color-black)); opacity: 0; animation: none; pointer-events: none; transition: opacity 550ms ease; }
+.portfolio-header.has-dropdown.menu-is-open::before { opacity: 1; animation: none; }
+.portfolio-header.has-dropdown .portfolio-brand-row { gap: 18px; }
+.portfolio-menu-reveal { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 650ms cubic-bezier(.22, 1, .36, 1), visibility 0s 650ms; }
+.menu-is-open .portfolio-menu-reveal { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 650ms cubic-bezier(.22, 1, .36, 1), visibility 0s; }
+.portfolio-menu-clip { min-height: 0; overflow: hidden; }
+.portfolio-header.has-dropdown .portfolio-menu-panel { gap: 0; padding: 18px 0 0 12px; }
+.portfolio-header.has-dropdown .portfolio-menu-panel a { opacity: 0; transform: translateY(-8px); transition: opacity 220ms ease, transform 350ms cubic-bezier(.22, 1, .36, 1), color 300ms; }
+.portfolio-header.menu-is-open .portfolio-menu-panel a { opacity: 1; transform: translateY(0); transition-duration: 420ms, 550ms, 300ms; transition-delay: 90ms, 90ms, 0s; }
+.portfolio-header.menu-is-open .portfolio-menu-panel a:nth-child(2) { transition-delay: 130ms, 130ms, 0s; }
+.portfolio-header.menu-is-open .portfolio-menu-panel a:nth-child(3) { transition-delay: 170ms, 170ms, 0s; }
+.portfolio-header.menu-is-open .portfolio-menu-panel a:nth-child(4) { transition-delay: 210ms, 210ms, 0s; }
+.portfolio-menu-shade { animation: none; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 550ms ease, visibility 0s 550ms; }
+.portfolio-menu-shade.is-visible { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 550ms ease, visibility 0s; }
+@media (max-width: 700px) { .portfolio-header.has-dropdown { width: min(330px, 100%); } .portfolio-header.has-dropdown::before { top: 26px; left: 22px; right: 8px; } }
+@media (prefers-reduced-motion: reduce) { .portfolio-menu-reveal, .menu-is-open .portfolio-menu-reveal, .portfolio-menu-shade, .portfolio-menu-shade.is-visible, .portfolio-header.has-dropdown::before, .portfolio-header.has-dropdown .portfolio-menu-panel a { transition: none; } }
+
+/* One continuous stroke rotates from slash to minus and back. */
+.portfolio-menu-symbol { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; transform: rotate(-65deg); transform-origin: center; transition: transform 650ms cubic-bezier(.22, 1, .36, 1); }
+.portfolio-menu-trigger[aria-expanded="true"] .portfolio-menu-symbol { transform: rotate(0deg); }
+@media (prefers-reduced-motion: reduce) { .portfolio-menu-symbol { transition: none; } }
+
+/* A caret follows the most recently revealed character without shifting text. */
+.typed-letter { position: relative; }
+.typed-letter::after { content: "|"; position: absolute; left: 100%; top: 0; color: var(--color-red); font-weight: 400; opacity: 0; pointer-events: none; animation: typing-caret-step var(--typing-step, 19ms) linear var(--letter-delay) both; }
+.portfolio-home.has-opening .typed-letter::after { animation-delay: calc(9500ms + var(--letter-delay)); }
+.typed-final-letter::after { animation-name: typing-caret-finish; animation-duration: 2400ms; animation-timing-function: steps(1, end); }
+.intro-typing-caret { position: absolute; left: 100%; top: -.035em; margin-left: .02em; color: var(--color-red); font-weight: 400; animation: typing-caret-blink 1200ms steps(1, end) infinite; }
+@keyframes typing-caret-step { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes typing-caret-finish { 0%, 40%, 80% { opacity: 1; } 20%, 60%, 100% { opacity: 0; } }
+@keyframes typing-caret-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .typed-letter::after, .intro-typing-caret { display: none; animation: none; } }
+
+.home-video-toggle.home-sound-toggle { bottom: calc(4.2% + 52px); }
+@media (max-width: 700px) { .home-video-toggle.home-sound-toggle { bottom: 72px; } }
+
+.intro-given-name { position: relative; min-height: .9em; }
+.intro-given-caret { position: absolute; left: 100%; top: 0; color: var(--color-red); font-weight: 400; animation: typing-caret-blink 1200ms steps(1, end) infinite; }
+.intro-typing-caret { transition: left 850ms cubic-bezier(.65, 0, .35, 1), margin-left 850ms ease; }
+.intro-typing-caret.is-at-start { left: -.32em; margin-left: 0; }
+@media (prefers-reduced-motion: reduce) { .intro-given-caret { display: none; } .intro-typing-caret { transition: none; } }

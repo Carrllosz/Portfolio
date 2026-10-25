@@ -1,3 +1,11 @@
+/* Shared portfolio palette. */
+:root {
+  --color-black: #060606;
+  --color-red: #EE0000;
+  --color-gray: #919191;
+  --color-white: #FFFFFF;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,0 +1,6 @@
+.wave-letter { transition: color 320ms ease; transition-delay: 0ms; }
+.wave-trigger:hover .wave-letter,
+.wave-trigger:focus-visible .wave-letter,
+.wave-text:hover .wave-letter { color: var(--color-red); transition-delay: var(--wave-delay, 0ms); }
+.wave-trigger.is-selected .wave-letter { color: var(--color-red); }
+@media (prefers-reduced-motion: reduce) { .wave-letter { transition: none; } }

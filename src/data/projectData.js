@@ -6,18 +6,6 @@ import moobi4 from "../assets/804.png";
 import moobi5 from "../assets/805.png";
 import moobi6 from "../assets/806.png";
 import moobi7 from "../assets/moobi7.png";
-import easyroutedetail from "../assets/easyroutedetail.mp4";
-import easy1 from "../assets/easyroutelogin.png";
-import easy3 from "../assets/principal.png";
-import easy4 from "../assets/easy4.mp4";
-import flu1 from "../assets/fluxus.mp4";
-import flu2 from "../assets/fluxus2.png";
-import flu3 from "../assets/fluxus3.png";
-import flu4 from "../assets/fluxus4.mp4";
-import flu5 from "../assets/fluxus6.mp4";
-import flu7 from "../assets/fluxus7.mp4";
-import flu8 from "../assets/fluxus8.mp4";
-import flu9 from "../assets/fluxus9.png";
 import bradescohero from "../assets/bradescohero.mp4";
 import research from "../assets/research.png";
 import benchmarking from "../assets/benchmarking.png";
@@ -29,94 +17,10 @@ import conversa from "../assets/conversa.png";
 import home from "../assets/home.png";
 
 export const projects = {
-  "fluxus-app": {
-    title: "Fluxus",
-    subtitle: "Turning operational complexity into measurable performance.",
-    link: "https://www.behance.net/gallery/228821855/fluxus-Process-Management-System-with-BPMN",
-
-    impact: [
-      "↓ Estimated 25–40% reduction in process inefficiencies (McKinsey Digital benchmark).",
-      "↑ Increased cross-department visibility through centralized BPMN documentation.",
-      "↓ Faster risk response cycles with structured mitigation workflows.",
-      "↑ Stronger strategic alignment between operations and leadership.",
-    ],
-
-    problem:
-      "Organizations faced fragmented workflows, limited visibility into process performance, and reactive risk management, generating inefficiencies, accountability gaps, and misalignment between strategy and execution.",
-
-    strategy:
-      "Fluxus was designed as a collaborative BPM platform grounded in BPMN methodology, embedding KPI dashboards and risk management directly into workflows to transform processes into measurable, continuously improvable systems.",
-
-    highlights: [
-      "Real-time approvals and workflow revisions.",
-      "AI-assisted process refinement.",
-      "Live performance dashboards with operational KPIs.",
-      "Integrated risk register with corrective/preventive tracking.",
-    ],
-
-    decisions: [
-      "Prioritized clarity over feature overload to increase adoption.",
-      "Structured risk as proactive, not reactive.",
-      "Embedded analytics inside workflows instead of isolating them.",
-      "Designed modular architecture to support scalability.",
-    ],
-
-    hero: { type: "video", src: flu1 },
-
-    contentBlocks: [
-      { type: "image", src: flu2 },
-      { type: "image", src: flu3 },
-      { type: "video", src: flu8 },
-      { type: "video", src: flu4 },
-      { type: "video", src: flu7 },
-      { type: "video", src: flu5 },
-      { type: "image", src: flu9 },
-    ],
-  },
-
-  "easyroute": {
-    title: "EasyRoute",
-    subtitle: "Optimizing last-mile logistics through intelligent routing.",
-    link: "https://www.figma.com/design/tbg5nXIrfu1VxQGI7Zv0hL/Easyroute---Redesign?node-id=0-1&t=XTmkjtgFYpRhFa7k-1",
-
-    impact: [
-      "↓ Estimated 15–30% reduction in fuel costs with route optimization (Deloitte Logistics Insights).",
-      "↑ Improved delivery time predictability through dynamic routing.",
-      "↓ Reduced manual dispatch errors with centralized visibility.",
-      "↑ Higher driver productivity through streamlined task flows.",
-    ],
-
-    problem:
-      "Logistics operations relied on manual route planning, limited real-time visibility, and inefficient communication between dispatch and drivers, leading to delays, higher costs, and inconsistent performance.",
-
-    strategy:
-      "EasyRoute was structured as a mobile-first logistics platform combining route optimization logic, real-time tracking, and operational dashboards to transform fragmented delivery operations into data-driven execution.",
-
-    highlights: [
-      "Dynamic route recalculation.",
-      "Driver task management interface.",
-      "Live tracking with operational overview.",
-      "Performance dashboard with delivery metrics.",
-    ],
-
-    decisions: [
-      "Focused on driver simplicity to reduce cognitive load in the field.",
-      "Designed real-time visibility as a core feature, not an add-on.",
-      "Balanced automation with manual override flexibility.",
-      "Structured data collection to enable future predictive analytics.",
-    ],
-
-    hero: { type: "video", src: easyroutedetail },
-
-    contentBlocks: [
-      { type: "image", src: easy1 },
-      { type: "image", src: easy3 },
-      { type: "video", src: easy4 },
-    ],
-  },
-
   "moobi": {
     title: "Moobi",
+    contextTitle: "Turning complexity into a clearer experience",
+    services: ["UX/UI", "Branding"],
     subtitle: "Redefining real estate discovery through digital experience.",
     link: "https://www.behance.net/gallery/237229489/MOOBI",
 
@@ -162,6 +66,8 @@ export const projects = {
 
   "bradesco": {
    title: "Bradesco",
+   contextTitle: "A more accessible first step into banking",
+   services: ["UX/UI"],
 
   subtitle:
     "Transforming digital banking onboarding through accessibility and inclusive UX.",
@@ -212,4 +118,34 @@ export const projects = {
     ],
   },
 
+};
+
+projects.moobi.contentBlocks.push(
+  { type: "image", src: require("../assets/moobi.png"), alt: "Moobi — visual overview" },
+  { type: "image", src: require("../assets/moobilogo.png"), alt: "Moobi — brand presentation" },
+  { type: "video", src: require("../assets/moobi.mp4"), alt: "Moobi — product in motion" },
+);
+projects.bradesco.contentBlocks.push(
+  { type: "image", src: require("../assets/bradesco.png"), alt: "Bradesco — project presentation" },
+);
+
+// The cover uses the same film as the final Moobi gallery block.
+projects.moobi.hero = projects.moobi.contentBlocks[projects.moobi.contentBlocks.length - 1];
+projects.naia = {
+  title: "NAIA",
+  contextTitle: "A new space for creative work",
+  comingSoon: true,
+  subtitle: "UX/UI design for NAIA.",
+  services: ["UX/UI"],
+  hero: { type: "video", src: require("../assets/naia.mp4"), alt: "NAIA — platform in motion" },
+  contentBlocks: [],
+};
+projects.caramelandia = {
+  title: "Caramelândia",
+  contextTitle: "A sweeter digital experience",
+  comingSoon: true,
+  subtitle: "UX/UI design for Caramelândia.",
+  services: ["UX/UI"],
+  hero: { type: "image", src: require("../assets/caramelandia-cover.png"), alt: "Caramelândia — white lettering over colorful sweets" },
+  contentBlocks: [],
 };
