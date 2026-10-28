@@ -11,7 +11,20 @@ function Media({ block, title, hero }) {
 }
 function Narrative({ title, text, items }) {
   if (!text && !items?.length) return null;
-  return <section className="case-narrative"><h2>{title}</h2><div>{text && <p>{text}</p>}{items?.length > 0 && <ul>{items.map(item => <li key={item}><span className="home-slash">/ </span>{item}</li>)}</ul>}</div></section>;
+  return <section className="case-narrative"><h2>{title}</h2><div>{text && <RichParagraphs text={text} />}{items?.length > 0 && <ul>{items.map(item => <li key={item}><span className="home-slash">/ </span>{item}</li>)}</ul>}</div></section>;
+}
+
+function RichParagraphs({ text }) {
+  return text.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph.split(/(\*\*.*?\*\*|\[[^\]]+\]\(https?:\/\/[^\s)]+\))/g).map((part, partIndex) => {
+    if (part.startsWith("**") && part.endsWith("**")) return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+    const link = part.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+    if (link) return <a key={partIndex} className="case-source-link wave-trigger" href={link[2]} target="_blank" rel="noopener noreferrer"><WaveText>{link[1]}</WaveText></a>;
+    return part;
+  })}</p>);
+}
+
+function ProjectSummary({ text }) {
+  return <div className="case-summary"><RichParagraphs text={text} /></div>;
 }
 
 function ProjectGallery({ blocks, title }) {
@@ -44,7 +57,7 @@ export default function ProjectsDetail() {
   if (!project) return <main className="case-page dark-page"><h1>Project not found</h1></main>;
   const blocks = project.contentBlocks || [];
   return <main className="case-page dark-page">
-    <aside className="case-sidebar"><Link to="/works" className="case-back-button wave-trigger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg><WaveText>Back</WaveText></Link><h1>{project.title.toUpperCase()}{project.year && <span className="dark-muted"> {project.year}</span>}</h1><p className="case-summary">{project.description || project.subtitle}</p><dl className="case-facts"><div><dt>CLIENTS</dt><dd>{project.client || project.title.toUpperCase()}</dd></div><div><dt>SERVICE</dt><dd>{project.services?.length ? project.services.join(", ") : project.service || "UX/UI"}</dd></div></dl>{project.team?.length > 0 && <section className="case-team"><h2>TEAM</h2>{project.team.map(member => <p key={member.name}>{member.role} <span className="home-slash">/ </span>{member.name}</p>)}</section>}</aside>
+    <aside className="case-sidebar"><Link to="/works" className="case-back-button wave-trigger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg><WaveText>Back</WaveText></Link><h1>{project.title.toUpperCase()}{project.year && <span className="dark-muted"> {project.year}</span>}</h1><ProjectSummary text={project.description || project.subtitle} /><dl className="case-facts"><div><dt>CLIENTS</dt><dd>{project.client || project.title.toUpperCase()}</dd></div><div><dt>SERVICE</dt><dd>{project.services?.length ? project.services.join(", ") : project.service || "UX/UI"}</dd></div></dl>{project.team?.length > 0 && <section className="case-team"><h2>TEAM</h2>{project.team.map(member => <p key={member.name}>{member.role} <span className="home-slash">/ </span>{member.name}</p>)}</section>}</aside>
     <article className="case-content" aria-label={`${project.title} case study`}><Media block={project.hero} title={`${project.title} — overview`} hero /><Narrative title={project.contextTitle || project.title} text={project.problem || project.subtitle} /><ProjectGallery blocks={blocks} title={project.title} /><ProjectNavigation currentId={id} /></article><PortfolioClock />
   </main>;
 }

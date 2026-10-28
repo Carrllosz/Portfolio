@@ -19,9 +19,10 @@ import home from "../assets/home.png";
 export const projects = {
   "moobi": {
     title: "Moobi",
-    contextTitle: "Turning complexity into a clearer experience",
+    contextTitle: "Making everyday commutes more human",
     services: ["UX/UI", "Branding"],
-    subtitle: "Redefining real estate discovery through digital experience.",
+    client: "Personal project",
+    subtitle: `Born from the idea of improving how people track and access public transportation, **Mobbi** is a personal app design project created to enhance urban mobility experiences in major Brazilian cities, helping people get to work and reach their destinations faster and more efficiently. The app offers real-time transit tracking, personalized alerts, and route comparisons based on crowding levels and travel time, while prioritizing accessibility for diverse users.`,
     link: "https://www.behance.net/gallery/237229489/MOOBI",
 
     impact: [
@@ -32,7 +33,9 @@ export const projects = {
     ],
 
     problem:
-      "Users struggled with fragmented property information, poor visual presentation, and inefficient search experiences, reducing trust and engagement in digital real estate platforms.",
+      `Every day, millions of Brazilians navigate crowded buses, unpredictable schedules, and long waits just to get where they need to be. According to the [2022 IBGE Census](https://educa.ibge.gov.br/jovens/materias-especiais/23064-censo-2022-como-a-populacao-se-desloca-para-estudar-e-trabalhar.html), **14.9 million people depend on buses to commute to work**, with **70% spending at least 30 minutes on their journey**. But commuting isn't just about time or distance. It's about the uncertainty of missing a connection, the frustration of unexpected delays, and the challenge of navigating a city that doesn't always move at your pace.
+
+**Moobi explores how technology can turn these everyday frustrations into better urban experiences.** By combining real-time tracking, smarter route comparisons, personalized alerts, and accessible navigation, the project gives commuters more control over their journeys. Rather than simply showing people how to get somewhere, Moobi aims to make every trip feel less uncertain, more intuitive, and ultimately more human.`,
 
     strategy:
       "Moobi was designed as a digital-first real estate experience, prioritizing intuitive navigation, immersive visuals, and structured filtering to create a seamless and confidence-driven property discovery journey.",
@@ -68,9 +71,10 @@ export const projects = {
    title: "Bradesco",
    contextTitle: "A more accessible first step into banking",
    services: ["UX/UI"],
+   client: "Personal project",
 
   subtitle:
-    "Transforming digital banking onboarding through accessibility and inclusive UX.",
+    `Driven by the goal of exploring and learning more about digital accessibility, this personal project focuses on redesigning the onboarding experience of the **Bradesco banking app**, making the first steps of accessing and navigating the platform more inclusive and accessible to users with disabilities. The redesign introduces clearer guidance, simplified navigation, voice support, and improved screen reader compatibility, aiming to make digital banking more accessible, efficient, and user-friendly for everyone.`,
 
   link: "https://www.behance.net/gallery/246731067/Accessible-Onboarding-Redesign-Bradesco-App",
 
@@ -82,7 +86,9 @@ export const projects = {
   ],
 
   problem:
-    "The existing onboarding experience presented accessibility barriers for users with visual and motor disabilities. Complex navigation, small touch targets, limited guidance, and inconsistent assistive technology support made it difficult for many users to independently complete their first interaction with the banking app.",
+    `In Brazil, **14.4 million people live with disabilities**, representing 7.3% of the population aged two and older, according to the [2022 IBGE Census](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/43463-censo-2022-brasil-tem-14-4-milhoes-de-pessoas-com-deficiencia). Yet digital accessibility remains a global challenge: **95.9% of the one million homepages analyzed** in the [2026 WebAIM Million Report](https://webaim.org/projects/million/) presented detectable accessibility guideline violations. These findings highlight the importance of designing digital experiences that work for everyone.
+
+With this in mind, the project reimagines **Bradesco's onboarding and home experience**, focusing on reducing accessibility barriers through clearer navigation, improved screen reader compatibility, simplified interactions, and more thoughtful information hierarchy. The goal is to make everyday banking more inclusive, empowering people with different abilities to manage their finances with greater independence, confidence, and ease.`,
 
   strategy:
     "The redesign applied a human-centered design process, combining UX research, accessibility best practices, and simplified interaction patterns to create an onboarding experience that is more inclusive, intuitive, and supportive from the very first access.",

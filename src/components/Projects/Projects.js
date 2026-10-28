@@ -17,11 +17,11 @@ function WorkCard({ project, active, setActive }) {
   const comingSoon = Boolean(projects[project.id].comingSoon);
   const Tag = comingSoon ? "div" : Link;
   const attributes = comingSoon
-    ? { tabIndex: 0, role: "group", "aria-disabled": true, "aria-label": `${project.title}: Saindo do forno já já.` }
+    ? { tabIndex: 0, role: "group", "aria-disabled": true, "aria-label": `${project.title}: Coming soon.` }
     : { to: `/projects/${project.id}` };
   return <Tag {...attributes} className={`works-card${active === project.id ? " is-active" : ""}${comingSoon ? " is-coming-soon" : ""}`} style={{ "--card-ratio": project.ratio, "--card-position": project.position || "center", order: works.indexOf(project) }} onMouseEnter={() => setActive(project.id)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(project.id)} onBlur={() => setActive(null)}>
-    <div className="works-card-media">{project.video ? <video src={project.video} autoPlay muted loop playsInline aria-label={project.title} /> : <img src={project.image} alt={project.title} loading="lazy" />}{comingSoon && <span className="works-coming-soon">Saindo do forno já já.</span>}</div>
-    <div className="works-caption"><span>{project.title}</span><span>{comingSoon ? "Saindo do forno já já." : project.description}</span></div>
+    <div className="works-card-media">{project.video ? <video src={project.video} autoPlay muted loop playsInline aria-label={project.title} /> : <img src={project.image} alt={project.title} loading="lazy" />}{comingSoon && <span className="works-coming-soon">Coming soon.</span>}</div>
+    <div className="works-caption"><span>{project.title}</span><span>{comingSoon ? "Coming soon." : project.description}</span></div>
   </Tag>;
 }
 export default function Projects() {

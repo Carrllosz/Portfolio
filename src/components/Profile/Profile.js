@@ -1,5 +1,6 @@
 import React from "react";
 import GreetingPortrait from "./GreetingPortrait";
+import EmailContact from "./EmailContact";
 import brazil from "../../assets/about-brazil.png";
 import WaveText from "../WaveText";
 import PortfolioClock from "../PortfolioClock";
@@ -26,9 +27,9 @@ export default function Profile() {
       </div>
     </section>
     <div className="about-columns">
-      <section className="about-contact"><h2>CONTACT ME</h2><a className="wave-trigger" href="https://www.linkedin.com/in/carrllosz" target="_blank" rel="noreferrer"><WaveText>linkedin.com/in/carrllosz</WaveText></a><a className="wave-trigger" href="mailto:joaocar2003@gmail.com"><WaveText>joaocar2003@gmail.com</WaveText></a><GreetingPortrait /></section>
-      <section><h2>work experience</h2>{experience.map(([title, organization, start, end]) => <Entry key={organization} {...{title, organization, start, end}} />)}</section>
-      <div className="about-education"><section><h2>education</h2><Entry title="ciência da computação" organization="ufal" /><Entry title="ux e design de produtos digitais" organization="puc minas" /></section><section><h2>awards</h2><Entry title="festival curicaca" organization="edge" start="11 october 2025" /></section></div>
+      <section className="about-contact"><h2>CONTACT ME</h2><a className="wave-trigger" href="https://www.linkedin.com/in/carrllosz" target="_blank" rel="noreferrer"><WaveText>linkedin.com/in/carrllosz</WaveText></a><EmailContact /><GreetingPortrait /></section>
+      <section><h2>WORK EXPERIENCE</h2>{experience.map(([title, organization, start, end]) => <Entry key={organization} {...{title, organization, start, end}} />)}</section>
+      <div className="about-education"><section><h2>EDUCATION</h2><Entry title="ciência da computação" organization="ufal" /><Entry title="ux e design de produtos digitais" organization="puc minas" /></section><section><h2>AWARDS</h2><Entry title="festival curicaca" organization="edge" start="11 october 2025" /></section></div>
     </div>
     <PortfolioClock />
   </main>;
