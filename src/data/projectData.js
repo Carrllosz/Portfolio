@@ -1,10 +1,10 @@
 import homeMoobi from "../assets/homemoobi.mp4";
-import moobi1 from "../assets/moobi1.png";
-import moobi2 from "../assets/802.png";
-import moobi3 from "../assets/803.png";
-import moobi4 from "../assets/804.png";
-import moobi5 from "../assets/805.png";
-import moobi6 from "../assets/806.png";
+import moobi1 from "../assets/moobi-billboard.png";
+import moobi2 from "../assets/moobi-recife.png";
+import moobi3 from "../assets/moobi-bus-stop.png";
+import moobiGuide from "../assets/moobiguide.mp4";
+import busRio from "../assets/bus_rio.mp4";
+import tremSp from "../assets/trem_sp.mp4";
 import moobi7 from "../assets/moobi7.png";
 import bradescohero from "../assets/bradescohero.mp4";
 import research from "../assets/research.png";
@@ -57,12 +57,12 @@ export const projects = {
     hero: { type: "video", src: homeMoobi },
 
     contentBlocks: [
-      { type: "image", src: moobi1 },
-      { type: "image", src: moobi2 },
-      { type: "image", src: moobi3 },
-      { type: "image", src: moobi4 },
-      { type: "image", src: moobi5 },
-      { type: "image", src: moobi6 },
+      { type: "image", src: moobi1, alt: "Moobi — urban mobility billboard with a view of Rio de Janeiro" },
+      { type: "video", src: moobiGuide, interactive: true, alt: "Moobi — app guide" },
+      { type: "image", src: moobi3, alt: "Moobi — brand poster at a bus stop" },
+      { type: "image", src: moobi2, alt: "Moobi — urban mobility campaign in Recife" },
+      { type: "video", src: busRio, interactive: true, alt: "Moobi — bus journey in Rio de Janeiro" },
+      { type: "video", src: tremSp, interactive: true, alt: "Moobi — train journey in São Paulo" },
       { type: "image", src: moobi7 },
     ],
   },
@@ -129,14 +129,14 @@ With this in mind, the project reimagines **Bradesco's onboarding and home exper
 projects.moobi.contentBlocks.push(
   { type: "image", src: require("../assets/moobi.png"), alt: "Moobi — visual overview" },
   { type: "image", src: require("../assets/moobilogo.png"), alt: "Moobi — brand presentation" },
-  { type: "video", src: require("../assets/moobi.mp4"), alt: "Moobi — product in motion" },
+  { type: "image", src: require("../assets/moobi-home-features.png"), alt: "Moobi — home screen features and accessible transit tools" },
+  { type: "video", layout: "full", src: require("../assets/onboardingmoobi.mp4"), alt: "Moobi — onboarding experience" },
 );
 projects.bradesco.contentBlocks.push(
   { type: "image", src: require("../assets/bradesco.png"), alt: "Bradesco — project presentation" },
 );
 
-// The cover uses the same film as the final Moobi gallery block.
-projects.moobi.hero = projects.moobi.contentBlocks[projects.moobi.contentBlocks.length - 1];
+projects.moobi.hero = { type: "video", src: require("../assets/moobi.mp4") };
 projects.naia = {
   title: "NAIA",
   contextTitle: "A new space for creative work",

@@ -60,7 +60,12 @@
 .case-team p { margin-top: 10px; }
 .case-project-link, .case-back { display: block; margin-top: 28px; }
 .case-content { min-width: 0; }
-.case-media { overflow: hidden; border-radius: 8px; background: var(--color-black); }
+.case-media { position: relative; overflow: hidden; border-radius: 8px; background: var(--color-black); }
+.case-video-controls { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 4px; }
+.case-video-controls button { position: relative; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: rgb(6 6 6 / 65%); color: white; }
+.case-video-controls button:focus-visible { outline: 2px solid var(--color-red); outline-offset: 3px; }
+.case-video-controls svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.case-video-controls .case-video-progress { position: absolute; inset: 0; width: 44px; height: 44px; transform: rotate(-90deg); }
 .case-media img, .case-media video { display: block; width: 100%; height: auto; }
 .case-hero { aspect-ratio: 16 / 9; }
 .case-hero img, .case-hero video { width: 100%; height: 100%; object-fit: cover; }
