@@ -8,7 +8,7 @@ import WaveText from "../WaveText";
 
 const categories = ["Branding", "UX/UI", "Motion", "Campaign", "Game Design"];
 const works = [
-  { id: "moobi", ratio: 1.4, title: "Moobi", description: "More human urban mobility.", video: projects.moobi.hero.src, categories: projects.moobi.services },
+  { id: "moobi", ratio: 1.4, title: "Moobi", description: "More human urban mobility.", video: require("../../assets/moobi.mp4"), categories: projects.moobi.services },
   { id: "bradesco", ratio: .96, title: "Bradesco", description: "Accessible digital banking for everyone.", image: bradesco, categories: projects.bradesco.services },
   { id: "caramelandia", ratio: .9, title: "Caramelândia", description: projects.caramelandia.subtitle, image: projects.caramelandia.hero.src, categories: projects.caramelandia.services },
   { id: "naia", ratio: 1.3, position: "50% 28%", title: "NAIA", description: projects.naia.subtitle, video: projects.naia.hero.src, categories: projects.naia.services },

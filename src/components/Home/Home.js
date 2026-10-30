@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import homeMoobi from "../../assets/homemoobi.mp4";
+import homeMoobi from "../../assets/moobipubli.mp4";
 import bahia from "../../assets/home-bahia.png";
 import alagoas from "../../assets/home-alagoas.png";
 import TypedText from "./TypedText";

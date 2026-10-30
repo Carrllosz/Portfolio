@@ -1,4 +1,4 @@
-import homeMoobi from "../assets/homemoobi.mp4";
+import homeMoobi from "../assets/moobipubli.mp4";
 import moobi1 from "../assets/moobi-billboard.png";
 import moobi2 from "../assets/moobi-recife.png";
 import moobi3 from "../assets/moobi-bus-stop.png";
@@ -54,7 +54,7 @@ export const projects = {
       "Designed scalable component system for listing expansion.",
     ],
 
-    hero: { type: "video", src: homeMoobi },
+    hero: { type: "video", src: homeMoobi, interactive: true },
 
     contentBlocks: [
       { type: "image", src: moobi1, alt: "Moobi — urban mobility billboard with a view of Rio de Janeiro" },
@@ -131,12 +131,12 @@ projects.moobi.contentBlocks.push(
   { type: "image", src: require("../assets/moobilogo.png"), alt: "Moobi — brand presentation" },
   { type: "image", src: require("../assets/moobi-home-features.png"), alt: "Moobi — home screen features and accessible transit tools" },
   { type: "video", layout: "full", src: require("../assets/onboardingmoobi.mp4"), alt: "Moobi — onboarding experience" },
+  { type: "video", layout: "full", src: require("../assets/fluxorota.mp4"), alt: "Moobi — route planning flow" },
 );
 projects.bradesco.contentBlocks.push(
   { type: "image", src: require("../assets/bradesco.png"), alt: "Bradesco — project presentation" },
 );
 
-projects.moobi.hero = { type: "video", src: require("../assets/moobi.mp4") };
 projects.naia = {
   title: "NAIA",
   contextTitle: "A new space for creative work",
